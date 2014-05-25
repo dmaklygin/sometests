@@ -33,6 +33,8 @@
 		685A62D0192802F900EE67EF /* dmLineEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 685A62CF192802F900EE67EF /* dmLineEventViewController.m */; };
 		68B8C53C1931F6740005011D /* Coefficient.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B8C53B1931F6740005011D /* Coefficient.m */; };
 		68B8C545193215E70005011D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 68B8C547193215E70005011D /* Localizable.strings */; };
+		68B8C54E19329A280005011D /* Bet.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B8C54D19329A280005011D /* Bet.m */; };
+		68B8C55119329CE80005011D /* dmCoupon.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B8C55019329CE80005011D /* dmCoupon.m */; };
 		9B35F3D1192CE795004135C8 /* dmLiveEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B35F3D0192CE795004135C8 /* dmLiveEventViewController.m */; };
 		9B35F3F1192DFD78004135C8 /* dmCoefficientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B35F3F0192DFD78004135C8 /* dmCoefficientView.m */; };
 		9B35F3F4192E2A31004135C8 /* dmMainCoefficientsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B35F3F3192E2A31004135C8 /* dmMainCoefficientsView.m */; };
@@ -103,6 +105,10 @@
 		68B8C549193216030005011D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		68B8C54A19321B020005011D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		68B8C54B19321B640005011D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		68B8C54C19329A280005011D /* Bet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bet.h; sourceTree = "<group>"; };
+		68B8C54D19329A280005011D /* Bet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bet.m; sourceTree = "<group>"; };
+		68B8C54F19329CE80005011D /* dmCoupon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmCoupon.h; sourceTree = "<group>"; };
+		68B8C55019329CE80005011D /* dmCoupon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dmCoupon.m; sourceTree = "<group>"; };
 		9B35F3CF192CE795004135C8 /* dmLiveEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmLiveEventViewController.h; sourceTree = "<group>"; };
 		9B35F3D0192CE795004135C8 /* dmLiveEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dmLiveEventViewController.m; sourceTree = "<group>"; };
 		9B35F3EF192DFD78004135C8 /* dmCoefficientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmCoefficientView.h; sourceTree = "<group>"; };
@@ -262,6 +268,8 @@
 			isa = PBXGroup;
 			children = (
 				6838105718FA9E950019A61D /* Tournaments.xcdatamodeld */,
+				68B8C54C19329A280005011D /* Bet.h */,
+				68B8C54D19329A280005011D /* Bet.m */,
 				68B8C53A1931F6740005011D /* Coefficient.h */,
 				68B8C53B1931F6740005011D /* Coefficient.m */,
 				9BE349A319260BF7003D1D72 /* Event.h */,
@@ -276,6 +284,8 @@
 				9BE349A719264DC9003D1D72 /* dmTournamentController.m */,
 				9B35F3F5192F3B5D004135C8 /* dmOutcomesController.h */,
 				9B35F3F6192F3B5D004135C8 /* dmOutcomesController.m */,
+				68B8C54F19329CE80005011D /* dmCoupon.h */,
+				68B8C55019329CE80005011D /* dmCoupon.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -491,12 +501,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BE3493D19212429003D1D72 /* dmSportController.m in Sources */,
+				68B8C55119329CE80005011D /* dmCoupon.m in Sources */,
 				6838102218F9FC170019A61D /* main.m in Sources */,
 				9B35F3F1192DFD78004135C8 /* dmCoefficientView.m in Sources */,
 				68B8C53C1931F6740005011D /* Coefficient.m in Sources */,
 				685A62CD19279E3900EE67EF /* dmLineEventsTableViewController.m in Sources */,
 				6838107718FBC1BD0019A61D /* dmLiveTableViewController.m in Sources */,
 				9B74BDD818FBF98100D884C0 /* dmEventTableViewCell.m in Sources */,
+				68B8C54E19329A280005011D /* Bet.m in Sources */,
 				9BE3499419237472003D1D72 /* dmFirstView.m in Sources */,
 				9B35F3F4192E2A31004135C8 /* dmMainCoefficientsView.m in Sources */,
 				9BE349471922833F003D1D72 /* dmTabBarViewController.m in Sources */,

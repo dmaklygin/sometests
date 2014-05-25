@@ -7,6 +7,8 @@
 //
 
 #import "dmCoefficientView.h"
+#import "dmAppDelegate.h"
+
 
 @interface dmCoefficientView ()
 
@@ -36,6 +38,7 @@
         self.frame = CGRectMake(0, 0, 44, 60);
         
         [self addSubview:self.button];
+        [self.button addTarget:self action:@selector(HandleTap:) forControlEvents:UIControlEventTouchUpInside];
 		[self addSubview:self.titleView];
     }
     return self;
@@ -49,6 +52,11 @@
     // Drawing code
 }
 */
+- (void)HandleTap:(UIButton *)button
+{
+    dmAppDelegate *appDelegate = (dmAppDelegate *)[[UIApplication sharedApplication] delegate];
+    [appDelegate.coupon addBet:self.coefficient];
+}
 
 - (void)updateCoefficient:(Coefficient *)coefficient
 {

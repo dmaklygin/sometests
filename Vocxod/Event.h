@@ -27,14 +27,15 @@
 
 + (NSSet *)upsertEvents:(NSArray *)data forTournament:(dmTournament *)tournament inManagedObjectContext:(NSManagedObjectContext *)managedObjectContext;
 + (Event *)createNewEvent:(NSDictionary *)attributes forTournament:(dmTournament *)tournament inManagedObjectContext:(NSManagedObjectContext *)managedObjectContext;
--(BOOL)isLive;
--(BOOL)isLine;
--(BOOL)isExpired;
--(NSString *)getFormatterDate;
 
+- (BOOL)isLive;
+- (BOOL)isLine;
+- (BOOL)isExpired;
+
+- (NSString *)getFormatterDate;
 - (NSNumber *)getPart;
+- (void)upsertCoefficients:(NSDictionary *)coefficients;
 
--(void)upsertCoefficients:(NSDictionary *)coefficients;
 @end
 
 @interface Event (CoreDataGeneratedAccessors)

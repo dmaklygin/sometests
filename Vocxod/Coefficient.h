@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
-#import "Event.h"
+#import "Bet.h"
 
 @class Event;
 
@@ -20,6 +20,7 @@
 @property (nonatomic, retain) NSNumber * uid;
 @property (nonatomic, retain) NSNumber * value;
 @property (nonatomic, retain) Event *inEvent;
+@property (nonatomic, retain) Bet *bet;
 
 - (void)setValues:(NSArray *)values forEvent:(Event *)event;
 - (NSString *)getOutcomeName;

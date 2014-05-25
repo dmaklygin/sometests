@@ -18,6 +18,7 @@
 @dynamic uid;
 @dynamic value;
 @dynamic inEvent;
+@dynamic bet;
 
 - (void)setValues:(NSArray *)values forEvent:(Event *)event
 {

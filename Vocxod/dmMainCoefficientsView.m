@@ -35,11 +35,13 @@
             
             coefficientView = [[dmCoefficientView alloc] initWithFrame:self.frame withTitle:[currentCoefficient getOutcomeName] withCoefficient:currentCoefficient];
             coefficientView.frame = CGRectMake(frame.origin.x + (coefficientView.bounds.size.width + 6) * i, frame.origin.y, coefficientView.bounds.size.width, coefficientView.bounds.size.height);
+            
             [self addSubview:coefficientView];
         }
     }
     return self;
 }
+
 
 - (void)updateCoefficients
 {

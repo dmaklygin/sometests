@@ -10,6 +10,7 @@
 #import "dmSportController.h"
 #import "dmOutcomesController.h"
 #import "dmTournamentController.h"
+#import "dmCoupon.h"
 
 @interface dmAppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -19,4 +20,5 @@
 @property (nonatomic, strong) dmOutcomesController *outcomesController;
 @property (nonatomic, strong) dmTournamentController *prematchTournamentController;
 @property (nonatomic, strong) dmTournamentController *liveTournamentController;
+@property (nonatomic, strong) dmCoupon *coupon;
 @end

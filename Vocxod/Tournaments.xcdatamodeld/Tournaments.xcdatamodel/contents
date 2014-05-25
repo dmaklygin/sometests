@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13C64" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Bet" representedClassName="Bet" syncable="YES">
+        <attribute name="cf_value" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="id" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="max" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="min" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="mnemonic_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="value" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="inCoefficient" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Coefficient" inverseName="bet" inverseEntity="Coefficient" syncable="YES"/>
+    </entity>
     <entity name="Coefficient" representedClassName="Coefficient" syncable="YES">
         <attribute name="cid" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="direction" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="uid" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="value" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="bet" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Bet" inverseName="inCoefficient" inverseEntity="Bet" syncable="YES"/>
         <relationship name="inEvent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="coefficients" inverseEntity="Event" syncable="YES"/>
     </entity>
     <entity name="Event" representedClassName="Event" syncable="YES">
@@ -35,9 +45,10 @@
         <relationship name="inSport" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Sport" inverseName="forTournaments" inverseEntity="Sport" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Coefficient" positionX="-1098" positionY="-153" width="128" height="133"/>
+        <element name="Coefficient" positionX="-1098" positionY="-153" width="128" height="148"/>
         <element name="Event" positionX="-1307" positionY="-225" width="128" height="165"/>
         <element name="Sport" positionX="-524" positionY="-109" width="128" height="133"/>
         <element name="Tournament" positionX="-992" positionY="-304" width="128" height="135"/>
+        <element name="Bet" positionX="-1098" positionY="-153" width="128" height="148"/>
     </elements>
 </model>

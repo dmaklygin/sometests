@@ -51,7 +51,6 @@
 
 - (void)setMainValues
 {
-    
     // Do any additional setup after loading the view.
     self.labelHome.text = [self.event valueForKey:@"home"];
     self.labelAway.text = [self.event valueForKey:@"away"];
@@ -63,15 +62,12 @@
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"HH:mm"];
     
-    
-    
     self.labelTime.text = [self getTime];
-    
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
-    NSLog(@"event changed");
+    NSLog(@"event changed. keyPath = %@", keyPath);
     [self.mainCoefficientsView updateCoefficients];
 }
 
@@ -106,18 +102,12 @@
     NSDateFormatter *df = [NSDateFormatter new];
     [df setDateFormat:@"mm:ss"];
     
-//    NSDate *nowDate = [NSDate date];
-//    NSString *nowDateString = [df stringFromDate:nowDate];
-//    NSString *eventDateString = [df stringFromDate:self.event.time];
-//
     NSDate *eventDate = [NSDate dateWithTimeIntervalSince1970:[self.event.current_second doubleValue]];
-//    NSTimeInterval interval = [self.event.current_second doubleValue];
-//    NSLog(@"date = %@", self.event.time);
-//    NSLog(@"interval = %f", interval);
-//    int minutes = floor(interval / 60);
-//    int seconds = ceil(fmod(interval, 60));
+
     return [df stringFromDate:eventDate];
-//    return [NSString stringWithFormat:@"%d:%d", minutes, seconds];
+
 }
 
+- (IBAction)buttonTap:(id)sender {
+}
 @end

@@ -34,15 +34,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
-    // Check Model
-    // first, test for an existing store
-//    if (![[NSFileManager defaultManager] fileExistsAtPath:self.persistentStorePath]) {
-//        NSLog(@"Store not Found");
-//        // Create new Store
-//        [self initApplication];
-//    }
-    
-//    self.window.backgroundColor = [UIColor blueColor];
     UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
     
     NSLog(@"tabBarController = %@", tabBarController);
@@ -75,6 +66,10 @@
                 [self handleError:error];
                 return;
             }
+            
+            // Инициализация купона
+            [self coupon];
+            
             [self initSuccess];
         }];
     }];
@@ -140,6 +135,19 @@
     _liveTournamentController = [[dmTournamentController alloc] initWithParams:@{@"command": @"live"}];
     
     return _liveTournamentController;
+}
+
+- (dmCoupon *)coupon
+{
+    if (_coupon != nil) {
+        return _coupon;
+    }
+    
+    _coupon = [[dmCoupon alloc] initWithManagedObjectContext:self.managedObjectContext];
+    
+    [_coupon loadBets];
+    
+    return _coupon;
 }
 
 - (NSString *)persistentStorePath {
