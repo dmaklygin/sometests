@@ -31,14 +31,14 @@
 -(BOOL)isExpired;
 -(NSString *)getFormatterDate;
 
+- (NSNumber *)getPart;
+
 -(void)upsertCoefficients:(NSDictionary *)coefficients;
 @end
 
-
 @interface Event (CoreDataGeneratedAccessors)
-
-- (void)addCoefficientsObject:(Coefficient *)value;
-- (void)removeCoefficientsObject:(Coefficient *)value;
+//- (void)addCoefficientsObject:(Coefficient *)value;
+//- (void)removeCoefficientsObject:(Coefficient *)value;
 - (void)addCoefficients:(NSSet *)values;
 - (void)removeCoefficients:(NSSet *)values;
 

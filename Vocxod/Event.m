@@ -29,6 +29,7 @@
     
     NSNumber *eventId = [attributes valueForKey:@"id"];
     [self setId:eventId];
+
     if ([[attributes valueForKey:@"away"] isKindOfClass:[NSNumber class]]) {
         [self setValue:[[attributes valueForKey:@"away"] stringValue] forKey:@"away"];
     } else {
@@ -140,6 +141,31 @@
     
     return [formatter stringFromDate:self.time];
 }
+
+- (Coefficient *)getCoefficientByName:(NSString *)mnemonicName
+{
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name == %@", mnemonicName];
+    NSSet *filteredSet = [self.coefficients filteredSetUsingPredicate:predicate];
+    NSEnumerator *enumerator = [filteredSet objectEnumerator];
+    Coefficient *coefficient;
+    
+    while ((coefficient = [enumerator nextObject])) {
+        return coefficient;
+    }
+    
+    return nil;
+}
+
+// Текущий тайм/период/половина матча
+- (NSNumber *)getPart
+{
+    Coefficient *coefficient = [self getCoefficientByName:@"coeff_SCORE_HALF"];
+    if (coefficient != nil) {
+        return coefficient.value;
+    }
+    return nil;
+}
+
 
 
 - (void)addCoefficientsObject:(Coefficient *)value

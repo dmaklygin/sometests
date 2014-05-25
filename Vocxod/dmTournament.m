@@ -46,6 +46,7 @@
         } else {
             // Update Tournament!
             dmTournament *tournament = (dmTournament *)[filteredArray firstObject];
+            [tournament setName:[attributes valueForKey:@"name"]];
             [tournament upsertEvents:(NSArray *)[attributes valueForKey:@"events"]];
 //            NSLog(@"update Tournament");
         }

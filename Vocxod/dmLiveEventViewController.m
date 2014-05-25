@@ -29,9 +29,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    self.labelHome.text = [self.event valueForKey:@"home"];
-    self.labelAway.text = [self.event valueForKey:@"away"];
+    
+    [self setMainValues];
     
     dmTournament *tournament = (dmTournament *)self.event.inTournament;
     
@@ -45,6 +44,18 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)setMainValues
+{
+    
+    // Do any additional setup after loading the view.
+    self.labelHome.text = [self.event valueForKey:@"home"];
+    self.labelAway.text = [self.event valueForKey:@"away"];
+
+    NSString *timeTitle = [NSString stringWithFormat:NSLocalizedString(@"%@ TIME", nil), [[self.event getPart] stringValue]];
+    
+    self.labelPart.text = timeTitle;
 }
 
 /*

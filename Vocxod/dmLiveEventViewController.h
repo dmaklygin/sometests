@@ -12,5 +12,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelHome;
 @property (weak, nonatomic) IBOutlet UILabel *labelAway;
 @property (weak, nonatomic) IBOutlet UIView *eventInfoView;
+@property (strong, nonatomic) IBOutlet UILabel *labelPart;
 @property (nonatomic,strong) Event *event;
 @end

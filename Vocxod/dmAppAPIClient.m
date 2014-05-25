@@ -28,7 +28,8 @@ static NSString * const dmAppAPIBaseURLString = @"http://vocxod.com/";
     
     [parameters setObject:@"v1.1" forKey:@"version"];
     [parameters setObject:@"{}" forKey:@"auth"];
-    
+    [parameters setObject:[[NSLocale preferredLanguages] objectAtIndex:0] forKey:@"language"];
+
     return [[dmAppAPIClient sharedClient] GET:@"/api/index.php" parameters:parameters success:success failure:failure];
 }
 

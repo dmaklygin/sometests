@@ -11,4 +11,5 @@
 @interface dmAppAPIClient : AFHTTPSessionManager
 + (instancetype)sharedClient;
 + (NSURLSessionDataTask *)send:(NSDictionary *)params success:(void (^)(NSURLSessionDataTask *task, id responseObject))success failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
+
 @end

@@ -1,0 +1,99 @@
+
+/* Class = "IBUILabel"; accessibilityLabel = "tournamentName"; ObjectID = "0Xb-3x-e1T"; */
+"0Xb-3x-e1T.accessibilityLabel" = "tournamentName";
+
+/* Class = "IBUILabel"; text = "Volga Nizhny Novgorod"; ObjectID = "0Xb-3x-e1T"; */
+"0Xb-3x-e1T.text" = "Volga Nizhny Novgorod";
+
+/* Class = "IBUILabel"; text = "4:0"; ObjectID = "1vO-lx-Al9"; */
+"1vO-lx-Al9.text" = "4:0";
+
+/* Class = "IBUILabel"; text = "Volga Nizhny Novgorod"; ObjectID = "22j-Na-klb"; */
+"22j-Na-klb.text" = "Volga Nizhny Novgorod";
+
+/* Class = "IBUIViewController"; title = "Favourites"; ObjectID = "2oN-6O-DhC"; */
+"2oN-6O-DhC.title" = "Избранное";
+
+/* Class = "IBUILabel"; text = "19:00"; ObjectID = "3pX-V7-VvD"; */
+"3pX-V7-VvD.text" = "19:00";
+
+/* Class = "IBUILabel"; text = "Dynamo Moscow"; ObjectID = "BkS-cj-qdz"; */
+"BkS-cj-qdz.text" = "Dynamo Moscow";
+
+/* Class = "IBUILabel"; text = "1 : 0"; ObjectID = "BwT-8J-dCm"; */
+"BwT-8J-dCm.text" = "1 : 0";
+
+/* Class = "IBUINavigationItem"; title = "Спорт"; ObjectID = "C0d-tF-Bcc"; */
+"C0d-tF-Bcc.title" = "Спорт";
+
+/* Class = "IBUIViewController"; title = "Sport"; ObjectID = "CZ4-MO-1fc"; */
+"CZ4-MO-1fc.title" = "Спорт";
+
+/* Class = "IBUILabel"; text = "vs"; ObjectID = "Ene-7L-GoH"; */
+"Ene-7L-GoH.text" = "vs";
+
+/* Class = "IBUILabel"; accessibilityLabel = "tournamentName"; ObjectID = "Plc-HR-oo1"; */
+"Plc-HR-oo1.accessibilityLabel" = "tournamentName";
+
+/* Class = "IBUILabel"; text = "Volga Nizhny Novgorod"; ObjectID = "Plc-HR-oo1"; */
+"Plc-HR-oo1.text" = "Volga Nizhny Novgorod";
+
+/* Class = "IBUIViewController"; title = "Live"; ObjectID = "QUy-BD-bpt"; */
+"QUy-BD-bpt.title" = "Live";
+
+/* Class = "IBUIViewController"; title = "Main"; ObjectID = "T5C-Ys-bd5"; */
+"T5C-Ys-bd5.title" = "Main";
+
+/* Class = "IBUIViewController"; title = "Line Event Item"; ObjectID = "W06-R1-mxG"; */
+"W06-R1-mxG.title" = "Line Event Item";
+
+/* Class = "IBUILabel"; text = "1 : 0"; ObjectID = "XVk-I7-yJR"; */
+"XVk-I7-yJR.text" = "1 : 0";
+
+/* Class = "IBUILabel"; text = "Спартак"; ObjectID = "Z7e-Pi-YRk"; */
+"Z7e-Pi-YRk.text" = "Спартак";
+
+/* Class = "IBUITabBarItem"; title = "Live"; ObjectID = "Z7h-1E-pvt"; */
+"Z7h-1E-pvt.title" = "Лайв";
+
+/* Class = "IBUILabel"; text = "19:00"; ObjectID = "aT9-et-En6"; */
+"aT9-et-En6.text" = "19:00";
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "cBz-Cm-BRx"; */
+"cBz-Cm-BRx.text" = "Label";
+
+/* Class = "IBUITableViewController"; title = "LiveEvents"; ObjectID = "cMM-0h-1jT"; */
+"cMM-0h-1jT.title" = "LiveEvents";
+
+/* Class = "IBUINavigationItem"; title = "Live"; ObjectID = "dUq-rX-nl3"; */
+"dUq-rX-nl3.title" = "Лайв";
+
+/* Class = "IBUITabBarItem"; title = "Главная"; ObjectID = "e8C-66-lvz"; */
+"e8C-66-lvz.title" = "Главная";
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "hva-sn-Oc7"; */
+"hva-sn-Oc7.text" = "Label";
+
+/* Class = "IBUINavigationItem"; title = "Лайв События"; ObjectID = "jlQ-Jt-wxo"; */
+"jlQ-Jt-wxo.title" = "Лайв События";
+
+/* Class = "IBUINavigationItem"; title = "События"; ObjectID = "ljx-wE-p6q"; */
+"ljx-wE-p6q.title" = "События";
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "mqi-qh-e4X"; */
+"mqi-qh-e4X.text" = "Label";
+
+/* Class = "IBUILabel"; text = "Dynamo Moscow"; ObjectID = "o7y-Ps-HVJ"; */
+"o7y-Ps-HVJ.text" = "Dynamo Moscow";
+
+/* Class = "IBUILabel"; text = "Манчестер Юнайтед"; ObjectID = "rAX-f5-QYM"; */
+"rAX-f5-QYM.text" = "Манчестер Юнайтед";
+
+/* Class = "IBUITabBarItem"; title = "Спорт"; ObjectID = "u1e-5L-l1D"; */
+"u1e-5L-l1D.title" = "Спорт";
+
+/* Class = "IBUILabel"; text = "Volga Nizhny Novgorod"; ObjectID = "woL-06-LVC"; */
+"woL-06-LVC.text" = "Volga Nizhny Novgorod";
+
+/* Class = "IBUITableViewController"; title = "LineEvents"; ObjectID = "z7b-cz-ZWF"; */
+"z7b-cz-ZWF.title" = "LineEvents";
