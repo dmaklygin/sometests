@@ -12,7 +12,7 @@
 #import "dmTournament.h"
 
 @interface dmLiveEventViewController ()
-
+@property (nonatomic, strong) dmMainCoefficientsView *mainCoefficientsView;
 @end
 
 @implementation dmLiveEventViewController
@@ -32,12 +32,15 @@
     
     [self setMainValues];
     
-    dmTournament *tournament = (dmTournament *)self.event.inTournament;
+    // @todo поговаривают, что надо убирать обсервер!! Возможен екзепшион!
+    [self.event addObserver:self forKeyPath:@"coefficients" options:NSKeyValueObservingOptionNew context:nil];
     
-    dmMainCoefficientsView *mainCoefficients = [[dmMainCoefficientsView alloc] initWithFrame:self.view.frame forSport:tournament.inSport forEvent:self.event];
-    CGRect frame = self.eventInfoView.frame;
-    mainCoefficients.frame = CGRectMake(frame.origin.x, frame.origin.y + frame.size.height + 10, mainCoefficients.bounds.size.width, mainCoefficients.bounds.size.height);
-    [self.view addSubview:mainCoefficients];
+    [self.view addSubview:self.mainCoefficientsView];
+}
+
+- (void)dealloc
+{
+    [self.event removeObserver:self forKeyPath:@"coefficients"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -53,9 +56,23 @@
     self.labelHome.text = [self.event valueForKey:@"home"];
     self.labelAway.text = [self.event valueForKey:@"away"];
 
-    NSString *timeTitle = [NSString stringWithFormat:NSLocalizedString(@"%@ TIME", nil), [[self.event getPart] stringValue]];
+    NSString *partTitle = [NSString stringWithFormat:NSLocalizedString(@"%@ TIME", nil), [[self.event getPart] stringValue]];
+    self.labelPart.text = partTitle;
     
-    self.labelPart.text = timeTitle;
+    // time
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"HH:mm"];
+    
+    
+    
+    self.labelTime.text = [self getTime];
+    
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    NSLog(@"event changed");
+    [self.mainCoefficientsView updateCoefficients];
 }
 
 /*
@@ -68,5 +85,39 @@
     // Pass the selected object to the new view controller.
 }
 */
+- (dmMainCoefficientsView *)mainCoefficientsView
+{
+    if (_mainCoefficientsView != nil) {
+        return _mainCoefficientsView;
+    }
+    
+    dmTournament *tournament = (dmTournament *)self.event.inTournament;
+    
+    _mainCoefficientsView = [[dmMainCoefficientsView alloc] initWithFrame:self.view.frame forSport:tournament.inSport forEvent:self.event];
+    
+    CGRect frame = self.eventInfoView.frame;
+    
+    _mainCoefficientsView.frame = CGRectMake(frame.origin.x, frame.origin.y + frame.size.height + 10, _mainCoefficientsView.bounds.size.width, _mainCoefficientsView.bounds.size.height);
+    return _mainCoefficientsView;
+}
+
+- (NSString *)getTime
+{
+    NSDateFormatter *df = [NSDateFormatter new];
+    [df setDateFormat:@"mm:ss"];
+    
+//    NSDate *nowDate = [NSDate date];
+//    NSString *nowDateString = [df stringFromDate:nowDate];
+//    NSString *eventDateString = [df stringFromDate:self.event.time];
+//
+    NSDate *eventDate = [NSDate dateWithTimeIntervalSince1970:[self.event.current_second doubleValue]];
+//    NSTimeInterval interval = [self.event.current_second doubleValue];
+//    NSLog(@"date = %@", self.event.time);
+//    NSLog(@"interval = %f", interval);
+//    int minutes = floor(interval / 60);
+//    int seconds = ceil(fmod(interval, 60));
+    return [df stringFromDate:eventDate];
+//    return [NSString stringWithFormat:@"%d:%d", minutes, seconds];
+}
 
 @end

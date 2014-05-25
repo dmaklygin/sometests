@@ -52,7 +52,8 @@
 
 - (void)updateCoefficient:(Coefficient *)coefficient
 {
-    
+    [self.button setTitle:[self getValueOfCoefficient] forState:UIControlStateNormal];
+    [self.button setBackgroundColor:[self getColorOfCoefficient]];
 }
 
 - (UILabel *)titleView
@@ -83,6 +84,7 @@
     
     _button = [UIButton buttonWithType:UIButtonTypeCustom];
     [_button setBackgroundColor:[self getColorOfCoefficient]];
+    [_button setTitleColor:[UIColor lightGrayColor] forState:UIControlStateHighlighted];
     [_button setTitle:[self getValueOfCoefficient] forState:UIControlStateNormal];
     [_button setFrame:CGRectMake(0, 0, 44, 44)];
     _button.clipsToBounds = YES;

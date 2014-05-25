@@ -19,6 +19,7 @@
 @property (nonatomic, retain) NSNumber * id;
 @property (nonatomic, retain) NSNumber * status;
 @property (nonatomic, retain) NSDate * time;
+@property (nonatomic, retain) NSNumber * current_second;
 @property (nonatomic, retain) dmTournament *inTournament;
 @property (nonatomic, retain) NSSet *coefficients;
 

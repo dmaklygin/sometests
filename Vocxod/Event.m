@@ -17,6 +17,7 @@
 @dynamic id;
 @dynamic status;
 @dynamic time;
+@dynamic current_second;
 @dynamic inTournament;
 @dynamic coefficients;
 
@@ -39,6 +40,11 @@
     [self setValue:[attributes valueForKey:@"home"] forKey:@"home"];
     [self setValue:[attributes valueForKey:@"status"] forKey:@"status"];
     [self setValue:serverDate forKey:@"time"];
+
+    NSNumber *currentSecond = [attributes valueForKey:@"current_second"];
+    if (currentSecond != nil) {
+        self.current_second = currentSecond;
+    }
     
     // insert or update events in tournament
     NSMutableDictionary *coefficients = [NSMutableDictionary dictionaryWithDictionary:[attributes valueForKey:@"cs"]];
@@ -70,8 +76,19 @@
     }
     
     // update coefficients Set
-    self.coefficients = [NSSet setWithArray:currentCoefficients];
+//    self.coefficients = [NSSet setWithArray:currentCoefficients];
+    [self setCoefficients:[NSSet setWithArray:currentCoefficients]];
+    
+    
 }
+
+// update coefficients Set
+//- (void)setCoefficients:(NSSet *)coefficients
+//{
+//    [self willChangeValueForKey:@"coefficients"];
+//    self.coefficients = coefficients;
+//    [self didChangeValueForKey:@"coefficients"];
+//}
 
 
 + (NSSet *)upsertEvents:(NSArray *)data forTournament:(dmTournament *)tournament inManagedObjectContext:(NSManagedObjectContext *)managedObjectContext {

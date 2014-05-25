@@ -17,5 +17,5 @@
 @property (nonatomic, strong) UIImage *background;
 
 - (id)initWithFrame:(CGRect)frame withTitle:(NSString *)title withCoefficient:(Coefficient *)coefficient;
-
+- (void)updateCoefficient:(Coefficient *)coefficient;
 @end

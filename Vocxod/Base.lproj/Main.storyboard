@@ -304,7 +304,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kqk-AK-JoT" colorLabel="IBBuiltInLabel-Red">
-                                <rect key="frame" x="20" y="64" width="280" height="84"/>
+                                <rect key="frame" x="20" y="64" width="280" height="130"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Team-76" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n9l-kd-J0N">
@@ -334,8 +334,14 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="12:34" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mks-24-chN">
+                                        <rect key="frame" x="20" y="85" width="240" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hva-sn-Oc7">
-                                        <rect key="frame" x="119" y="52" width="42" height="21"/>
+                                        <rect key="frame" x="119" y="109" width="42" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -357,6 +363,7 @@
                         <outlet property="labelAway" destination="rAX-f5-QYM" id="bk8-7H-CqT"/>
                         <outlet property="labelHome" destination="Z7e-Pi-YRk" id="KOP-E2-oSs"/>
                         <outlet property="labelPart" destination="hva-sn-Oc7" id="uvD-hZ-XgU"/>
+                        <outlet property="labelTime" destination="Mks-24-chN" id="pPc-2y-EWv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V39-TK-SIE" userLabel="First Responder" sceneMemberID="firstResponder"/>

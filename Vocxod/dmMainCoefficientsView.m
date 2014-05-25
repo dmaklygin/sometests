@@ -17,8 +17,6 @@
     self.event = event;
     self.sport = sport;
     
-    
-    
     return [self initWithFrame:frame];
 }
 
@@ -27,23 +25,13 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-        NSDictionary *mainCoefficients = [self getCoefficientsOfSport];
-        NSLog(@"mainCoefficients = %@", mainCoefficients);
-        
-        NSArray *coefficients = [self.event.coefficients allObjects];
-        NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
-            Coefficient *tempCoefficient = (Coefficient *)evaluatedObject;
-            if (mainCoefficients[tempCoefficient.name]) {
-                return YES;
-            }
-            return NO;
-        }];
-        NSArray *filteredCoefficients = [coefficients filteredArrayUsingPredicate:predicate];
         CGRect frame = [self bounds];
         
+        NSArray *mainCoefficients = [self getMainCoefficientsOfSport];
+        
         dmCoefficientView *coefficientView;
-        for (int i = 0; i < [filteredCoefficients count]; i++) {
-            Coefficient *currentCoefficient = [filteredCoefficients objectAtIndex:i];
+        for (int i = 0; i < [mainCoefficients count]; i++) {
+            Coefficient *currentCoefficient = [mainCoefficients objectAtIndex:i];
             
             coefficientView = [[dmCoefficientView alloc] initWithFrame:self.frame withTitle:[currentCoefficient getOutcomeName] withCoefficient:currentCoefficient];
             coefficientView.frame = CGRectMake(frame.origin.x + (coefficientView.bounds.size.width + 6) * i, frame.origin.y, coefficientView.bounds.size.width, coefficientView.bounds.size.height);
@@ -51,6 +39,20 @@
         }
     }
     return self;
+}
+
+- (void)updateCoefficients
+{
+    NSArray *mainCoefficients = [self getMainCoefficientsOfSport];
+    
+    dmCoefficientView *coefficientView;
+    Coefficient *currentCoefficient;
+    
+    for (int i = 0; i < [mainCoefficients count]; i++) {
+        currentCoefficient = [mainCoefficients objectAtIndex:i];
+        coefficientView = [[self subviews] objectAtIndex:i];
+        [coefficientView updateCoefficient:currentCoefficient];
+    }
 }
 
 - (BOOL)sportWithoutDraw
@@ -72,8 +74,25 @@
     // Drawing code
 }
 */
+- (NSArray *)getMainCoefficientsOfSport
+{
+    NSDictionary *mainCoefficientsNames = [self getCoefficientsNamesOfSport];
+    NSLog(@"mainCoefficientsNames = %@", mainCoefficientsNames);
+    
+    NSArray *coefficients = [self.event.coefficients allObjects];
+    NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
+        Coefficient *tempCoefficient = (Coefficient *)evaluatedObject;
+        if (mainCoefficientsNames[tempCoefficient.name]) {
+            return YES;
+        }
+        return NO;
+    }];
+    NSArray *filteredCoefficients = [coefficients filteredArrayUsingPredicate:predicate];
+    
+    return filteredCoefficients;
+}
 
-- (NSDictionary *)getCoefficientsOfSport
+- (NSDictionary *)getCoefficientsNamesOfSport
 {
     switch (self.sportWithoutDraw) {
         case YES:

@@ -16,4 +16,5 @@
 @property (nonatomic, strong) Event *event;
 @property (nonatomic) BOOL sportWithoutDraw;
 - (id)initWithFrame:(CGRect)frame forSport:(dmSport *)sport forEvent:(Event *)event;
+- (void)updateCoefficients;
 @end
