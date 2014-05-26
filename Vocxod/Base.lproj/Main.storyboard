@@ -190,6 +190,67 @@
             </objects>
             <point key="canvasLocation" x="653" y="1268"/>
         </scene>
+        <!--Coupon View-->
+        <scene sceneID="rj4-mF-x2E">
+            <objects>
+                <viewController id="dzF-zk-3aI" userLabel="Coupon View" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9Wz-kH-ukY"/>
+                        <viewControllerLayoutGuide type="bottom" id="Gpz-rb-Sdx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4qm-Wz-HNr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="x09-a6-RCH">
+                                <rect key="frame" x="20" y="71" width="280" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="ODINAR"/>
+                                    <segment title="EXPRESS"/>
+                                    <segment title="SYSTEM"/>
+                                </segments>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="A3m-PS-0WY">
+                                <rect key="frame" x="0.0" y="107" width="320" height="410"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="JD4-O2-z6y">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JD4-O2-z6y" id="vWT-Dc-csg">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Coupon" id="nrf-CN-S6S"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hR2-cd-RCr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1179" y="1988"/>
+        </scene>
+        <!--Navigation Controller - Coupon-->
+        <scene sceneID="pbS-9Z-m3C">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="PAy-lu-jRu" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Coupon" image="first" id="9vV-U0-Quj"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ofz-Jo-pF6">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="dzF-zk-3aI" kind="relationship" relationship="rootViewController" id="aWz-6j-wGS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jj2-dN-huK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="653" y="1988"/>
+        </scene>
         <!--Live-->
         <scene sceneID="ot8-2e-RuS">
             <objects>
@@ -386,11 +447,12 @@
                         <segue destination="qRc-bp-bzN" kind="relationship" relationship="viewControllers" id="rOc-I4-2Va"/>
                         <segue destination="qVY-0l-Q1C" kind="relationship" relationship="viewControllers" id="MFL-qM-0La"/>
                         <segue destination="2oN-6O-DhC" kind="relationship" relationship="viewControllers" id="8rN-LW-qBG"/>
+                        <segue destination="PAy-lu-jRu" kind="relationship" relationship="viewControllers" id="3mY-9F-7Yx"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FNP-y4-bzi" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="180"/>
+            <point key="canvasLocation" x="47" y="165"/>
         </scene>
         <!--Navigation Controller - Main-->
         <scene sceneID="DRX-e7-Whf">

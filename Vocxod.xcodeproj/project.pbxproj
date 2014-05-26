@@ -40,6 +40,7 @@
 		9B35F3F4192E2A31004135C8 /* dmMainCoefficientsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B35F3F3192E2A31004135C8 /* dmMainCoefficientsView.m */; };
 		9B35F3F7192F3B5D004135C8 /* dmOutcomesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B35F3F6192F3B5D004135C8 /* dmOutcomesController.m */; };
 		9B74BDD818FBF98100D884C0 /* dmEventTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B74BDD718FBF98100D884C0 /* dmEventTableViewCell.m */; };
+		9BA321A81933915B00D6F8E6 /* dmCouponTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA321A71933915B00D6F8E6 /* dmCouponTableViewController.m */; };
 		9BE3493D19212429003D1D72 /* dmSportController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE3493C19212429003D1D72 /* dmSportController.m */; };
 		9BE349471922833F003D1D72 /* dmTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE349461922833F003D1D72 /* dmTabBarViewController.m */; };
 		9BE3499419237472003D1D72 /* dmFirstView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE3499319237472003D1D72 /* dmFirstView.m */; };
@@ -119,6 +120,8 @@
 		9B35F3F6192F3B5D004135C8 /* dmOutcomesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dmOutcomesController.m; sourceTree = "<group>"; };
 		9B74BDD618FBF98100D884C0 /* dmEventTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmEventTableViewCell.h; sourceTree = "<group>"; };
 		9B74BDD718FBF98100D884C0 /* dmEventTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dmEventTableViewCell.m; sourceTree = "<group>"; };
+		9BA321A61933915B00D6F8E6 /* dmCouponTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmCouponTableViewController.h; sourceTree = "<group>"; };
+		9BA321A71933915B00D6F8E6 /* dmCouponTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dmCouponTableViewController.m; sourceTree = "<group>"; };
 		9BE3493B19212429003D1D72 /* dmSportController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmSportController.h; sourceTree = "<group>"; };
 		9BE3493C19212429003D1D72 /* dmSportController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dmSportController.m; sourceTree = "<group>"; };
 		9BE349451922833F003D1D72 /* dmTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmTabBarViewController.h; sourceTree = "<group>"; };
@@ -240,6 +243,8 @@
 		6838104D18FA00870019A61D /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				9BA321A61933915B00D6F8E6 /* dmCouponTableViewController.h */,
+				9BA321A71933915B00D6F8E6 /* dmCouponTableViewController.m */,
 				685A62CE192802F900EE67EF /* dmLineEventViewController.h */,
 				685A62CF192802F900EE67EF /* dmLineEventViewController.m */,
 				685A62CB19279E3900EE67EF /* dmLineEventsTableViewController.h */,
@@ -518,6 +523,7 @@
 				9BE34999192384FF003D1D72 /* MBProgressHUD.m in Sources */,
 				9BE349A819264DC9003D1D72 /* dmTournamentController.m in Sources */,
 				6838107418FB45050019A61D /* dmTournament.m in Sources */,
+				9BA321A81933915B00D6F8E6 /* dmCouponTableViewController.m in Sources */,
 				6838102618F9FC170019A61D /* dmAppDelegate.m in Sources */,
 				9BE349A21925215F003D1D72 /* dmTournamentTableViewCell.m in Sources */,
 				9B35F3D1192CE795004135C8 /* dmLiveEventViewController.m in Sources */,
