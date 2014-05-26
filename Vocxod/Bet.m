@@ -35,11 +35,9 @@
 - (NSString *)generateBetId:(Coefficient *)coefficient
 {
     Event *event = (Event *)coefficient.inEvent;
-    NSMutableString *betId = (NSMutableString *)[event.id stringValue];
-    [betId appendString:@"-"];
-    [betId appendString:coefficient.name];
+    NSString *betId = [NSString stringWithFormat:@"%@-%@", [event.id stringValue], coefficient.name];
     
-    return (NSString *)betId;
+    return betId;
 }
 
 @end
