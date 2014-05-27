@@ -193,7 +193,7 @@
         <!--Coupon View-->
         <scene sceneID="rj4-mF-x2E">
             <objects>
-                <viewController id="dzF-zk-3aI" userLabel="Coupon View" sceneMemberID="viewController">
+                <viewController id="dzF-zk-3aI" userLabel="Coupon View" customClass="dmCouponViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9Wz-kH-ukY"/>
                         <viewControllerLayoutGuide type="bottom" id="Gpz-rb-Sdx"/>
@@ -210,6 +210,9 @@
                                     <segment title="EXPRESS"/>
                                     <segment title="SYSTEM"/>
                                 </segments>
+                                <connections>
+                                    <action selector="onCouponTypeValueChanged:" destination="dzF-zk-3aI" eventType="valueChanged" id="1dn-Ok-Ur7"/>
+                                </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="A3m-PS-0WY">
                                 <rect key="frame" x="0.0" y="107" width="320" height="410"/>
@@ -225,11 +228,19 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="dzF-zk-3aI" id="KOg-ra-BMw"/>
+                                    <outlet property="delegate" destination="dzF-zk-3aI" id="kG3-nw-UqG"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Coupon" id="nrf-CN-S6S"/>
+                    <connections>
+                        <outlet property="betsTableView" destination="A3m-PS-0WY" id="PH2-Vc-3cm"/>
+                        <outlet property="couponTypeSegmentedControl" destination="x09-a6-RCH" id="0xa-A5-R3a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hR2-cd-RCr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

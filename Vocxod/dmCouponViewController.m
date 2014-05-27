@@ -1,28 +1,20 @@
 //
-//  dmCouponTableViewController.m
+//  dmCouponViewController.m
 //  Vocxod
 //
 //  Created by Dmitry Maklygin on 26.05.14.
 //  Copyright (c) 2014 DmitryCo. All rights reserved.
 //
-
-#import "dmCouponTableViewController.h"
+#import "dmCouponViewController.h"
 #import "dmAppDelegate.h"
 
-@interface dmCouponTableViewController () <NSFetchedResultsControllerDelegate>
+@interface dmCouponViewController () <NSFetchedResultsControllerDelegate>
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
+
+- (void)reloadData;
 @end
 
-@implementation dmCouponTableViewController
-
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+@implementation dmCouponViewController
 
 - (void)viewDidLoad
 {
@@ -44,14 +36,16 @@
     }
 }
 
-- (void)viewWillAppear {
-    [self.tableView reloadData];
-}
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+// Перерисовывает Представление.
+- (void)reloadData
+{
+    
 }
 
 #pragma mark - Table view data source
@@ -161,7 +155,7 @@
  */
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
     // The fetch controller is about to start sending change notifications, so prepare the table view for updates.
-    [self.tableView beginUpdates];
+    [self.betsTableView beginUpdates];
 }
 
 
@@ -169,20 +163,32 @@
     NSLog(@"didChangeObject of Coupon = %@", anObject);
     switch(type) {
         case NSFetchedResultsChangeInsert:
-            [self.tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+            [self.betsTableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
             break;
         case NSFetchedResultsChangeUpdate:
-            [self configureCell:(UITableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
+            [self configureCell:(UITableViewCell *)[self.betsTableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
             break;
         case NSFetchedResultsChangeDelete:
-            [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+            [self.betsTableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
             break;
     }
 }
 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
-    [self.tableView endUpdates];
+    [self.betsTableView endUpdates];
 }
 
 
+- (IBAction)onCouponTypeValueChanged:(UISegmentedControl *)sender {
+    UIAlertView *alertView;
+
+    if (sender.selectedSegmentIndex == 2 && [self.fetchedResultsController.fetchedObjects count] < 3) {
+        alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"COUPON", nil) message:NSLocalizedString(@"SYSTEM_TYPE_REQUIRED_MIN_3_BETS", nil) delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alertView show];
+        [self.couponTypeSegmentedControl setSelectedSegmentIndex:0];
+        return;
+    }
+    
+    [self reloadData];
+}
 @end

@@ -79,7 +79,6 @@
 - (NSArray *)getMainCoefficientsOfSport
 {
     NSDictionary *mainCoefficientsNames = [self getCoefficientsNamesOfSport];
-    NSLog(@"mainCoefficientsNames = %@", mainCoefficientsNames);
     
     NSArray *coefficients = [self.event.coefficients allObjects];
     NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {

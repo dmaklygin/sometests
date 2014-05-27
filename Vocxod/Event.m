@@ -145,6 +145,13 @@
 
 -(BOOL)isExpired
 {
+    Coefficient *eventEnded = [self getCoefficientByName:@"coeff_SCORE_ENDED"];
+    if (eventEnded != nil) {
+        if ([eventEnded.value integerValue] == 1) {
+            return YES;
+        }
+    }
+    
     if ([self.status isEqual: @0]) {
         return YES;
     }
