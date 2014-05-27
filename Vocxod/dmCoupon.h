@@ -16,7 +16,14 @@ typedef NS_ENUM(NSInteger, dmCouponType)
     dmCouponTypeSystem
 };
 
-@interface dmCoupon : NSObject <NSFetchedResultsControllerDelegate>
+
+typedef NS_ENUM(NSInteger, dmCouponError)
+{
+    dmCouponErrorEventExist
+};
+
+
+@interface dmCoupon : NSObject <NSFetchedResultsControllerDelegate,UIAlertViewDelegate>
 
 @property (nonatomic) dmCouponType couponType;
 
@@ -26,4 +33,7 @@ typedef NS_ENUM(NSInteger, dmCouponType)
 - (void)loadBets;
 - (BOOL)addBetFromCoefficient:(Coefficient *)coefficient;
 - (BOOL)removeBet:(Bet *)bet;
+
+// UIAlertViewDelegate
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex;
 @end

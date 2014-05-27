@@ -10,7 +10,7 @@
 
 @interface dmCouponViewController () <NSFetchedResultsControllerDelegate>
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
-
+@property (nonatomic, strong) dmCoupon *coupon;
 - (void)reloadData;
 @end
 
@@ -28,6 +28,8 @@
     
     dmAppDelegate *appDelegate = (dmAppDelegate *)[[UIApplication sharedApplication] delegate];
     self.managedObjectContext = [appDelegate managedObjectContext];
+    
+    self.coupon = [appDelegate coupon];
     
     NSError *error;
     if (![[self fetchedResultsController] performFetch:&error]) {
@@ -188,6 +190,8 @@
         [self.couponTypeSegmentedControl setSelectedSegmentIndex:0];
         return;
     }
+    
+    [self.coupon setCouponType:sender.selectedSegmentIndex];
     
     [self reloadData];
 }

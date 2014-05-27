@@ -40,4 +40,9 @@
     return betId;
 }
 
+- (Event *)getEvent
+{
+    return self.inCoefficient.inEvent;
+}
+
 @end

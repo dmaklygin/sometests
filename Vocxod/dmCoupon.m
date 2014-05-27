@@ -9,8 +9,9 @@
 #import "dmCoupon.h"
 #import "Bet.h"
 
+NSString * const dmCouponErrorDomain = @"dmCouponErrorDomain";
 
-@interface dmCoupon () <NSFetchedResultsControllerDelegate>
+@interface dmCoupon () <NSFetchedResultsControllerDelegate, UIAlertViewDelegate>
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 @end
 
@@ -44,6 +45,24 @@
         return NO;
     }
     
+    NSError *error;
+    UIAlertView *alertView;
+    if (![self validateBetFromCoefficient:coefficient withError:&error]) {
+        switch (error.code) {
+            case dmCouponErrorEventExist:
+                alertView = [[UIAlertView alloc]
+                             initWithTitle:NSLocalizedString(@"COUPON", nil)
+                             message:NSLocalizedString(@"BET_CREATE_ERROR_EVENT_EXIST", nil)
+                             delegate:self
+                             cancelButtonTitle:@"CANCEL"
+                             otherButtonTitles:@"BET_CHANGE",@"BET_REMOVE",@"SINGLE", nil
+                             ];
+                [alertView show];
+                break;
+        }
+        return NO;
+    }
+    
     Bet *newBet = (Bet *)[NSEntityDescription insertNewObjectForEntityForName:@"Bet" inManagedObjectContext:self.managedObjectContext];
     [newBet setValues:coefficient];
     
@@ -60,6 +79,28 @@
         return NO;
     }
     return YES;
+}
+
+- (BOOL)validateBetFromCoefficient:(Coefficient *)coefficient withError:(NSError * __autoreleasing *)error
+{
+    Event *existEvent;
+    
+    for (Bet *currentBet in self.fetchedResultsController.fetchedObjects) {
+        if ([currentBet getEvent] == coefficient.inEvent) {
+            existEvent = [currentBet getEvent];
+            break;
+        }
+    }
+    
+    if (existEvent && self.couponType == dmCouponTypeExpress) {
+        *error = [[NSError alloc] initWithDomain:dmCouponErrorDomain code:dmCouponErrorEventExist userInfo:@{@"existEvent": existEvent}];
+        return NO;
+    }
+    
+    //  @TODO Проверка на связанные события. Не забыть!!!
+    
+    return YES;
+    
 }
 
 - (NSFetchedResultsController *)fetchedResultsController
@@ -113,6 +154,12 @@
 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
     
+}
+
+//
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    NSLog(@"buttonIndex = %ld", (long)buttonIndex);
 }
 
 

@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+@class Event;
 @class Coefficient;
 
 @interface Bet : NSManagedObject
@@ -22,5 +23,6 @@
 @property (nonatomic, retain) Coefficient *inCoefficient;
 
 - (void)setValues:(Coefficient *)coefficient;
+- (Event *)getEvent;
 
 @end
