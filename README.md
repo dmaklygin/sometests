@@ -1,4 +1,4 @@
-vocxod
+tests
 ======
 
-some mobile app for vocxod api
+some mobile app for api
