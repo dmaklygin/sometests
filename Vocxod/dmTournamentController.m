@@ -16,23 +16,6 @@
 
 @implementation dmTournamentController
 
-//- (void)loadRemoveTournaments {
-//    
-//    NSURLSessionDataTask *task = [dmTournament tournamentsWithBlock:^(NSArray *tournaments, NSError *error) {
-//        if (!error) {
-//            //            NSLog(@" tournaments = %@", tournaments);
-//            //            self.tournaments = tournaments;
-//            [self.tableView reloadData];
-//            [self.loader hide:YES];
-//        }
-//    } withParameters:@{@"command": @"line"} inManagedObjectContext:self.managedObjectContext];
-//    
-//    [UIAlertView showAlertViewForTaskWithErrorOnCompletion:task delegate:nil];
-//    [self.refreshControl setRefreshingWithStateOfTask:task];
-//    [self.loader show:YES];
-//    
-//}
-
 - (instancetype)initWithParams:(NSDictionary *)params
 {
     self = [super init];

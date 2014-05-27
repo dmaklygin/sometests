@@ -55,7 +55,7 @@
 - (void)HandleTap:(UIButton *)button
 {
     dmAppDelegate *appDelegate = (dmAppDelegate *)[[UIApplication sharedApplication] delegate];
-    [appDelegate.coupon addBet:self.coefficient];
+    [appDelegate.coupon addBetFromCoefficient:self.coefficient];
 }
 
 - (void)updateCoefficient:(Coefficient *)coefficient
@@ -94,6 +94,10 @@
     [_button setBackgroundColor:[self getColorOfCoefficient]];
     [_button setTitleColor:[UIColor lightGrayColor] forState:UIControlStateHighlighted];
     [_button setTitle:[self getValueOfCoefficient] forState:UIControlStateNormal];
+    if (self.coefficient.bet != nil) {
+        _button.layer.borderWidth = 1.0f;
+        _button.layer.borderColor = [[UIColor blueColor] CGColor];
+    }
     [_button setFrame:CGRectMake(0, 0, 44, 44)];
     _button.clipsToBounds = YES;
     _button.layer.cornerRadius = 22;

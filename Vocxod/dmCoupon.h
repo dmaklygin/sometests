@@ -24,5 +24,6 @@ typedef NS_ENUM(NSInteger, dmCouponType)
 
 - (instancetype)initWithManagedObjectContext:(NSManagedObjectContext *)managedObjectContext;
 - (void)loadBets;
-- (BOOL)addBet:(Coefficient *)coefficient;
+- (BOOL)addBetFromCoefficient:(Coefficient *)coefficient;
+- (BOOL)removeBet:(Bet *)bet;
 @end

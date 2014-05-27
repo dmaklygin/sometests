@@ -37,12 +37,28 @@
     }
 }
 
-- (BOOL)addBet:(Coefficient *)coefficient
+- (BOOL)addBetFromCoefficient:(Coefficient *)coefficient
 {
-    Bet *newBet = (Bet *)[NSEntityDescription insertNewObjectForEntityForName:@"Bet" inManagedObjectContext:self.managedObjectContext];
+    if (coefficient.bet != nil) {
+        [self removeBet:coefficient.bet];
+        return NO;
+    }
     
+    Bet *newBet = (Bet *)[NSEntityDescription insertNewObjectForEntityForName:@"Bet" inManagedObjectContext:self.managedObjectContext];
     [newBet setValues:coefficient];
     
+    return YES;
+}
+
+- (BOOL)removeBet:(Bet *)bet
+{
+    [self.managedObjectContext deleteObject:bet];
+
+    NSError *error;
+    if (![self.managedObjectContext save:&error]) {
+        NSLog(@"Couln't remove Bet. Error: %@, %@", error, [error userInfo]);
+        return NO;
+    }
     return YES;
 }
 
@@ -80,6 +96,10 @@
     switch(type) {
         case NSFetchedResultsChangeInsert:
             alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"COUPON", nil) message:NSLocalizedString(@"BET_ADDED_INTO_COUPON", nil) delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alertView show];
+            break;
+        case NSFetchedResultsChangeDelete:
+            alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"COUPON", nil) message:NSLocalizedString(@"BET_REMOVED_FROM_COUPON", nil) delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
             [alertView show];
             break;
     }
