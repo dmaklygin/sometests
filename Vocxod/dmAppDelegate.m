@@ -12,6 +12,8 @@
 #import "dmTabBarViewController.h"
 #import "dmFirstView.h"
 
+#import "dmMainSettings.h"
+
 @interface dmAppDelegate()
 
 // Properties for the importer and its background processing queue.
@@ -67,10 +69,16 @@
                 return;
             }
             
-            // Инициализация купона
-            [self coupon];
-            
-            [self initSuccess];
+            [[dmMainSettings instance] loadSettings:^(NSDictionary *settings, NSError *error) {
+                if (error != nil) {
+                    [self handleError:error];
+                    return;
+                }
+                // Инициализация купона
+                [self coupon];
+                
+                [self initSuccess];
+            }];
         }];
     }];
 }
