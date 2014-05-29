@@ -8,6 +8,8 @@
 #import "dmCouponViewController.h"
 #import "dmAppDelegate.h"
 
+#import "dmCouponSingleViewCell.h"
+
 @interface dmCouponViewController () <NSFetchedResultsControllerDelegate>
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, strong) dmCoupon *coupon;
@@ -30,6 +32,8 @@
     self.managedObjectContext = [appDelegate managedObjectContext];
     
     self.coupon = [appDelegate coupon];
+    
+    [self.betsTableView registerNib:[UINib nibWithNibName:@"dmCouponSingleViewCell" bundle:nil] forCellReuseIdentifier:@"couponSingleCell"];
     
     NSError *error;
     if (![[self fetchedResultsController] performFetch:&error]) {
@@ -74,12 +78,24 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    dmCouponSingleViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"couponSingleCell" forIndexPath:indexPath];
     
-    // Configure the cell...
-    [self configureCell:cell atIndexPath:indexPath];
+    if (!cell) {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"couponSingleCell"];
+    }
+    
+    Bet *bet = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    
+    cell.labelHome.text = [bet getEvent].home;
+    cell.labelAway.text = [bet getEvent].away;
+    cell.labelOutcomeName.text = bet.mnemonic_name;
+    
+    tableView.rowHeight = 112.0f;
     
     return cell;
+
+//    [self configureCell:cell atIndexPath:indexPath];
+    // Configure the cell...
 }
 
 
@@ -186,6 +202,11 @@
 
     if (sender.selectedSegmentIndex == 2 && [self.fetchedResultsController.fetchedObjects count] < 3) {
         alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"COUPON", nil) message:NSLocalizedString(@"SYSTEM_TYPE_REQUIRED_MIN_3_BETS", nil) delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alertView show];
+        [self.couponTypeSegmentedControl setSelectedSegmentIndex:0];
+        return;
+    } else if (sender.selectedSegmentIndex > 0 && ![self.coupon canMultiType]) {
+        alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"COUPON", nil) message:NSLocalizedString(@"DO_NOT_SWITCH_COUPON_TO_MULTI", nil) delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alertView show];
         [self.couponTypeSegmentedControl setSelectedSegmentIndex:0];
         return;

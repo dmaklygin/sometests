@@ -31,6 +31,8 @@
 		6838107718FBC1BD0019A61D /* dmLiveTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6838107618FBC1BD0019A61D /* dmLiveTableViewController.m */; };
 		685A62CD19279E3900EE67EF /* dmLineEventsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 685A62CC19279E3900EE67EF /* dmLineEventsTableViewController.m */; };
 		685A62D0192802F900EE67EF /* dmLineEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 685A62CF192802F900EE67EF /* dmLineEventViewController.m */; };
+		6885C69F19367C29003243DD /* dmCouponSingleViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6885C69D19367C29003243DD /* dmCouponSingleViewCell.m */; };
+		6885C6A019367C29003243DD /* dmCouponSingleViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6885C69E19367C29003243DD /* dmCouponSingleViewCell.xib */; };
 		68B8C53C1931F6740005011D /* Coefficient.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B8C53B1931F6740005011D /* Coefficient.m */; };
 		68B8C545193215E70005011D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 68B8C547193215E70005011D /* Localizable.strings */; };
 		68B8C54E19329A280005011D /* Bet.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B8C54D19329A280005011D /* Bet.m */; };
@@ -100,6 +102,9 @@
 		685A62CC19279E3900EE67EF /* dmLineEventsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dmLineEventsTableViewController.m; sourceTree = "<group>"; };
 		685A62CE192802F900EE67EF /* dmLineEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmLineEventViewController.h; sourceTree = "<group>"; };
 		685A62CF192802F900EE67EF /* dmLineEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dmLineEventViewController.m; sourceTree = "<group>"; };
+		6885C69C19367C29003243DD /* dmCouponSingleViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmCouponSingleViewCell.h; sourceTree = "<group>"; };
+		6885C69D19367C29003243DD /* dmCouponSingleViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dmCouponSingleViewCell.m; sourceTree = "<group>"; };
+		6885C69E19367C29003243DD /* dmCouponSingleViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = dmCouponSingleViewCell.xib; sourceTree = "<group>"; };
 		68B8C53A1931F6740005011D /* Coefficient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Coefficient.h; sourceTree = "<group>"; };
 		68B8C53B1931F6740005011D /* Coefficient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Coefficient.m; sourceTree = "<group>"; };
 		68B8C542193210550005011D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
@@ -318,6 +323,16 @@
 			name = Network;
 			sourceTree = "<group>";
 		};
+		6885C69B19367BE1003243DD /* Coupon */ = {
+			isa = PBXGroup;
+			children = (
+				6885C69C19367C29003243DD /* dmCouponSingleViewCell.h */,
+				6885C69D19367C29003243DD /* dmCouponSingleViewCell.m */,
+				6885C69E19367C29003243DD /* dmCouponSingleViewCell.xib */,
+			);
+			name = Coupon;
+			sourceTree = "<group>";
+		};
 		9B35F3D2192CECD5004135C8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -347,6 +362,7 @@
 		9B74BDD518FBF93A00D884C0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				6885C69B19367BE1003243DD /* Coupon */,
 				9B35F3E7192DF1B3004135C8 /* Coefficients */,
 				9B74BDD618FBF98100D884C0 /* dmEventTableViewCell.h */,
 				9B74BDD718FBF98100D884C0 /* dmEventTableViewCell.m */,
@@ -458,6 +474,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6838103118F9FC170019A61D /* Images.xcassets in Resources */,
+				6885C6A019367C29003243DD /* dmCouponSingleViewCell.xib in Resources */,
 				6838102918F9FC170019A61D /* Main.storyboard in Resources */,
 				68B8C545193215E70005011D /* Localizable.strings in Resources */,
 			);
@@ -515,6 +532,7 @@
 				68B8C55119329CE80005011D /* dmCoupon.m in Sources */,
 				6838102218F9FC170019A61D /* main.m in Sources */,
 				9B35F3F1192DFD78004135C8 /* dmCoefficientView.m in Sources */,
+				6885C69F19367C29003243DD /* dmCouponSingleViewCell.m in Sources */,
 				68B8C53C1931F6740005011D /* Coefficient.m in Sources */,
 				685A62CD19279E3900EE67EF /* dmLineEventsTableViewController.m in Sources */,
 				6838107718FBC1BD0019A61D /* dmLiveTableViewController.m in Sources */,

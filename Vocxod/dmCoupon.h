@@ -34,6 +34,8 @@ typedef NS_ENUM(NSInteger, dmCouponError)
 - (BOOL)addBetFromCoefficient:(Coefficient *)coefficient;
 - (BOOL)removeBet:(Bet *)bet;
 
+- (BOOL)canMultiType;
+
 // UIAlertViewDelegate
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex;
 @end

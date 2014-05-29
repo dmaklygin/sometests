@@ -8,6 +8,7 @@
 
 #import "dmCoupon.h"
 #import "Bet.h"
+#import "Event.h"
 
 NSString * const dmCouponErrorDomain = @"dmCouponErrorDomain";
 
@@ -101,6 +102,22 @@ NSString * const dmCouponErrorDomain = @"dmCouponErrorDomain";
     
     return YES;
     
+}
+
+- (BOOL)canMultiType
+{
+    NSMutableDictionary *events = [[NSMutableDictionary alloc] init];
+    BOOL can = YES;
+    Event *event;
+    for (Bet *currentBet in self.fetchedResultsController.fetchedObjects) {
+        event = (Event *)[currentBet getEvent];
+        if (events[event.id]) {
+            can = NO;
+            break;
+        }
+        [events setObject:@YES forKey:event.id];
+    }
+    return can;
 }
 
 - (NSFetchedResultsController *)fetchedResultsController
