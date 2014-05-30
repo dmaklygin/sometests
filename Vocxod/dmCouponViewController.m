@@ -9,11 +9,15 @@
 #import "dmAppDelegate.h"
 
 #import "dmCouponSingleViewCell.h"
+#import "dmCouponMultiViewCell.h"
+
 
 @interface dmCouponViewController () <NSFetchedResultsControllerDelegate>
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, strong) dmCoupon *coupon;
+@property (nonatomic) float cellHeight;
 - (void)reloadData;
+- (NSString *)getIdentifier;
 @end
 
 @implementation dmCouponViewController
@@ -35,6 +39,8 @@
     
     [self.betsTableView registerNib:[UINib nibWithNibName:@"dmCouponSingleViewCell" bundle:nil] forCellReuseIdentifier:@"couponSingleCell"];
     
+    [self.betsTableView registerNib:[UINib nibWithNibName:@"dmCouponMultiViewCell" bundle:nil] forCellReuseIdentifier:@"couponMultiCell"];
+    
     NSError *error;
     if (![[self fetchedResultsController] performFetch:&error]) {
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
@@ -51,7 +57,7 @@
 // Перерисовывает Представление.
 - (void)reloadData
 {
-    
+    [self.betsTableView reloadData];
 }
 
 #pragma mark - Table view data source
@@ -76,12 +82,15 @@
     cell.textLabel.text = [bet valueForKey:@"mnemonic_name"];
 }
 
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    dmCouponSingleViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"couponSingleCell" forIndexPath:indexPath];
+    
+    
+    dmCouponSingleViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[self getIdentifier] forIndexPath:indexPath];
     
     if (!cell) {
-        cell = [tableView dequeueReusableCellWithIdentifier:@"couponSingleCell"];
+        cell = [tableView dequeueReusableCellWithIdentifier:[self getIdentifier]];
     }
     
     Bet *bet = [self.fetchedResultsController objectAtIndexPath:indexPath];
@@ -89,8 +98,7 @@
     cell.labelHome.text = [bet getEvent].home;
     cell.labelAway.text = [bet getEvent].away;
     cell.labelOutcomeName.text = bet.mnemonic_name;
-    
-    tableView.rowHeight = 112.0f;
+    cell.labelCoefficientValue.text = [bet.cf_value stringValue];
     
     return cell;
 
@@ -98,6 +106,37 @@
     // Configure the cell...
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return self.cellHeight;
+}
+
+- (float)cellHeight
+{
+    if (_cellHeight) {
+        return _cellHeight;
+    }
+    dmCouponSingleViewCell *cell;
+    
+    cell = (dmCouponSingleViewCell *)[self.betsTableView dequeueReusableCellWithIdentifier:[self getIdentifier]];
+    
+    _cellHeight = cell.bounds.size.height;
+
+    return _cellHeight;
+}
+
+- (NSString *)getIdentifier
+{
+    switch (self.couponTypeSegmentedControl.selectedSegmentIndex) {
+        case dmCouponTypeSingle:
+            return @"couponSingleCell";
+            break;
+        case dmCouponTypeExpress:
+            return @"couponMultiCell";
+            break;
+    }
+    return @"couponMultiCell";
+}
 
 /*
 // Override to support conditional editing of the table view.
@@ -178,7 +217,9 @@
 
 
 - (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(NSIndexPath *)newIndexPath {
-    NSLog(@"didChangeObject of Coupon = %@", anObject);
+    
+    self.cellHeight = 0;
+    
     switch(type) {
         case NSFetchedResultsChangeInsert:
             [self.betsTableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
@@ -213,6 +254,8 @@
     }
     
     [self.coupon setCouponType:sender.selectedSegmentIndex];
+    
+    self.cellHeight = 0;
     
     [self reloadData];
 }

@@ -14,6 +14,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *labelAway;
 @property (strong, nonatomic) IBOutlet UILabel *labelMin;
 @property (strong, nonatomic) IBOutlet UILabel *labelMax;
+@property (strong, nonatomic) IBOutlet UILabel *labelCoefficientValue;
 @property (strong, nonatomic) IBOutlet UITextField *textFieldBetValue;
 - (IBAction)betValueChanged:(id)sender;
 

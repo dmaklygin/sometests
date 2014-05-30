@@ -1,14 +1,14 @@
 //
-//  dmCouponSingleCellViewTableViewCell.m
+//  dmCouponMultiViewCell.m
 //  Vocxod
 //
-//  Created by Дмитрий on 29.05.14.
+//  Created by Дмитрий on 31.05.14.
 //  Copyright (c) 2014 DmitryCo. All rights reserved.
 //
 
-#import "dmCouponSingleViewCell.h"
+#import "dmCouponMultiViewCell.h"
 
-@implementation dmCouponSingleViewCell
+@implementation dmCouponMultiViewCell
 
 - (void)awakeFromNib
 {
@@ -22,7 +22,4 @@
     // Configure the view for the selected state
 }
 
-- (IBAction)betValueChanged:(id)sender {
-    NSLog(@"betValueChanged");
-}
 @end
