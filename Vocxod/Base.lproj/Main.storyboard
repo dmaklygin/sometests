@@ -194,7 +194,16 @@
         <scene sceneID="rj4-mF-x2E">
             <objects>
                 <viewController id="dzF-zk-3aI" userLabel="Coupon View" customClass="dmCouponItemViewController" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" title="Coupon" id="nrf-CN-S6S"/>
+                    <navigationItem key="navigationItem" title="Coupon" id="nrf-CN-S6S">
+                        <barButtonItem key="rightBarButtonItem" title="Send" id="cGU-0L-pKh">
+                            <connections>
+                                <action selector="onSendButtonClick:" destination="dzF-zk-3aI" id="Svz-bH-JR0"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="sendButton" destination="cGU-0L-pKh" id="MLG-Mv-a73"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hR2-cd-RCr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -223,6 +223,17 @@
     [self.betsTableView endUpdates];
 }
 
+- (IBAction)onSendButtonClick:(id)sender {
+    
+    UIAlertView *alertView;
+    NSError *error;
+    if (![self.coupon check:&error]) {
+        alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"COUPON", nil) message:error.description delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alertView show];
+    }
+    NSLog(@"SendButton click");
+}
+
 - (IBAction)onCouponTypeChanged:(UISegmentedControl *)sender {
     UIAlertView *alertView;
         
@@ -243,6 +254,7 @@
     self.cellHeight = 0;
         
     [self reloadData];
-    
 }
+
+
 @end

@@ -13,5 +13,7 @@
 @property (strong, nonatomic) IBOutlet UITableView *betsTableView;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *betsTableHeight;
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *sendButton;
+- (IBAction)onSendButtonClick:(id)sender;
 - (IBAction)onCouponTypeChanged:(UISegmentedControl *)sender;
 @end

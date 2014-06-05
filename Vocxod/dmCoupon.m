@@ -120,6 +120,14 @@ NSString * const dmCouponErrorDomain = @"dmCouponErrorDomain";
     return can;
 }
 
+- (BOOL)check:(NSError *__autoreleasing *)error
+{
+    
+    
+    
+    return NO;
+}
+
 - (NSFetchedResultsController *)fetchedResultsController
 {
     if (_fetchedResultsController != nil) {

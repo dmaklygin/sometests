@@ -36,6 +36,8 @@ typedef NS_ENUM(NSInteger, dmCouponError)
 
 - (BOOL)canMultiType;
 
+- (BOOL)check:(NSError *__autoreleasing *)error;
+
 // UIAlertViewDelegate
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex;
 @end
