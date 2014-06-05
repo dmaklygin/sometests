@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8YX-ce-x5E">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="h1F-uk-B3P">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -7,7 +7,7 @@
         <!--Main-->
         <scene sceneID="qUb-PU-2O4">
             <objects>
-                <viewController storyboardIdentifier="MainViewController" title="Main" id="T5C-Ys-bd5" userLabel="Main" customClass="dmMainViewController" sceneMemberID="viewController">
+                <viewController title="Main" id="T5C-Ys-bd5" userLabel="Main" customClass="dmMainViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QK3-25-ZlF"/>
                         <viewControllerLayoutGuide type="bottom" id="gnA-c8-Phj"/>
@@ -17,8 +17,15 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="1ly-mF-d0I"/>
+                    <navigationItem key="navigationItem" id="1ly-mF-d0I">
+                        <barButtonItem key="leftBarButtonItem" image="Menu" style="plain" id="hwn-x0-rtb">
+                            <connections>
+                                <action selector="unwindToMenu:" destination="T5C-Ys-bd5" id="9Eu-o0-EXk"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="menuButton" destination="hwn-x0-rtb" id="SLe-H3-bQs"/>
                         <outlet property="view" destination="HUl-p8-5i5" id="wPB-ad-H6a"/>
                     </connections>
                 </viewController>
@@ -342,11 +349,11 @@
                                 <rect key="frame" x="20" y="64" width="280" height="130"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Team-76" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n9l-kd-J0N">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n9l-kd-J0N">
                                         <rect key="frame" x="20" y="8" width="44" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Team-76" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zqE-OZ-ZEz">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zqE-OZ-ZEz">
                                         <rect key="frame" x="216" y="8" width="44" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
@@ -428,12 +435,70 @@
             </objects>
             <point key="canvasLocation" x="47" y="165"/>
         </scene>
-        <!--Navigation Controller - Main-->
+        <!--Dm Menu Table View Controller-->
+        <scene sceneID="UGy-Lz-dHG">
+            <objects>
+                <viewController storyboardIdentifier="MenuViewController" id="YN5-E4-cWh" customClass="dmMenuTableViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9b4-pC-QDI"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ep9-TJ-zGy"/>
+                    </layoutGuides>
+                    <view key="view" alpha="0.49999999999999961" contentMode="scaleToFill" id="jcd-Y0-bJ0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="8UY-9U-ImJ">
+                                <rect key="frame" x="0.0" y="60" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="wPl-u7-TBO">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wPl-u7-TBO" id="wbh-J9-kHV">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.21445920169999999" green="0.45820360869999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ue2-Zp-cmE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-407" y="-500"/>
+        </scene>
+        <!--Sliding View Controller-->
+        <scene sceneID="iC5-8m-NBj">
+            <objects>
+                <viewController storyboardIdentifier="SlidingViewController" id="h1F-uk-B3P" userLabel="Sliding View Controller" customClass="ECSlidingViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Y8e-Km-gj7"/>
+                        <viewControllerLayoutGuide type="bottom" id="Vo4-0K-JTc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="72w-8H-Evy">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="underLeftViewControllerStoryboardId" value="MenuViewController"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="topViewControllerStoryboardId" value="MainViewController"/>
+                    </userDefinedRuntimeAttributes>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8kE-kl-tav" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="47" y="-500"/>
+        </scene>
+        <!--Main View Controller-->
         <scene sceneID="DRX-e7-Whf">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tyg-JY-QIO" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MainViewController" automaticallyAdjustsScrollViewInsets="NO" id="tyg-JY-QIO" userLabel="Main View Controller" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Main" id="e8C-66-lvz"/>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="cPg-4F-Pau"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Nf5-S3-weg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -487,8 +552,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Menu" width="24" height="24"/>
         <image name="Second" width="16" height="16"/>
-        <image name="Team-76" width="76" height="76"/>
         <image name="first" width="30" height="30"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

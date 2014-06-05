@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		4D781245A38342B788C896A8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5EEC38CCBFC4FB2A9C5D058 /* libPods.a */; };
+		6821629A193FCE8300EE466F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68216299193FCE8300EE466F /* Images.xcassets */; };
+		682162A0193FD72100EE466F /* dmMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6821629F193FD72100EE466F /* dmMenuTableViewController.m */; };
+		682162A4193FDC5200EE466F /* dmZoomAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 682162A3193FDC5200EE466F /* dmZoomAnimationController.m */; };
 		6837D1C119280A2D00CE4928 /* dmEventView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6837D1C019280A2D00CE4928 /* dmEventView.m */; };
 		6837D1C419294DAA00CE4928 /* dmLiveEventsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6837D1C319294DAA00CE4928 /* dmLiveEventsTableViewController.m */; };
 		6838101618F9FC170019A61D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6838101518F9FC170019A61D /* Foundation.framework */; };
@@ -17,7 +20,6 @@
 		6838102618F9FC170019A61D /* dmAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6838102518F9FC170019A61D /* dmAppDelegate.m */; };
 		6838102918F9FC170019A61D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6838102718F9FC170019A61D /* Main.storyboard */; };
 		6838102F18F9FC170019A61D /* dmSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6838102E18F9FC170019A61D /* dmSecondViewController.m */; };
-		6838103118F9FC170019A61D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6838103018F9FC170019A61D /* Images.xcassets */; };
 		6838103818F9FC170019A61D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6838103718F9FC170019A61D /* XCTest.framework */; };
 		6838103918F9FC170019A61D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6838101518F9FC170019A61D /* Foundation.framework */; };
 		6838103A18F9FC170019A61D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6838101918F9FC170019A61D /* UIKit.framework */; };
@@ -31,6 +33,7 @@
 		6838107718FBC1BD0019A61D /* dmLiveTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6838107618FBC1BD0019A61D /* dmLiveTableViewController.m */; };
 		685A62CD19279E3900EE67EF /* dmLineEventsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 685A62CC19279E3900EE67EF /* dmLineEventsTableViewController.m */; };
 		685A62D0192802F900EE67EF /* dmLineEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 685A62CF192802F900EE67EF /* dmLineEventViewController.m */; };
+		6882F02F193FAFA60049BE28 /* dmUserSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 6882F02E193FAFA60049BE28 /* dmUserSettings.m */; };
 		6885C69F19367C29003243DD /* dmCouponSingleViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6885C69D19367C29003243DD /* dmCouponSingleViewCell.m */; };
 		6885C6A019367C29003243DD /* dmCouponSingleViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6885C69E19367C29003243DD /* dmCouponSingleViewCell.xib */; };
 		688F496E19391D0300A1428E /* dmCouponMultiViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 688F496C19391D0300A1428E /* dmCouponMultiViewCell.m */; };
@@ -67,6 +70,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		68216299193FCE8300EE466F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		6821629E193FD72100EE466F /* dmMenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmMenuTableViewController.h; sourceTree = "<group>"; };
+		6821629F193FD72100EE466F /* dmMenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dmMenuTableViewController.m; sourceTree = "<group>"; };
+		682162A2193FDC5200EE466F /* dmZoomAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmZoomAnimationController.h; sourceTree = "<group>"; };
+		682162A3193FDC5200EE466F /* dmZoomAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dmZoomAnimationController.m; sourceTree = "<group>"; };
 		6837D1BF19280A2D00CE4928 /* dmEventView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmEventView.h; sourceTree = "<group>"; };
 		6837D1C019280A2D00CE4928 /* dmEventView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dmEventView.m; sourceTree = "<group>"; };
 		6837D1C219294DAA00CE4928 /* dmLiveEventsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmLiveEventsTableViewController.h; sourceTree = "<group>"; };
@@ -83,7 +91,6 @@
 		6838102818F9FC170019A61D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6838102D18F9FC170019A61D /* dmSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dmSecondViewController.h; sourceTree = "<group>"; };
 		6838102E18F9FC170019A61D /* dmSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = dmSecondViewController.m; sourceTree = "<group>"; };
-		6838103018F9FC170019A61D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6838103618F9FC170019A61D /* VocxodTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VocxodTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6838103718F9FC170019A61D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		6838103F18F9FC170019A61D /* VocxodTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VocxodTests-Info.plist"; sourceTree = "<group>"; };
@@ -105,6 +112,8 @@
 		685A62CC19279E3900EE67EF /* dmLineEventsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dmLineEventsTableViewController.m; sourceTree = "<group>"; };
 		685A62CE192802F900EE67EF /* dmLineEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmLineEventViewController.h; sourceTree = "<group>"; };
 		685A62CF192802F900EE67EF /* dmLineEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dmLineEventViewController.m; sourceTree = "<group>"; };
+		6882F02D193FAFA60049BE28 /* dmUserSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmUserSettings.h; sourceTree = "<group>"; };
+		6882F02E193FAFA60049BE28 /* dmUserSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dmUserSettings.m; sourceTree = "<group>"; };
 		6885C69C19367C29003243DD /* dmCouponSingleViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmCouponSingleViewCell.h; sourceTree = "<group>"; };
 		6885C69D19367C29003243DD /* dmCouponSingleViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dmCouponSingleViewCell.m; sourceTree = "<group>"; };
 		6885C69E19367C29003243DD /* dmCouponSingleViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = dmCouponSingleViewCell.xib; sourceTree = "<group>"; };
@@ -180,6 +189,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		682162A1193FDC1C00EE466F /* Transitions */ = {
+			isa = PBXGroup;
+			children = (
+				682162A2193FDC5200EE466F /* dmZoomAnimationController.h */,
+				682162A3193FDC5200EE466F /* dmZoomAnimationController.m */,
+			);
+			name = Transitions;
+			sourceTree = "<group>";
+		};
 		6838100918F9FC160019A61D = {
 			isa = PBXGroup;
 			children = (
@@ -258,6 +276,7 @@
 		6838104D18FA00870019A61D /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				682162A1193FDC1C00EE466F /* Transitions */,
 				685A62CE192802F900EE67EF /* dmLineEventViewController.h */,
 				685A62CF192802F900EE67EF /* dmLineEventViewController.m */,
 				685A62CB19279E3900EE67EF /* dmLineEventsTableViewController.h */,
@@ -281,6 +300,10 @@
 				68EE4360193A065400AD22A8 /* dmCouponItemViewController.h */,
 				68EE4361193A065400AD22A8 /* dmCouponItemViewController.m */,
 				68EE4362193A065400AD22A8 /* dmCouponItemViewController.xib */,
+				6882F02D193FAFA60049BE28 /* dmUserSettings.h */,
+				6882F02E193FAFA60049BE28 /* dmUserSettings.m */,
+				6821629E193FD72100EE466F /* dmMenuTableViewController.h */,
+				6821629F193FD72100EE466F /* dmMenuTableViewController.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -316,7 +339,7 @@
 		6838105018FA00F00019A61D /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				6838103018F9FC170019A61D /* Images.xcassets */,
+				68216299193FCE8300EE466F /* Images.xcassets */,
 				6838102718F9FC170019A61D /* Main.storyboard */,
 			);
 			name = Sources;
@@ -485,9 +508,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				68EE4364193A065400AD22A8 /* dmCouponItemViewController.xib in Resources */,
-				6838103118F9FC170019A61D /* Images.xcassets in Resources */,
 				6885C6A019367C29003243DD /* dmCouponSingleViewCell.xib in Resources */,
 				6838102918F9FC170019A61D /* Main.storyboard in Resources */,
+				6821629A193FCE8300EE466F /* Images.xcassets in Resources */,
 				68B8C545193215E70005011D /* Localizable.strings in Resources */,
 				688F496F19391D0300A1428E /* dmCouponMultiViewCell.xib in Resources */,
 			);
@@ -544,6 +567,7 @@
 				9BE3493D19212429003D1D72 /* dmSportController.m in Sources */,
 				68B8C55119329CE80005011D /* dmCoupon.m in Sources */,
 				6838102218F9FC170019A61D /* main.m in Sources */,
+				6882F02F193FAFA60049BE28 /* dmUserSettings.m in Sources */,
 				9B35F3F1192DFD78004135C8 /* dmCoefficientView.m in Sources */,
 				6885C69F19367C29003243DD /* dmCouponSingleViewCell.m in Sources */,
 				68B8C53C1931F6740005011D /* Coefficient.m in Sources */,
@@ -559,10 +583,12 @@
 				9BE349A519260BF7003D1D72 /* Event.m in Sources */,
 				6838107018FB41E00019A61D /* dmLineTableViewController.m in Sources */,
 				9BE34999192384FF003D1D72 /* MBProgressHUD.m in Sources */,
+				682162A4193FDC5200EE466F /* dmZoomAnimationController.m in Sources */,
 				9BE349A819264DC9003D1D72 /* dmTournamentController.m in Sources */,
 				68EE4363193A065400AD22A8 /* dmCouponItemViewController.m in Sources */,
 				6838107418FB45050019A61D /* dmTournament.m in Sources */,
 				6838102618F9FC170019A61D /* dmAppDelegate.m in Sources */,
+				682162A0193FD72100EE466F /* dmMenuTableViewController.m in Sources */,
 				9BE349A21925215F003D1D72 /* dmTournamentTableViewCell.m in Sources */,
 				9B35F3D1192CE795004135C8 /* dmLiveEventViewController.m in Sources */,
 				6838105C18FB247B0019A61D /* dmSport.m in Sources */,
