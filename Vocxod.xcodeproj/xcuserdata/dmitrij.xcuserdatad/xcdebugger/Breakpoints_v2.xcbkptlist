@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Vocxod/dmAppDelegate.m"
-            timestampString = "422750067.426349"
+            timestampString = "423604938.605327"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
-            landmarkName = "-applicationWillResignActive:"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "-initSuccess"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

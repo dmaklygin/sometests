@@ -13,6 +13,7 @@
 #import "dmFirstView.h"
 
 #import "dmMainSettings.h"
+#import "dmUserSettings.h"
 
 @interface dmAppDelegate()
 
@@ -93,6 +94,10 @@
             [subView removeFromSuperview];
         }
     }
+    dmUserSettings *userSettings = [dmUserSettings standartSettings];
+//    [userSettings setLogin:@"somelogin"];
+//    [[NSUserDefaults standardUserDefaults] synchronize];
+    NSLog(@"user is Login = %@", [userSettings getLogin]);
 }
 
 
