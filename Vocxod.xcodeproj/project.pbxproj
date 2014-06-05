@@ -11,6 +11,7 @@
 		6821629A193FCE8300EE466F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68216299193FCE8300EE466F /* Images.xcassets */; };
 		682162A0193FD72100EE466F /* dmMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6821629F193FD72100EE466F /* dmMenuViewController.m */; };
 		682162A4193FDC5200EE466F /* dmZoomAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 682162A3193FDC5200EE466F /* dmZoomAnimationController.m */; };
+		682162A8194114A700EE466F /* dmFavouritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 682162A7194114A700EE466F /* dmFavouritesViewController.m */; };
 		6837D1C119280A2D00CE4928 /* dmEventView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6837D1C019280A2D00CE4928 /* dmEventView.m */; };
 		6837D1C419294DAA00CE4928 /* dmLiveEventsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6837D1C319294DAA00CE4928 /* dmLiveEventsTableViewController.m */; };
 		6838101618F9FC170019A61D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6838101518F9FC170019A61D /* Foundation.framework */; };
@@ -75,6 +76,8 @@
 		6821629F193FD72100EE466F /* dmMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dmMenuViewController.m; sourceTree = "<group>"; };
 		682162A2193FDC5200EE466F /* dmZoomAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmZoomAnimationController.h; sourceTree = "<group>"; };
 		682162A3193FDC5200EE466F /* dmZoomAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dmZoomAnimationController.m; sourceTree = "<group>"; };
+		682162A6194114A700EE466F /* dmFavouritesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmFavouritesViewController.h; sourceTree = "<group>"; };
+		682162A7194114A700EE466F /* dmFavouritesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dmFavouritesViewController.m; sourceTree = "<group>"; };
 		6837D1BF19280A2D00CE4928 /* dmEventView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmEventView.h; sourceTree = "<group>"; };
 		6837D1C019280A2D00CE4928 /* dmEventView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dmEventView.m; sourceTree = "<group>"; };
 		6837D1C219294DAA00CE4928 /* dmLiveEventsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmLiveEventsTableViewController.h; sourceTree = "<group>"; };
@@ -198,6 +201,15 @@
 			name = Transitions;
 			sourceTree = "<group>";
 		};
+		682162A51941148D00EE466F /* Favourites */ = {
+			isa = PBXGroup;
+			children = (
+				682162A6194114A700EE466F /* dmFavouritesViewController.h */,
+				682162A7194114A700EE466F /* dmFavouritesViewController.m */,
+			);
+			name = Favourites;
+			sourceTree = "<group>";
+		};
 		6838100918F9FC160019A61D = {
 			isa = PBXGroup;
 			children = (
@@ -276,6 +288,7 @@
 		6838104D18FA00870019A61D /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				682162A51941148D00EE466F /* Favourites */,
 				9BA8BCEF194097F4006FC42B /* Coupon */,
 				9BA8BCEE194097DD006FC42B /* Live */,
 				9BA8BCED194097B1006FC42B /* Prematch */,
@@ -622,6 +635,7 @@
 				6838106018FB26950019A61D /* dmAppAPIClient.m in Sources */,
 				6838106318FB3B150019A61D /* dmMainViewController.m in Sources */,
 				6837D1C119280A2D00CE4928 /* dmEventView.m in Sources */,
+				682162A8194114A700EE466F /* dmFavouritesViewController.m in Sources */,
 				6838102F18F9FC170019A61D /* dmSecondViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

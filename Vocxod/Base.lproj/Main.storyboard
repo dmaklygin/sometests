@@ -65,7 +65,13 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Sport" id="C0d-tF-Bcc"/>
+                    <navigationItem key="navigationItem" title="Sport" id="C0d-tF-Bcc">
+                        <barButtonItem key="leftBarButtonItem" image="Menu" style="plain" id="yLZ-fx-PiF">
+                            <connections>
+                                <action selector="onMenuButtonClick:" destination="CZ4-MO-1fc" id="2CC-jp-yyN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qh2-T1-AhA" sceneMemberID="firstResponder"/>
             </objects>
@@ -181,7 +187,7 @@
         <!--Favourites-->
         <scene sceneID="NOZ-M5-I1a">
             <objects>
-                <viewController storyboardIdentifier="FavouritesViewController" title="Favourites" id="2oN-6O-DhC" userLabel="Favourites" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FavouritesViewController" title="Favourites" id="2oN-6O-DhC" userLabel="Favourites" customClass="dmFavouritesViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lMq-uj-UdG"/>
                         <viewControllerLayoutGuide type="bottom" id="FZf-1j-3xg"/>
@@ -202,6 +208,11 @@
             <objects>
                 <viewController id="dzF-zk-3aI" userLabel="Coupon View" customClass="dmCouponItemViewController" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="Coupon" id="nrf-CN-S6S">
+                        <barButtonItem key="leftBarButtonItem" image="Menu" style="plain" id="h5Z-cm-d9X">
+                            <connections>
+                                <action selector="onMenuButtonClick:" destination="dzF-zk-3aI" id="s86-4A-nOs"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Send" id="cGU-0L-pKh">
                             <connections>
                                 <action selector="onSendButtonClick:" destination="dzF-zk-3aI" id="Svz-bH-JR0"/>
@@ -219,7 +230,7 @@
         <!--Navigation Controller - Coupon-->
         <scene sceneID="pbS-9Z-m3C">
             <objects>
-                <navigationController definesPresentationContext="YES" id="PAy-lu-jRu" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="CouponViewController" definesPresentationContext="YES" id="PAy-lu-jRu" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Coupon" image="first" id="9vV-U0-Quj"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ofz-Jo-pF6">
                         <autoresizingMask key="autoresizingMask"/>
@@ -235,7 +246,7 @@
         <!--Live-->
         <scene sceneID="ot8-2e-RuS">
             <objects>
-                <viewController storyboardIdentifier="LiveViewController" title="Live" id="QUy-BD-bpt" userLabel="Live" customClass="dmLiveTableViewController" sceneMemberID="viewController">
+                <viewController title="Live" id="QUy-BD-bpt" userLabel="Live" customClass="dmLiveTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="LXZ-QQ-Tfz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -264,7 +275,13 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Live" id="dUq-rX-nl3"/>
+                    <navigationItem key="navigationItem" title="Live" id="dUq-rX-nl3">
+                        <barButtonItem key="leftBarButtonItem" image="Menu" style="plain" id="Hh2-zi-GEc">
+                            <connections>
+                                <action selector="onMenuButtonClick:" destination="QUy-BD-bpt" id="qfI-ym-btn"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3qq-4t-Ow8" sceneMemberID="firstResponder"/>
             </objects>
@@ -536,7 +553,7 @@
         <!--Navigation Controller - Sport-->
         <scene sceneID="ILU-Ul-Ih1">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qRc-bp-bzN" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="LineViewController" automaticallyAdjustsScrollViewInsets="NO" id="qRc-bp-bzN" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Sport" image="first" id="u1e-5L-l1D"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="uJE-iS-Sqe">
@@ -555,7 +572,7 @@
         <!--Navigation Controller - Live-->
         <scene sceneID="zfT-nY-ltg">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qVY-0l-Q1C" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="LiveViewController" automaticallyAdjustsScrollViewInsets="NO" id="qVY-0l-Q1C" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Live" image="Second" id="Z7h-1E-pvt"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Yme-lq-GhI">

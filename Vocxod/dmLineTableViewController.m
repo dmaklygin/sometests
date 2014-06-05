@@ -14,8 +14,10 @@
 
 #import "UIRefreshControl+AFNetworking.h"
 #import "UIAlertView+AFNetworking.h"
+#import "UIViewController+ECSlidingViewController.h"
 #import "dmAppDelegate.h"
 #import "MBProgressHUD.h"
+#import "dmZoomAnimationController.h"
 
 @interface dmLineTableViewController () <NSFetchedResultsControllerDelegate>
 
@@ -23,6 +25,7 @@
 @property (nonatomic, strong) MBProgressHUD *loader;
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, strong) NSTimer *updaterTimer;
+@property (nonatomic, strong) dmZoomAnimationController *zoomAnimationController;
 @end
 
 @implementation dmLineTableViewController
@@ -55,11 +58,13 @@
     [self updaterTimer];
     
 
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    self.slidingViewController.topViewAnchoredGesture = ECSlidingViewControllerAnchoredGestureTapping | ECSlidingViewControllerAnchoredGesturePanning;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.slidingViewController.delegate = self.zoomAnimationController;
+    self.slidingViewController.customAnchoredGestures = @[];
+    
+    [self.navigationController.view addGestureRecognizer:self.slidingViewController.panGesture];
+
 }
 
 - (void)viewWillAppear {
@@ -88,6 +93,19 @@
     [UIAlertView showAlertViewForTaskWithErrorOnCompletion:task delegate:nil];
     [self.refreshControl setRefreshingWithStateOfTask:task];
     [self.loader show:YES];
+}
+
+- (dmZoomAnimationController *)zoomAnimationController {
+    if (_zoomAnimationController) return _zoomAnimationController;
+    
+    _zoomAnimationController = [[dmZoomAnimationController alloc] init];
+    
+    return _zoomAnimationController;
+}
+
+
+- (IBAction)onMenuButtonClick:(id)sender {
+    [self.slidingViewController anchorTopViewToRightAnimated:YES];
 }
 
 - (void)removeExpiredEventsInTournament:(id)sender

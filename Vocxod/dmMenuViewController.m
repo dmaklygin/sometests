@@ -7,13 +7,27 @@
 //
 
 #import "dmMenuViewController.h"
+#import "UIViewController+ECSlidingViewController.h"
+
+#import "dmMainViewController.h"
+#import "dmLineTableViewController.h"
+#import "dmLiveTableViewController.h"
+#import "dmFavouritesViewController.h"
+#import "dmCouponItemViewController.h"
 
 @interface dmMenuViewController ()
 @property (nonatomic, strong) NSMutableArray *menuItems;
+
+@property (nonatomic, strong) dmMainViewController *mainViewController;
+@property (nonatomic, strong) dmLineTableViewController *lineViewController;
+@property (nonatomic, strong) dmLiveTableViewController *liveViewController;
+@property (nonatomic, strong) dmFavouritesViewController *favouritesViewController;
+@property (nonatomic, strong) dmCouponItemViewController *couponViewController;
 @end
 
-@implementation dmMenuViewController
 
+
+@implementation dmMenuViewController
 
 - (void)viewDidLoad
 {
@@ -50,7 +64,7 @@
 }
 
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -58,8 +72,9 @@
 {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    NSLog(@"prepare");
 }
-*/
+
 
 #pragma mark - Table view data source
 
@@ -90,6 +105,70 @@
     [self configureCell:cell atIndexPath:indexPath];
     
     return cell;
+}
+
+#pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+//    NSString *menuItem = self.menuItems[indexPath.row];
+    
+    switch (indexPath.row) {
+        case 0:
+            self.slidingViewController.topViewController = self.mainViewController;
+            break;
+        case 1:
+            self.slidingViewController.topViewController = self.lineViewController;
+            break;
+        case 2:
+            self.slidingViewController.topViewController = self.liveViewController;
+            break;
+        case 4:
+            self.slidingViewController.topViewController = self.couponViewController;
+            break;
+        default:
+            break;
+    }
+    
+    [self.slidingViewController resetTopViewAnimated:YES];
+}
+
+- (dmMainViewController *)mainViewController
+{
+    if (_mainViewController) {
+        return _mainViewController;
+    }
+    
+    _mainViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
+    return _mainViewController;
+}
+
+- (dmLineTableViewController *)lineViewController
+{
+    if (_lineViewController) {
+        return _lineViewController;
+    }
+    _lineViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"LineViewController"];
+    return _lineViewController;
+}
+
+
+- (dmLiveTableViewController *)liveViewController
+{
+    if (_liveViewController) {
+        return _liveViewController;
+    }
+    _liveViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"LiveViewController"];
+    return _liveViewController;
+}
+
+- (dmCouponItemViewController *)couponViewController
+{
+    if (_couponViewController) {
+        return _couponViewController;
+    }
+    _couponViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"CouponViewController"];
+    return _couponViewController;
 }
 
 

@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "dmAppDelegate.h"
+#import "ECSlidingViewController.h"
 
-@interface dmLiveTableViewController : UITableViewController <NSFetchedResultsControllerDelegate>
+@interface dmLiveTableViewController : UITableViewController <NSFetchedResultsControllerDelegate,ECSlidingViewControllerDelegate>
 
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, strong) dmAppDelegate * appDelegate;
+- (IBAction)onMenuButtonClick:(id)sender;
 
 - (void)removeExpiredEventsInTournament:(id)sender;
 @end
