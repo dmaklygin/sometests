@@ -27,7 +27,7 @@
     self.slidingViewController.customAnchoredGestures = @[];
     
     [self.navigationController.view addGestureRecognizer:self.slidingViewController.panGesture];
-    
+
 }
 
 

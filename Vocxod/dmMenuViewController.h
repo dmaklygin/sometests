@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface dmMenuTableViewController : UIViewController
+@interface dmMenuViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITableView *menuTable;
 
 @end

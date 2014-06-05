@@ -65,6 +65,7 @@
         
         self.outcomesController = [[dmOutcomesController alloc] initWithManagedObjectContext:self.managedObjectContext];
         [self.outcomesController loadRemoteOutcomes:^(NSDictionary *data, NSError *error) {
+            NSLog(@"upload outcomesController");
             if (error != nil) {
                 [self handleError:error];
                 return;
