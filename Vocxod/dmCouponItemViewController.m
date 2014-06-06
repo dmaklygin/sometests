@@ -58,15 +58,16 @@
     }
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self.navigationController.view addGestureRecognizer:self.slidingViewController.panGesture];
+}
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
     
     [self adjustTableViewHeight];
-    
-    [self.navigationController.view addGestureRecognizer:self.slidingViewController.panGesture];
-
 }
 
 // Перерисовывает Представление.

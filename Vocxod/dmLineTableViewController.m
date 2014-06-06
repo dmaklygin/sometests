@@ -12,7 +12,7 @@
 #import "dmTournament.h"
 #import "dmTournamentTableViewCell.h"
 
-#import "UIRefreshControl+AFNetworking.h"
+//#import "UIRefreshControl+AFNetworking.h"
 #import "UIAlertView+AFNetworking.h"
 
 #import "dmAppDelegate.h"
@@ -21,7 +21,6 @@
 
 @interface dmLineTableViewController () <NSFetchedResultsControllerDelegate>
 
-@property (readwrite, nonatomic, strong) UIRefreshControl *refreshControl;
 @property (nonatomic, strong) MBProgressHUD *loader;
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, strong) NSTimer *updaterTimer;
@@ -35,9 +34,7 @@
 {
     [super viewDidLoad];
     
-    self.refreshControl = [[UIRefreshControl alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.tableView.frame.size.width, 100.0f)];
-    [self.refreshControl addTarget:self action:@selector(reload:) forControlEvents:UIControlEventValueChanged];
-    [self.tableView addSubview:self.refreshControl];
+    [self setRefreshControl];
     
     self.appDelegate = (dmAppDelegate *)[[UIApplication sharedApplication] delegate];
     self.managedObjectContext = [self.appDelegate managedObjectContext];
@@ -45,33 +42,33 @@
     self.loader = [[MBProgressHUD alloc] initWithView:self.tableView];
     [self.tableView addSubview:self.loader];
     
-    NSError *error;
-    if (![[self fetchedResultsController] performFetch:&error]) {
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
-    }
-    // В первоначальной загрузке необходимо удалить старые события в турнирах
-    [self removeExpiredEventsInTournament:nil];
-    // Загрузка данных
-    [self reload:nil];
-    // Таймер релоадит каждые 60 секунд
-    [self updaterTimer];
-    
-
 }
 
-- (void)viewWillAppear {
+- (void)viewDidUnload {
+    // Release any properties that are loaded in viewDidLoad or can be recreated lazily.
+    self.fetchedResultsController = nil;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
     
     [self.navigationController.view addGestureRecognizer:self.slidingViewController.panGesture];
     
-    [self.tableView reloadData];
-}
-
-
-- (void)viewDidUnload {
+    // Загрузка данных из БД    
+    NSError *error;
+    if (![self.fetchedResultsController performFetch:&error]) {
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+    }
     
-    // Release any properties that are loaded in viewDidLoad or can be recreated lazily.
-    self.fetchedResultsController = nil;
+    // Перерисовка таблицы
+    [self.tableView reloadData];
+    
+    // Загрузка данных
+    [self reload:nil];
+
+    // Таймер релоадит каждые 60 секунд
+    [self updaterTimer];
 }
 
 
@@ -81,13 +78,14 @@
     NSURLSessionDataTask *task = [self.appDelegate.prematchTournamentController loadRemoteTournaments:^(NSArray *tournaments, NSError *error) {
         if (!error) {
             [self.tableView reloadData];
+            [self.refreshControl endRefreshing];
             [self.loader hide:YES];
             NSLog(@"tournaments = %@", tournaments);
         }
     } inManagedObjectContext:self.managedObjectContext];
     
     [UIAlertView showAlertViewForTaskWithErrorOnCompletion:task delegate:nil];
-    [self.refreshControl setRefreshingWithStateOfTask:task];
+    [self.refreshControl beginRefreshing];
     [self.loader show:YES];
 }
 
@@ -122,12 +120,21 @@
     return _updaterTimer;
 }
 
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (UIRefreshControl *)setRefreshControl
+{
+    self.refreshControl = [[UIRefreshControl alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.tableView.frame.size.width, 100.0f)];
+    //    self.refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"Update"];
+    [self.refreshControl addTarget:self action:@selector(reload:) forControlEvents:UIControlEventValueChanged];
+    
+    return self.refreshControl;
+}
+
 
 #pragma mark - Table view data source
 
@@ -179,44 +186,6 @@
     return @"";
 }
 
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 
 #pragma mark - Navigation

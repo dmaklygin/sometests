@@ -14,7 +14,6 @@
 #import "dmTournamentTableViewCell.h"
 #import "dmEventTableViewCell.h"
 
-#import "UIRefreshControl+AFNetworking.h"
 #import "UIAlertView+AFNetworking.h"
 
 #import "MBProgressHUD.h"
@@ -22,7 +21,6 @@
 
 @interface dmLiveTableViewController () <NSFetchedResultsControllerDelegate>
 
-@property (readwrite, nonatomic, strong) UIRefreshControl *refreshControl;
 @property (nonatomic, strong) MBProgressHUD *loader;
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, strong) NSTimer *updaterTimer;
@@ -37,7 +35,6 @@
     
     self.refreshControl = [[UIRefreshControl alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.tableView.frame.size.width, 100.0f)];
     [self.refreshControl addTarget:self action:@selector(reload:) forControlEvents:UIControlEventValueChanged];
-    [self.tableView addSubview:self.refreshControl];
     
     self.appDelegate = (dmAppDelegate *)[[UIApplication sharedApplication] delegate];
     self.managedObjectContext = [self.appDelegate managedObjectContext];
@@ -45,15 +42,13 @@
     self.loader = [[MBProgressHUD alloc] initWithView:self.tableView];
     [self.tableView addSubview:self.loader];
     
-    NSError *error;
-    if (![[self fetchedResultsController] performFetch:&error]) {
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
-    }
+//    NSError *error;
+//    if (![[self fetchedResultsController] performFetch:&error]) {
+//        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+//        abort();
+//    }
     
     [self removeExpiredEventsInTournament:nil];
-    [self reload:nil];
-    [self updaterTimer];
     
 //    self.slidingViewController.topViewAnchoredGesture = ECSlidingViewControllerAnchoredGestureTapping | ECSlidingViewControllerAnchoredGesturePanning;
 //    
@@ -62,13 +57,29 @@
 
 }
 
-- (void)viewWillAppear {
+
+- (void)viewWillAppear:(BOOL)animated
+{
     
     [self.navigationController.view addGestureRecognizer:self.slidingViewController.panGesture];
-
+    
+    // Загрузка данных из БД
+    NSError *error;
+    if (![self.fetchedResultsController performFetch:&error]) {
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+    }
+    
+    // Перерисовка таблицы
     [self.tableView reloadData];
+    
+    // Загрузка данных
+    [self reload:nil];
+    
+    // Таймер релоадит каждые 60 секунд
+    [self updaterTimer];
+    
 }
-
 
 - (void)viewDidUnload {
     
@@ -92,12 +103,12 @@
         if (!error) {
             [self.tableView reloadData];
             [self.loader hide:YES];
-            NSLog(@"updateTimer Fire");
+            [self.refreshControl endRefreshing];
         }
     } inManagedObjectContext:self.managedObjectContext];
     
     [UIAlertView showAlertViewForTaskWithErrorOnCompletion:task delegate:nil];
-    [self.refreshControl setRefreshingWithStateOfTask:task];
+    [self.refreshControl beginRefreshing];
     [self.loader show:YES];
 }
 

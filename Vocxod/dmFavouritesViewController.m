@@ -26,8 +26,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    [self.navigationController.view addGestureRecognizer:self.slidingViewController.panGesture];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    // Do any additional setup after loading the view
+    [self.view addGestureRecognizer:self.slidingViewController.panGesture];
 }
 
 - (void)didReceiveMemoryWarning
