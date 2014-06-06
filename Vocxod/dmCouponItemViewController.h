@@ -7,7 +7,7 @@
 //
 
 #import "Bet.h"
-#import "ECSlidingViewController.h"
+#import "UIViewController+ECSlidingViewController.h"
 
 @interface dmCouponItemViewController : UIViewController <NSFetchedResultsControllerDelegate, ECSlidingViewControllerDelegate>
 @property (strong, nonatomic) IBOutlet UISegmentedControl *couponTypeSegmentedControl;

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "dmAppDelegate.h"
-#import "ECSlidingViewController.h"
+#import "UIViewController+ECSlidingViewController.h"
 
 @interface dmLiveTableViewController : UITableViewController <NSFetchedResultsControllerDelegate,ECSlidingViewControllerDelegate>
 

@@ -8,9 +8,9 @@
 
 #import <CoreData/CoreData.h>
 #import "dmAppDelegate.h"
-#import "ECSlidingViewController.h"
+#import "UIViewController+ECSlidingViewController.h"
 
-@interface dmLineTableViewController : UITableViewController <NSFetchedResultsControllerDelegate,ECSlidingViewControllerDelegate>
+@interface dmLineTableViewController : UITableViewController <NSFetchedResultsControllerDelegate, ECSlidingViewControllerDelegate>
 
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, strong) dmAppDelegate * appDelegate;

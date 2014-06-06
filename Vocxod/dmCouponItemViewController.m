@@ -12,14 +12,11 @@
 #import "dmCouponMultiViewCell.h"
 #import "dmCouponSingleViewCell.h"
 
-#import "UIViewController+ECSlidingViewController.h"
-#import "dmZoomAnimationController.h"
-
 @interface dmCouponItemViewController () <NSFetchedResultsControllerDelegate>
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, strong) dmCoupon *coupon;
 @property (nonatomic) float cellHeight;
-@property (nonatomic, strong) dmZoomAnimationController *zoomAnimationController;
+
 
 - (void)reloadData;
 - (NSString *)getIdentifier;
@@ -61,17 +58,12 @@
     }
 }
 
+
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
     
     [self adjustTableViewHeight];
-    
-    // Для левого меню    
-    self.slidingViewController.topViewAnchoredGesture = ECSlidingViewControllerAnchoredGestureTapping | ECSlidingViewControllerAnchoredGesturePanning;
-    
-    self.slidingViewController.delegate = self.zoomAnimationController;
-    self.slidingViewController.customAnchoredGestures = @[];
     
     [self.navigationController.view addGestureRecognizer:self.slidingViewController.panGesture];
 
@@ -88,14 +80,6 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (dmZoomAnimationController *)zoomAnimationController {
-    if (_zoomAnimationController) return _zoomAnimationController;
-    
-    _zoomAnimationController = [[dmZoomAnimationController alloc] init];
-    
-    return _zoomAnimationController;
 }
 
 

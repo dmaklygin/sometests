@@ -1,18 +1,19 @@
 //
-//  dmFavouritesViewController.m
+//  dmSlidingViewController.m
 //  Vocxod
 //
-//  Created by Дмитрий on 06.06.14.
+//  Created by Dmitry Maklygin on 06.06.14.
 //  Copyright (c) 2014 DmitryCo. All rights reserved.
 //
 
-#import "dmFavouritesViewController.h"
+#import "dmSlidingViewController.h"
+#import "dmZoomAnimationController.h"
 
-@interface dmFavouritesViewController ()
-
+@interface dmSlidingViewController ()
+@property (nonatomic, strong) dmZoomAnimationController *zoomAnimationController;
 @end
 
-@implementation dmFavouritesViewController
+@implementation dmSlidingViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,7 +28,12 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self.navigationController.view addGestureRecognizer:self.slidingViewController.panGesture];
+    
+    self.topViewAnchoredGesture = ECSlidingViewControllerAnchoredGestureTapping | ECSlidingViewControllerAnchoredGesturePanning;
+    
+    self.delegate = self.zoomAnimationController;
+    self.customAnchoredGestures = @[];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -35,6 +41,15 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (dmZoomAnimationController *)zoomAnimationController {
+    if (_zoomAnimationController) return _zoomAnimationController;
+    
+    _zoomAnimationController = [[dmZoomAnimationController alloc] init];
+    
+    return _zoomAnimationController;
+}
+
 
 /*
 #pragma mark - Navigation

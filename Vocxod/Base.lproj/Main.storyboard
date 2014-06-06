@@ -210,7 +210,7 @@
                     <navigationItem key="navigationItem" title="Coupon" id="nrf-CN-S6S">
                         <barButtonItem key="leftBarButtonItem" image="Menu" style="plain" id="h5Z-cm-d9X">
                             <connections>
-                                <action selector="onMenuButtonClick:" destination="dzF-zk-3aI" id="s86-4A-nOs"/>
+                                <action selector="onMenuButtonClick:" destination="dzF-zk-3aI" id="sNo-g0-Lbh"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Send" id="cGU-0L-pKh">
@@ -511,7 +511,7 @@
         <!--Sliding View Controller-->
         <scene sceneID="iC5-8m-NBj">
             <objects>
-                <viewController storyboardIdentifier="SlidingViewController" id="h1F-uk-B3P" userLabel="Sliding View Controller" customClass="ECSlidingViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SlidingViewController" id="h1F-uk-B3P" userLabel="Sliding View Controller" customClass="dmSlidingViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Y8e-Km-gj7"/>
                         <viewControllerLayoutGuide type="bottom" id="Vo4-0K-JTc"/>

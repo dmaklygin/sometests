@@ -111,8 +111,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-//    NSString *menuItem = self.menuItems[indexPath.row];
-    
     switch (indexPath.row) {
         case 0:
             self.slidingViewController.topViewController = self.mainViewController;
@@ -123,10 +121,11 @@
         case 2:
             self.slidingViewController.topViewController = self.liveViewController;
             break;
+        case 3:
+            self.slidingViewController.topViewController = self.favouritesViewController;
+            break;
         case 4:
             self.slidingViewController.topViewController = self.couponViewController;
-            break;
-        default:
             break;
     }
     
@@ -160,6 +159,15 @@
     }
     _liveViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"LiveViewController"];
     return _liveViewController;
+}
+
+- (dmFavouritesViewController *)favouritesViewController
+{
+    if (_favouritesViewController) {
+        return _favouritesViewController;
+    }
+    _favouritesViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"FavouritesViewController"];
+    return _favouritesViewController;
 }
 
 - (dmCouponItemViewController *)couponViewController

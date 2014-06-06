@@ -58,6 +58,7 @@
 		9BE349A21925215F003D1D72 /* dmTournamentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE349A11925215F003D1D72 /* dmTournamentTableViewCell.m */; };
 		9BE349A519260BF7003D1D72 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE349A419260BF7003D1D72 /* Event.m */; };
 		9BE349A819264DC9003D1D72 /* dmTournamentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE349A719264DC9003D1D72 /* dmTournamentController.m */; };
+		9BEF7AF11941AD9300545A24 /* dmSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BEF7AF01941AD9300545A24 /* dmSlidingViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -163,6 +164,8 @@
 		9BE349A419260BF7003D1D72 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 		9BE349A619264DC9003D1D72 /* dmTournamentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmTournamentController.h; sourceTree = "<group>"; };
 		9BE349A719264DC9003D1D72 /* dmTournamentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dmTournamentController.m; sourceTree = "<group>"; };
+		9BEF7AEF1941AD9300545A24 /* dmSlidingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmSlidingViewController.h; sourceTree = "<group>"; };
+		9BEF7AF01941AD9300545A24 /* dmSlidingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dmSlidingViewController.m; sourceTree = "<group>"; };
 		B5EEC38CCBFC4FB2A9C5D058 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E10176B1DFFB4D85B3719299 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -288,6 +291,8 @@
 		6838104D18FA00870019A61D /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				9BEF7AF21941AE4300545A24 /* Main */,
+				9BEF7AEE1941AD7100545A24 /* Menu */,
 				682162A51941148D00EE466F /* Favourites */,
 				9BA8BCEF194097F4006FC42B /* Coupon */,
 				9BA8BCEE194097DD006FC42B /* Live */,
@@ -299,12 +304,8 @@
 				6838102E18F9FC170019A61D /* dmSecondViewController.m */,
 				6838102418F9FC170019A61D /* dmAppDelegate.h */,
 				6838102518F9FC170019A61D /* dmAppDelegate.m */,
-				6838106118FB3B150019A61D /* dmMainViewController.h */,
-				6838106218FB3B150019A61D /* dmMainViewController.m */,
 				6882F02D193FAFA60049BE28 /* dmUserSettings.h */,
 				6882F02E193FAFA60049BE28 /* dmUserSettings.m */,
-				6821629E193FD72100EE466F /* dmMenuViewController.h */,
-				6821629F193FD72100EE466F /* dmMenuViewController.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -464,6 +465,26 @@
 			name = MBProgressHUD;
 			sourceTree = "<group>";
 		};
+		9BEF7AEE1941AD7100545A24 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				6821629E193FD72100EE466F /* dmMenuViewController.h */,
+				9BEF7AEF1941AD9300545A24 /* dmSlidingViewController.h */,
+				9BEF7AF01941AD9300545A24 /* dmSlidingViewController.m */,
+				6821629F193FD72100EE466F /* dmMenuViewController.m */,
+			);
+			name = Menu;
+			sourceTree = "<group>";
+		};
+		9BEF7AF21941AE4300545A24 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				6838106118FB3B150019A61D /* dmMainViewController.h */,
+				6838106218FB3B150019A61D /* dmMainViewController.m */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -600,6 +621,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BEF7AF11941AD9300545A24 /* dmSlidingViewController.m in Sources */,
 				9B2D9F151934B4AF006835F4 /* dmMainSettings.m in Sources */,
 				9BE3493D19212429003D1D72 /* dmSportController.m in Sources */,
 				68B8C55119329CE80005011D /* dmCoupon.m in Sources */,

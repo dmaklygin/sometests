@@ -16,9 +16,9 @@
 
 #import "UIRefreshControl+AFNetworking.h"
 #import "UIAlertView+AFNetworking.h"
-#import "UIViewController+ECSlidingViewController.h"
+
 #import "MBProgressHUD.h"
-#import "dmZoomAnimationController.h"
+
 
 @interface dmLiveTableViewController () <NSFetchedResultsControllerDelegate>
 
@@ -26,7 +26,7 @@
 @property (nonatomic, strong) MBProgressHUD *loader;
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, strong) NSTimer *updaterTimer;
-@property (nonatomic, strong) dmZoomAnimationController *zoomAnimationController;
+
 @end
 
 @implementation dmLiveTableViewController
@@ -55,10 +55,10 @@
     [self reload:nil];
     [self updaterTimer];
     
-    self.slidingViewController.topViewAnchoredGesture = ECSlidingViewControllerAnchoredGestureTapping | ECSlidingViewControllerAnchoredGesturePanning;
-    
-    self.slidingViewController.delegate = self.zoomAnimationController;
-    self.slidingViewController.customAnchoredGestures = @[];
+//    self.slidingViewController.topViewAnchoredGesture = ECSlidingViewControllerAnchoredGestureTapping | ECSlidingViewControllerAnchoredGesturePanning;
+//    
+//    self.slidingViewController.delegate = self.zoomAnimationController;
+//    self.slidingViewController.customAnchoredGestures = @[];
 
 }
 
@@ -99,14 +99,6 @@
     [UIAlertView showAlertViewForTaskWithErrorOnCompletion:task delegate:nil];
     [self.refreshControl setRefreshingWithStateOfTask:task];
     [self.loader show:YES];
-}
-
-- (dmZoomAnimationController *)zoomAnimationController {
-    if (_zoomAnimationController) return _zoomAnimationController;
-    
-    _zoomAnimationController = [[dmZoomAnimationController alloc] init];
-    
-    return _zoomAnimationController;
 }
 
 

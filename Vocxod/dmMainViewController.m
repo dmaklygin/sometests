@@ -7,10 +7,10 @@
 //
 #import "UIViewController+ECSlidingViewController.h"
 #import "dmMainViewController.h"
-#import "dmZoomAnimationController.h"
+
 
 @interface dmMainViewController ()
-@property (nonatomic, strong) dmZoomAnimationController *zoomAnimationController;
+
 @end
 
 @implementation dmMainViewController
@@ -21,13 +21,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.slidingViewController.topViewAnchoredGesture = ECSlidingViewControllerAnchoredGestureTapping | ECSlidingViewControllerAnchoredGesturePanning;
-    
-    self.slidingViewController.delegate = self.zoomAnimationController;
-    self.slidingViewController.customAnchoredGestures = @[];
-    
-    [self.navigationController.view addGestureRecognizer:self.slidingViewController.panGesture];
 
+    [self.navigationController.view addGestureRecognizer:self.slidingViewController.panGesture];
 }
 
 
@@ -47,14 +42,6 @@
     // Pass the selected object to the new view controller.
 }
 */
-
-- (dmZoomAnimationController *)zoomAnimationController {
-    if (_zoomAnimationController) return _zoomAnimationController;
-    
-    _zoomAnimationController = [[dmZoomAnimationController alloc] init];
-    
-    return _zoomAnimationController;
-}
 
 
 - (IBAction)unwindToMenu:(id)sender {
