@@ -52,7 +52,6 @@
 		9B35F3F7192F3B5D004135C8 /* dmOutcomesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B35F3F6192F3B5D004135C8 /* dmOutcomesController.m */; };
 		9B74BDD818FBF98100D884C0 /* dmEventTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B74BDD718FBF98100D884C0 /* dmEventTableViewCell.m */; };
 		9BE3493D19212429003D1D72 /* dmSportController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE3493C19212429003D1D72 /* dmSportController.m */; };
-		9BE349471922833F003D1D72 /* dmTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE349461922833F003D1D72 /* dmTabBarViewController.m */; };
 		9BE3499419237472003D1D72 /* dmFirstView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE3499319237472003D1D72 /* dmFirstView.m */; };
 		9BE34999192384FF003D1D72 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE34998192384FF003D1D72 /* MBProgressHUD.m */; };
 		9BE349A21925215F003D1D72 /* dmTournamentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE349A11925215F003D1D72 /* dmTournamentTableViewCell.m */; };
@@ -152,8 +151,6 @@
 		9B74BDD718FBF98100D884C0 /* dmEventTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dmEventTableViewCell.m; sourceTree = "<group>"; };
 		9BE3493B19212429003D1D72 /* dmSportController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmSportController.h; sourceTree = "<group>"; };
 		9BE3493C19212429003D1D72 /* dmSportController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dmSportController.m; sourceTree = "<group>"; };
-		9BE349451922833F003D1D72 /* dmTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmTabBarViewController.h; sourceTree = "<group>"; };
-		9BE349461922833F003D1D72 /* dmTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dmTabBarViewController.m; sourceTree = "<group>"; };
 		9BE3499219237472003D1D72 /* dmFirstView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmFirstView.h; sourceTree = "<group>"; };
 		9BE3499319237472003D1D72 /* dmFirstView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dmFirstView.m; sourceTree = "<group>"; };
 		9BE34997192384FF003D1D72 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
@@ -298,8 +295,6 @@
 				9BA8BCEE194097DD006FC42B /* Live */,
 				9BA8BCED194097B1006FC42B /* Prematch */,
 				682162A1193FDC1C00EE466F /* Transitions */,
-				9BE349451922833F003D1D72 /* dmTabBarViewController.h */,
-				9BE349461922833F003D1D72 /* dmTabBarViewController.m */,
 				6838102D18F9FC170019A61D /* dmSecondViewController.h */,
 				6838102E18F9FC170019A61D /* dmSecondViewController.m */,
 				6838102418F9FC170019A61D /* dmAppDelegate.h */,
@@ -637,7 +632,6 @@
 				9BE3499419237472003D1D72 /* dmFirstView.m in Sources */,
 				688F496E19391D0300A1428E /* dmCouponMultiViewCell.m in Sources */,
 				9B35F3F4192E2A31004135C8 /* dmMainCoefficientsView.m in Sources */,
-				9BE349471922833F003D1D72 /* dmTabBarViewController.m in Sources */,
 				6837D1C419294DAA00CE4928 /* dmLiveEventsTableViewController.m in Sources */,
 				9BE349A519260BF7003D1D72 /* Event.m in Sources */,
 				6838107018FB41E00019A61D /* dmLineTableViewController.m in Sources */,

@@ -429,29 +429,6 @@
             </objects>
             <point key="canvasLocation" x="2271" y="554"/>
         </scene>
-        <!--Dm Tab Bar View Controller-->
-        <scene sceneID="Vex-rW-GRa">
-            <objects>
-                <tabBarController storyboardIdentifier="TabBarController" id="8YX-ce-x5E" customClass="dmTabBarViewController" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="aO1-ll-S4c"/>
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="JQR-rB-NYL">
-                        <rect key="frame" x="0.0" y="431" width="320" height="49"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="tyg-JY-QIO" kind="relationship" relationship="viewControllers" id="i6P-R8-jbW"/>
-                        <segue destination="qRc-bp-bzN" kind="relationship" relationship="viewControllers" id="rOc-I4-2Va"/>
-                        <segue destination="qVY-0l-Q1C" kind="relationship" relationship="viewControllers" id="MFL-qM-0La"/>
-                        <segue destination="2oN-6O-DhC" kind="relationship" relationship="viewControllers" id="8rN-LW-qBG"/>
-                        <segue destination="PAy-lu-jRu" kind="relationship" relationship="viewControllers" id="3mY-9F-7Yx"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FNP-y4-bzi" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="47" y="165"/>
-        </scene>
         <!--Dm Menu View Controller-->
         <scene sceneID="UGy-Lz-dHG">
             <objects>

@@ -42,19 +42,7 @@
     self.loader = [[MBProgressHUD alloc] initWithView:self.tableView];
     [self.tableView addSubview:self.loader];
     
-}
-
-- (void)viewDidUnload {
-    // Release any properties that are loaded in viewDidLoad or can be recreated lazily.
-    self.fetchedResultsController = nil;
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    
-    [self.navigationController.view addGestureRecognizer:self.slidingViewController.panGesture];
-    
-    // Загрузка данных из БД    
+    // Загрузка данных из БД
     NSError *error;
     if (![self.fetchedResultsController performFetch:&error]) {
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
@@ -66,11 +54,21 @@
     
     // Загрузка данных
     [self reload:nil];
-
+    
     // Таймер релоадит каждые 60 секунд
     [self updaterTimer];
+    
 }
 
+- (void)dealloc {
+    // Release any properties that are loaded in viewDidLoad or can be recreated lazily.
+    self.fetchedResultsController = nil;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self.navigationController.view addGestureRecognizer:self.slidingViewController.panGesture];
+}
 
 - (void)reload:(id)sender
 {
