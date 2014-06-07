@@ -58,7 +58,7 @@
     // Таймер релоадит каждые 5 секунд
     [self updaterTimer];
     
-    [self removeExpiredEventsInTournament:nil];
+//    [self removeExpiredEventsInTournament:nil];
     
 }
 
@@ -78,6 +78,7 @@
     NSLog(@"RELOAD!!!");
     NSURLSessionDataTask *task = [self.appDelegate.liveTournamentController loadRemoteTournaments:^(NSArray *tournaments, NSError *error) {
         if (!error) {
+            [self removeExpiredEventsInTournament:nil];
             [self.tableView reloadData];
             [self.loader hide:YES];
             [self.refreshControl endRefreshing];
@@ -97,11 +98,11 @@
 - (void)removeExpiredEventsInTournament:(id)sender
 {
     [self.appDelegate.liveTournamentController removeExpiredEventsInTournament:self.fetchedResultsController.fetchedObjects inManagedObjectContext:self.managedObjectContext forLive:YES];
-    [NSTimer scheduledTimerWithTimeInterval:5
-                                     target:self
-                                   selector:@selector(removeExpiredEventsInTournament:)
-                                   userInfo:nil
-                                    repeats:NO];
+//    [NSTimer scheduledTimerWithTimeInterval:5
+//                                     target:self
+//                                   selector:@selector(removeExpiredEventsInTournament:)
+//                                   userInfo:nil
+//                                    repeats:NO];
 }
 
 - (NSTimer *)updaterTimer
@@ -199,7 +200,7 @@
     NSSortDescriptor *namesSortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"rating" ascending:NO];
     [fetchRequest setSortDescriptors:@[sportSortDescriptor, namesSortDescriptor]];
     
-//    NSPredicate *predicate =
+
     NSDate *nowDate = [[NSDate alloc] init];
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"ANY self.events.time < %@", nowDate];
     [fetchRequest setPredicate:predicate];
@@ -223,15 +224,11 @@
 
 
 - (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(NSIndexPath *)newIndexPath {
-    dmTournamentTableViewCell *tournamentViewCell;
     switch(type) {
         case NSFetchedResultsChangeInsert:
             [self.tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
             break;
         case NSFetchedResultsChangeUpdate:
-            tournamentViewCell = (dmTournamentTableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath];
-            [tournamentViewCell setActive];
-//            [self configureCell:tournamentViewCell atIndexPath:indexPath];
             [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationNone];
             break;
         case NSFetchedResultsChangeDelete:

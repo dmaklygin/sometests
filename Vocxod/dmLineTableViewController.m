@@ -57,7 +57,6 @@
     
     // Таймер релоадит каждые 60 секунд
     [self updaterTimer];
-    
 }
 
 - (void)dealloc {
@@ -90,16 +89,6 @@
 
 - (IBAction)onMenuButtonClick:(id)sender {
     [self.slidingViewController anchorTopViewToRightAnimated:YES];
-}
-
-- (void)removeExpiredEventsInTournament:(id)sender
-{
-    [self.appDelegate.prematchTournamentController removeExpiredEventsInTournament:self.fetchedResultsController.fetchedObjects inManagedObjectContext:self.managedObjectContext forLive:NO];
-    [NSTimer scheduledTimerWithTimeInterval:5
-                                     target:self
-                                   selector:@selector(removeExpiredEventsInTournament:)
-                                   userInfo:nil
-                                    repeats:NO];
 }
 
 - (NSTimer *)updaterTimer
@@ -242,10 +231,15 @@
             [self.tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
             break;
         case NSFetchedResultsChangeUpdate:
-            [self configureCell:(dmTournamentTableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
+            [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationNone];
             break;
         case NSFetchedResultsChangeDelete:
             [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+            break;
+        case NSFetchedResultsChangeMove:
+            NSLog(@"NSFetchedResultsChangeMove!!!!");
+            [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
             break;
     }
 }

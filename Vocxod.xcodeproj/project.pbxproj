@@ -12,6 +12,8 @@
 		682162A0193FD72100EE466F /* dmMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6821629F193FD72100EE466F /* dmMenuViewController.m */; };
 		682162A4193FDC5200EE466F /* dmZoomAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 682162A3193FDC5200EE466F /* dmZoomAnimationController.m */; };
 		682162A8194114A700EE466F /* dmFavouritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 682162A7194114A700EE466F /* dmFavouritesViewController.m */; };
+		682162B21943AE6D00EE466F /* dmFirstScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 682162B01943AE6D00EE466F /* dmFirstScreenViewController.m */; };
+		682162B31943AE6D00EE466F /* dmFirstScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 682162B11943AE6D00EE466F /* dmFirstScreenViewController.xib */; };
 		6837D1C119280A2D00CE4928 /* dmEventView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6837D1C019280A2D00CE4928 /* dmEventView.m */; };
 		6837D1C419294DAA00CE4928 /* dmLiveEventsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6837D1C319294DAA00CE4928 /* dmLiveEventsTableViewController.m */; };
 		6838101618F9FC170019A61D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6838101518F9FC170019A61D /* Foundation.framework */; };
@@ -52,7 +54,6 @@
 		9B35F3F7192F3B5D004135C8 /* dmOutcomesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B35F3F6192F3B5D004135C8 /* dmOutcomesController.m */; };
 		9B74BDD818FBF98100D884C0 /* dmEventTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B74BDD718FBF98100D884C0 /* dmEventTableViewCell.m */; };
 		9BE3493D19212429003D1D72 /* dmSportController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE3493C19212429003D1D72 /* dmSportController.m */; };
-		9BE3499419237472003D1D72 /* dmFirstView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE3499319237472003D1D72 /* dmFirstView.m */; };
 		9BE34999192384FF003D1D72 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE34998192384FF003D1D72 /* MBProgressHUD.m */; };
 		9BE349A21925215F003D1D72 /* dmTournamentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE349A11925215F003D1D72 /* dmTournamentTableViewCell.m */; };
 		9BE349A519260BF7003D1D72 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE349A419260BF7003D1D72 /* Event.m */; };
@@ -78,6 +79,9 @@
 		682162A3193FDC5200EE466F /* dmZoomAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dmZoomAnimationController.m; sourceTree = "<group>"; };
 		682162A6194114A700EE466F /* dmFavouritesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmFavouritesViewController.h; sourceTree = "<group>"; };
 		682162A7194114A700EE466F /* dmFavouritesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dmFavouritesViewController.m; sourceTree = "<group>"; };
+		682162AF1943AE6D00EE466F /* dmFirstScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmFirstScreenViewController.h; sourceTree = "<group>"; };
+		682162B01943AE6D00EE466F /* dmFirstScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dmFirstScreenViewController.m; sourceTree = "<group>"; };
+		682162B11943AE6D00EE466F /* dmFirstScreenViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = dmFirstScreenViewController.xib; sourceTree = "<group>"; };
 		6837D1BF19280A2D00CE4928 /* dmEventView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmEventView.h; sourceTree = "<group>"; };
 		6837D1C019280A2D00CE4928 /* dmEventView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dmEventView.m; sourceTree = "<group>"; };
 		6837D1C219294DAA00CE4928 /* dmLiveEventsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmLiveEventsTableViewController.h; sourceTree = "<group>"; };
@@ -151,8 +155,6 @@
 		9B74BDD718FBF98100D884C0 /* dmEventTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dmEventTableViewCell.m; sourceTree = "<group>"; };
 		9BE3493B19212429003D1D72 /* dmSportController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmSportController.h; sourceTree = "<group>"; };
 		9BE3493C19212429003D1D72 /* dmSportController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dmSportController.m; sourceTree = "<group>"; };
-		9BE3499219237472003D1D72 /* dmFirstView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmFirstView.h; sourceTree = "<group>"; };
-		9BE3499319237472003D1D72 /* dmFirstView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dmFirstView.m; sourceTree = "<group>"; };
 		9BE34997192384FF003D1D72 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		9BE34998192384FF003D1D72 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		9BE349A01925215F003D1D72 /* dmTournamentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmTournamentTableViewCell.h; sourceTree = "<group>"; };
@@ -210,10 +212,19 @@
 			name = Favourites;
 			sourceTree = "<group>";
 		};
+		682162A91943AA1000EE466F /* FirstScreen */ = {
+			isa = PBXGroup;
+			children = (
+				682162AF1943AE6D00EE466F /* dmFirstScreenViewController.h */,
+				682162B01943AE6D00EE466F /* dmFirstScreenViewController.m */,
+				682162B11943AE6D00EE466F /* dmFirstScreenViewController.xib */,
+			);
+			name = FirstScreen;
+			sourceTree = "<group>";
+		};
 		6838100918F9FC160019A61D = {
 			isa = PBXGroup;
 			children = (
-				9BE349951923848C003D1D72 /* Vendor */,
 				6838101B18F9FC170019A61D /* Vocxod */,
 				6838103D18F9FC170019A61D /* VocxodTests */,
 				6838101418F9FC170019A61D /* Frameworks */,
@@ -246,6 +257,7 @@
 		6838101B18F9FC170019A61D /* Vocxod */ = {
 			isa = PBXGroup;
 			children = (
+				9BE349951923848C003D1D72 /* Vendor */,
 				9B35F3D2192CECD5004135C8 /* Resources */,
 				9B74BDD518FBF93A00D884C0 /* Views */,
 				6838105D18FB26650019A61D /* Network */,
@@ -393,14 +405,13 @@
 		9B74BDD518FBF93A00D884C0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				682162A91943AA1000EE466F /* FirstScreen */,
 				6885C69B19367BE1003243DD /* Coupon */,
 				9B35F3E7192DF1B3004135C8 /* Coefficients */,
 				9B74BDD618FBF98100D884C0 /* dmEventTableViewCell.h */,
 				9B74BDD718FBF98100D884C0 /* dmEventTableViewCell.m */,
-				9BE3499219237472003D1D72 /* dmFirstView.h */,
 				9BE349A01925215F003D1D72 /* dmTournamentTableViewCell.h */,
 				9BE349A11925215F003D1D72 /* dmTournamentTableViewCell.m */,
-				9BE3499319237472003D1D72 /* dmFirstView.m */,
 				6837D1BF19280A2D00CE4928 /* dmEventView.h */,
 				6837D1C019280A2D00CE4928 /* dmEventView.m */,
 			);
@@ -449,6 +460,7 @@
 				9BE3499619238496003D1D72 /* MBProgressHUD */,
 			);
 			name = Vendor;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		9BE3499619238496003D1D72 /* MBProgressHUD */ = {
@@ -562,6 +574,7 @@
 			files = (
 				68EE4364193A065400AD22A8 /* dmCouponItemViewController.xib in Resources */,
 				6885C6A019367C29003243DD /* dmCouponSingleViewCell.xib in Resources */,
+				682162B31943AE6D00EE466F /* dmFirstScreenViewController.xib in Resources */,
 				6838102918F9FC170019A61D /* Main.storyboard in Resources */,
 				6821629A193FCE8300EE466F /* Images.xcassets in Resources */,
 				68B8C545193215E70005011D /* Localizable.strings in Resources */,
@@ -621,6 +634,7 @@
 				9BE3493D19212429003D1D72 /* dmSportController.m in Sources */,
 				68B8C55119329CE80005011D /* dmCoupon.m in Sources */,
 				6838102218F9FC170019A61D /* main.m in Sources */,
+				682162B21943AE6D00EE466F /* dmFirstScreenViewController.m in Sources */,
 				6882F02F193FAFA60049BE28 /* dmUserSettings.m in Sources */,
 				9B35F3F1192DFD78004135C8 /* dmCoefficientView.m in Sources */,
 				6885C69F19367C29003243DD /* dmCouponSingleViewCell.m in Sources */,
@@ -629,7 +643,6 @@
 				6838107718FBC1BD0019A61D /* dmLiveTableViewController.m in Sources */,
 				9B74BDD818FBF98100D884C0 /* dmEventTableViewCell.m in Sources */,
 				68B8C54E19329A280005011D /* Bet.m in Sources */,
-				9BE3499419237472003D1D72 /* dmFirstView.m in Sources */,
 				688F496E19391D0300A1428E /* dmCouponMultiViewCell.m in Sources */,
 				9B35F3F4192E2A31004135C8 /* dmMainCoefficientsView.m in Sources */,
 				6837D1C419294DAA00CE4928 /* dmLiveEventsTableViewController.m in Sources */,

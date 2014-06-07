@@ -9,16 +9,12 @@
 #import "dmSport.h"
 #import "dmAppDelegate.h"
 
-#import "dmFirstView.h"
+#import "dmFirstScreenViewController.h"
 
 #import "dmMainSettings.h"
 #import "dmUserSettings.h"
 
 @interface dmAppDelegate()
-
-// Properties for the importer and its background processing queue.
-//@property (nonatomic, strong) iTunesRSSImporter *importer;
-@property (nonatomic, strong) NSOperationQueue *operationQueue;
 
 // Properties for the Core Data stack.
 @property (nonatomic, strong) NSManagedObjectModel *managedObjectModel;
@@ -26,8 +22,10 @@
 @property (nonatomic, strong) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 @property (nonatomic, strong) NSString *persistentStorePath;
 
-- (NSURL *)applicationDocumentsDirectory;
+@property (nonatomic, strong) dmFirstScreenViewController *firstController;
 
+- (NSURL *)applicationDocumentsDirectory;
+- (void)showLoadingScreen;
 @end
 
 
@@ -36,17 +34,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
-    UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
-    
-    NSLog(@"tabBarController = %@", tabBarController);
-    
-    dmFirstView *loadingView = [[dmFirstView alloc] initWithFrame: tabBarController.view.bounds];
-    loadingView.userInteractionEnabled = NO;
-    [tabBarController.view addSubview:loadingView];
+    [self showLoadingScreen];
     
     [self initApplication];
     
-    // Override point for customization after application launch.
     return YES;
 }
 
@@ -75,8 +66,9 @@
                     [self handleError:error];
                     return;
                 }
+                
                 // Инициализация купона
-                [self coupon];
+//                [self coupon];
                 
                 [self initSuccess];
             }];
@@ -84,20 +76,8 @@
     }];
 }
 
-
-
 - (void)initSuccess {
-    UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
-    
-    for (UIView *subView in tabBarController.view.subviews) {
-        if ([subView isKindOfClass:[dmFirstView class]]) {
-            [subView removeFromSuperview];
-        }
-    }
-    dmUserSettings *userSettings = [dmUserSettings standartSettings];
-//    [userSettings setLogin:@"somelogin"];
-//    [[NSUserDefaults standardUserDefaults] synchronize];
-    NSLog(@"user is Login = %@", [userSettings getLogin]);
+    [self hideLoadingScreen];
 }
 
 
@@ -126,6 +106,21 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)showLoadingScreen
+{
+    self.firstController = [[dmFirstScreenViewController alloc] initWithNibName:@"dmFirstScreenViewController" bundle:nil];
+    
+    UIViewController *mainUIViewController = (UIViewController *)self.window.rootViewController;
+    
+    [mainUIViewController.view addSubview:self.firstController.view];
+
+}
+
+- (void)hideLoadingScreen
+{
+    [self.firstController.view removeFromSuperview];
 }
 
 - (dmTournamentController *)prematchTournamentController
