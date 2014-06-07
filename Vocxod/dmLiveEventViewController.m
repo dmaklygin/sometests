@@ -35,6 +35,7 @@
     // @todo поговаривают, что надо убирать обсервер!! Возможен екзепшион!
     [self.event addObserver:self forKeyPath:@"coefficients" options:NSKeyValueObservingOptionNew context:nil];
     
+    
     [self.view addSubview:self.mainCoefficientsView];
 }
 
@@ -109,5 +110,9 @@
 }
 
 - (IBAction)buttonTap:(id)sender {
+}
+
+- (IBAction)onFavouritesButtonClick:(id)sender {
+    
 }
 @end

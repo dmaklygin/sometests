@@ -18,6 +18,7 @@
 @dynamic status;
 @dynamic time;
 @dynamic current_second;
+@dynamic in_favourites;
 @dynamic inTournament;
 @dynamic coefficients;
 

@@ -406,6 +406,14 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Opp-fU-81O">
+                                        <rect key="frame" x="20" y="100" width="74" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Favourites"/>
+                                        <connections>
+                                            <action selector="onFavouritesButtonClick:" destination="StE-4S-1HM" eventType="touchUpInside" id="QH4-85-spr"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <accessibility key="accessibilityConfiguration">
                                     <bool key="isElement" value="YES"/>
@@ -419,6 +427,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="eventInfoView" destination="kqk-AK-JoT" id="xM8-Gy-boC"/>
+                        <outlet property="favouritesButton" destination="Opp-fU-81O" id="SVq-my-tAE"/>
                         <outlet property="labelAway" destination="rAX-f5-QYM" id="bk8-7H-CqT"/>
                         <outlet property="labelHome" destination="Z7e-Pi-YRk" id="KOP-E2-oSs"/>
                         <outlet property="labelPart" destination="hva-sn-Oc7" id="uvD-hZ-XgU"/>

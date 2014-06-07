@@ -23,6 +23,7 @@
         <attribute name="current_second" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="home" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="in_favourites" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
         <attribute name="status" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="time" optional="YES" attributeType="Date" syncable="YES"/>
         <relationship name="coefficients" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Coefficient" inverseName="inEvent" inverseEntity="Coefficient" syncable="YES"/>
@@ -58,9 +59,9 @@
     <elements>
         <element name="Bet" positionX="-1098" positionY="-153" width="128" height="148"/>
         <element name="Coefficient" positionX="-1098" positionY="-153" width="128" height="148"/>
-        <element name="Event" positionX="-1307" positionY="-225" width="128" height="165"/>
+        <element name="Event" positionX="-1307" positionY="-225" width="128" height="180"/>
         <element name="Sport" positionX="-524" positionY="-109" width="128" height="133"/>
-        <element name="Tournament" positionX="-992" positionY="-304" width="128" height="135"/>
         <element name="Timeline" positionX="-1098" positionY="-153" width="128" height="180"/>
+        <element name="Tournament" positionX="-992" positionY="-304" width="128" height="135"/>
     </elements>
 </model>
