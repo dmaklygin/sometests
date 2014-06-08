@@ -12,6 +12,8 @@
 #import "dmTournamentController.h"
 #import "dmCoupon.h"
 
+#import "dmFirstScreenViewController.h"
+
 @interface dmAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
@@ -21,4 +23,9 @@
 @property (nonatomic, strong) dmTournamentController *prematchTournamentController;
 @property (nonatomic, strong) dmTournamentController *liveTournamentController;
 @property (nonatomic, strong) dmCoupon *coupon;
+
+@property (nonatomic, strong) dmFirstScreenViewController *firstController;
+
+- (void)showLoadingScreen;
+
 @end

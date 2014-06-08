@@ -5,27 +5,14 @@
 //  Created by Дмитрий on 13.04.14.
 //  Copyright (c) 2014 DmitryCo. All rights reserved.
 //
-
-#import "dmSport.h"
 #import "dmAppDelegate.h"
-
-#import "dmFirstScreenViewController.h"
+#import "dmModelController.h"
 
 #import "dmMainSettings.h"
-#import "dmUserSettings.h"
+
 
 @interface dmAppDelegate()
 
-// Properties for the Core Data stack.
-@property (nonatomic, strong) NSManagedObjectModel *managedObjectModel;
-
-@property (nonatomic, strong) NSPersistentStoreCoordinator *persistentStoreCoordinator;
-@property (nonatomic, strong) NSString *persistentStorePath;
-
-@property (nonatomic, strong) dmFirstScreenViewController *firstController;
-
-- (NSURL *)applicationDocumentsDirectory;
-- (void)showLoadingScreen;
 @end
 
 
@@ -55,7 +42,7 @@
         
         self.outcomesController = [[dmOutcomesController alloc] initWithManagedObjectContext:self.managedObjectContext];
         [self.outcomesController loadRemoteOutcomes:^(NSDictionary *data, NSError *error) {
-            NSLog(@"upload outcomesController");
+
             if (error != nil) {
                 [self handleError:error];
                 return;
@@ -66,9 +53,6 @@
                     [self handleError:error];
                     return;
                 }
-                
-                // Инициализация купона
-//                [self coupon];
                 
                 [self initSuccess];
             }];
@@ -158,14 +142,7 @@
     return _coupon;
 }
 
-- (NSString *)persistentStorePath {
-    if (_persistentStorePath == nil) {
-        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-        NSString *documentsDirectory = [paths lastObject];
-        _persistentStorePath = [documentsDirectory stringByAppendingPathComponent:@"Tournaments.sqlite"];
-    }
-    return _persistentStorePath;
-}
+
 
 - (BOOL)checkResponse:(NSHTTPURLResponse *)httpResponse
 {
@@ -181,48 +158,9 @@
         return _managedObjectContext;
     }
     
-    NSPersistentStoreCoordinator *persistentStoreCoordinator = [self persistentStoreCoordinator];
-    
-    _managedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
-    [_managedObjectContext setPersistentStoreCoordinator:persistentStoreCoordinator];
+    _managedObjectContext = [dmModelController managedObjectContext];
     
     return _managedObjectContext;
-}
-
-- (NSPersistentStoreCoordinator *)persistentStoreCoordinator {
-    if (_persistentStoreCoordinator != nil) {
-        return _persistentStoreCoordinator;
-    }
-    
-    NSManagedObjectModel *managedObjectModel = [self managedObjectModel];
-    
-    _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:managedObjectModel];
-    
-    NSDictionary *options = @{NSMigratePersistentStoresAutomaticallyOption: @YES, NSInferMappingModelAutomaticallyOption: @YES};
-    NSURL *storeUrl = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"Vocxod.CDBStore"];
-    NSError *error;
-    
-    if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeUrl options:options error:&error]) {
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
-    }
-    
-    return _persistentStoreCoordinator;
-}
-
-- (NSManagedObjectModel *)managedObjectModel {
-    
-    if (_managedObjectModel != nil) {
-        return _managedObjectModel;
-    }
-    NSURL *modelUrl = [[NSBundle mainBundle] URLForResource:@"Tournaments" withExtension:@"momd"];
-    _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelUrl];
-    
-    return _managedObjectModel;
-}
-
-- (NSURL *)applicationDocumentsDirectory {
-    return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
 
 
