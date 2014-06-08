@@ -9,10 +9,12 @@
 #import "dmEventsTableViewController.h"
 #import "dmModelController.h"
 
+#import "Event.h"
+
 @interface dmEventsTableViewController ()
 - (void)setPredicate:(NSFetchRequest *)fetchRequest;
+- (void)configureCell:(UITableView *)cell withEvent:(Event *)event;
 @end
-
 
 @implementation dmEventsTableViewController
 
@@ -32,6 +34,10 @@
     // Uncomment the following line to preserve selection between presentations.
     self.clearsSelectionOnViewWillAppear = NO;
     
+    //    Регистрация строк разного вида.
+    [self.tableView registerNib:[UINib nibWithNibName:@"dmLiveEventsTableViewCell" bundle:nil] forCellReuseIdentifier:@"LiveEventsCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"dmLineEventsTableViewCell" bundle:nil] forCellReuseIdentifier:@"LineEventsCell"];
+
     NSError *error;
     if (![self.fetchedResultsController performFetch:&error]) {
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
@@ -61,16 +67,23 @@
     return [sectionInfo numberOfObjects];
 }
 
-- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
+- (void)configureCell:(UITableView *)cell withEvent:(Event *)event
 {
     
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    Event *event = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
-    [self configureCell:cell atIndexPath:indexPath];
+    UITableViewCell *cell;
+    if ([event isLive]) {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"LiveEventsCell" forIndexPath:indexPath];
+    } else {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"LineEventsCell" forIndexPath:indexPath];
+    }
+    
+    [self configureCell:cell withEvent:event];
     
     return cell;
 }

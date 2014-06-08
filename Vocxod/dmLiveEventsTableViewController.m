@@ -9,7 +9,7 @@
 #import "dmLiveEventsTableViewController.h"
 #import "dmLiveEventViewController.h"
 
-#import "dmEventTableViewCell.h"
+#import "dmLiveEventsTableViewCell.h"
 
 @interface dmLiveEventsTableViewController ()
 @end
@@ -27,11 +27,9 @@
 
 #pragma mark - Table view data source
 
-- (void)configureCell:(UITableView *)cell atIndexPath:(NSIndexPath *)indexPath
+- (void)configureCell:(UITableView *)cell withEvent:(Event *)event
 {
-    Event *event = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    
-    dmEventTableViewCell *dmCell = (dmEventTableViewCell *)cell;
+    dmLiveEventsTableViewCell *dmCell = (dmLiveEventsTableViewCell *)cell;
     
     // Configure the cell...
     dmCell.labelAway.text = [event valueForKey:@"away"];

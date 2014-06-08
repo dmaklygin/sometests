@@ -112,5 +112,12 @@
 
 - (IBAction)onFavouritesButtonClick:(id)sender {
     
+    [self.event toggleFavourites];
+    
+    NSError *error;
+    if(![self.event.managedObjectContext save:&error]) {
+        NSLog(@"Toggle favourites in event ERROR: %@, %@", error, [error userInfo]);
+        abort();
+    }
 }
 @end

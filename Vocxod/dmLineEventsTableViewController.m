@@ -9,7 +9,7 @@
 #import "dmLineEventsTableViewController.h"
 #import "dmLineEventViewController.h"
 
-#import "dmEventTableViewCell.h"
+#import "dmLineEventsTableViewCell.h"
 
 @interface dmLineEventsTableViewController ()
 @end
@@ -25,16 +25,23 @@
     return self;
 }
 
-- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
+- (void)configureCell:(UITableView *)cell withEvent:(Event *)event
+{
+    dmLineEventsTableViewCell *dmCell = (dmLineEventsTableViewCell *)cell;
+
+    dmCell.labelAway.text = [event valueForKey:@"away"];
+    dmCell.labelHome.text = [event valueForKey:@"home"];
+    dmCell.labelDate.text = [event getFormatterDate];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     Event *event = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
-    dmEventTableViewCell *dmCell = (dmEventTableViewCell *)cell;
-
-    // Configure the cell...
-    dmCell.labelAway.text = [event valueForKey:@"away"];
-    dmCell.labelHome.text = [event valueForKey:@"home"];
-    dmCell.labelTime.text = [event getFormatterDate];
+    dmLineEventViewController *eventViewController = [[dmLineEventViewController alloc] init];
+    eventViewController.event = event;
+    
+    [self.navigationController pushViewController:eventViewController animated:YES];
 }
 
 #pragma mark - Navigation
@@ -57,7 +64,5 @@
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"time > %@ AND self.inTournament == %@", nowDate, self.tournament];
     [fetchRequest setPredicate:predicate];
 }
-
-
 
 @end

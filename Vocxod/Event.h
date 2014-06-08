@@ -29,6 +29,8 @@
 + (NSSet *)upsertEvents:(NSArray *)data forTournament:(dmTournament *)tournament inManagedObjectContext:(NSManagedObjectContext *)managedObjectContext;
 + (Event *)createNewEvent:(NSDictionary *)attributes forTournament:(dmTournament *)tournament inManagedObjectContext:(NSManagedObjectContext *)managedObjectContext;
 
+- (void)toggleFavourites;
+
 - (BOOL)isLive;
 - (BOOL)isLine;
 - (BOOL)isExpired;

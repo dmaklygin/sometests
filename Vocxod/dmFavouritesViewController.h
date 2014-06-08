@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 DmitryCo. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "dmEventsTableViewController.h"
 #import "UIViewController+ECSlidingViewController.h"
 
-@interface dmFavouritesViewController : UITableViewController <ECSlidingViewControllerDelegate>
+@interface dmFavouritesViewController : dmEventsTableViewController <ECSlidingViewControllerDelegate>
 
 @end

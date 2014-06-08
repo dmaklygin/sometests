@@ -126,6 +126,15 @@
     return event;
 }
 
+- (void)toggleFavourites
+{
+    if (self.in_favourites) {
+        [self setIn_favourites:NO];
+    } else {
+        [self setIn_favourites:YES];
+    }
+}
+
 -(BOOL)isLive
 {
     NSDate *nowDate = [NSDate date];

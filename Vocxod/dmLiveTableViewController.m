@@ -169,9 +169,6 @@
     return @"";
 }
 
-
-
-
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -208,8 +205,6 @@
     _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:@"sport_id" cacheName:nil];
     
     _fetchedResultsController.delegate = self;
-    
-    
     
     return _fetchedResultsController;
 }
