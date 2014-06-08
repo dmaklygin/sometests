@@ -10,6 +10,8 @@
 #import "Bet.h"
 #import "Event.h"
 
+#import "dmModelController.h"
+
 NSString * const dmCouponErrorDomain = @"dmCouponErrorDomain";
 
 @interface dmCoupon () <NSFetchedResultsControllerDelegate, UIAlertViewDelegate>
@@ -17,6 +19,16 @@ NSString * const dmCouponErrorDomain = @"dmCouponErrorDomain";
 @end
 
 @implementation dmCoupon
+
++ (instancetype)instance {
+    static dmCoupon *_sharedCoupon = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _sharedCoupon = [[self alloc] initWithManagedObjectContext:[dmModelController managedObjectContext]];
+    });
+    
+    return _sharedCoupon;
+}
 
 - (instancetype)initWithManagedObjectContext:(NSManagedObjectContext *)managedObjectContext
 {

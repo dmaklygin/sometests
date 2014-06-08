@@ -45,7 +45,7 @@
     dmAppDelegate *appDelegate = (dmAppDelegate *)[[UIApplication sharedApplication] delegate];
     self.managedObjectContext = [appDelegate managedObjectContext];
     
-    self.coupon = [appDelegate coupon];
+    self.coupon = [dmCoupon instance];
 
 //    Регистрация строк разного вида.
     [self.betsTableView registerNib:[UINib nibWithNibName:@"dmCouponSingleViewCell" bundle:nil] forCellReuseIdentifier:@"couponSingleCell"];

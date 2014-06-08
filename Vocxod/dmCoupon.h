@@ -29,7 +29,8 @@ typedef NS_ENUM(NSInteger, dmCouponError)
 
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 
-- (instancetype)initWithManagedObjectContext:(NSManagedObjectContext *)managedObjectContext;
++ (instancetype)instance;
+
 - (void)loadBets;
 - (BOOL)addBetFromCoefficient:(Coefficient *)coefficient;
 - (BOOL)removeBet:(Bet *)bet;

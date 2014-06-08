@@ -5,11 +5,9 @@
 //  Created by Дмитрий on 17.05.14.
 //  Copyright (c) 2014 DmitryCo. All rights reserved.
 //
-
-#import <CoreData/CoreData.h>
+#import "dmEventsTableViewController.h"
 #import "dmTournament.h"
-#import "Event.h"
 
-@interface dmLineEventsTableViewController : UITableViewController <NSFetchedResultsControllerDelegate>
+@interface dmLineEventsTableViewController : dmEventsTableViewController
 @property (nonatomic,strong) dmTournament *tournament;
 @end

@@ -54,8 +54,7 @@
 */
 - (void)HandleTap:(UIButton *)button
 {
-    dmAppDelegate *appDelegate = (dmAppDelegate *)[[UIApplication sharedApplication] delegate];
-    [appDelegate.coupon addBetFromCoefficient:self.coefficient];
+    [[dmCoupon instance] addBetFromCoefficient:self.coefficient];
 }
 
 - (void)updateCoefficient:(Coefficient *)coefficient

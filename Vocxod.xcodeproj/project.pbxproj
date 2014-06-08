@@ -24,7 +24,6 @@
 		6838102218F9FC170019A61D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6838102118F9FC170019A61D /* main.m */; };
 		6838102618F9FC170019A61D /* dmAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6838102518F9FC170019A61D /* dmAppDelegate.m */; };
 		6838102918F9FC170019A61D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6838102718F9FC170019A61D /* Main.storyboard */; };
-		6838102F18F9FC170019A61D /* dmSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6838102E18F9FC170019A61D /* dmSecondViewController.m */; };
 		6838103818F9FC170019A61D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6838103718F9FC170019A61D /* XCTest.framework */; };
 		6838103918F9FC170019A61D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6838101518F9FC170019A61D /* Foundation.framework */; };
 		6838103A18F9FC170019A61D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6838101918F9FC170019A61D /* UIKit.framework */; };
@@ -102,8 +101,6 @@
 		6838102418F9FC170019A61D /* dmAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dmAppDelegate.h; sourceTree = "<group>"; };
 		6838102518F9FC170019A61D /* dmAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = dmAppDelegate.m; sourceTree = "<group>"; };
 		6838102818F9FC170019A61D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		6838102D18F9FC170019A61D /* dmSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dmSecondViewController.h; sourceTree = "<group>"; };
-		6838102E18F9FC170019A61D /* dmSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = dmSecondViewController.m; sourceTree = "<group>"; };
 		6838103618F9FC170019A61D /* VocxodTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VocxodTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6838103718F9FC170019A61D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		6838103F18F9FC170019A61D /* VocxodTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VocxodTests-Info.plist"; sourceTree = "<group>"; };
@@ -391,8 +388,6 @@
 				9BA8BCEE194097DD006FC42B /* Live */,
 				9BA8BCED194097B1006FC42B /* Prematch */,
 				682162A1193FDC1C00EE466F /* Transitions */,
-				6838102D18F9FC170019A61D /* dmSecondViewController.h */,
-				6838102E18F9FC170019A61D /* dmSecondViewController.m */,
 				6838102418F9FC170019A61D /* dmAppDelegate.h */,
 				6838102518F9FC170019A61D /* dmAppDelegate.m */,
 				6882F02D193FAFA60049BE28 /* dmUserSettings.h */,
@@ -404,6 +399,7 @@
 		6838104E18FA00990019A61D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				68C00CDF1945028700D1310B /* Coupon */,
 				682162BE1944DE6E00EE466F /* Bet */,
 				682162BD1944DE6400EE466F /* Outcomes */,
 				682162BC1944DE4F00EE466F /* Coefficient */,
@@ -412,8 +408,6 @@
 				682162B91944DE1900EE466F /* Sport */,
 				682162B81944DE0400EE466F /* ModelController */,
 				6838105718FA9E950019A61D /* Tournaments.xcdatamodeld */,
-				68B8C54F19329CE80005011D /* dmCoupon.h */,
-				68B8C55019329CE80005011D /* dmCoupon.m */,
 				9B2D9F131934B4AF006835F4 /* dmMainSettings.h */,
 				9B2D9F141934B4AF006835F4 /* dmMainSettings.m */,
 			);
@@ -447,6 +441,15 @@
 				688F496B19391D0300A1428E /* dmCouponMultiViewCell.h */,
 				688F496C19391D0300A1428E /* dmCouponMultiViewCell.m */,
 				688F496D19391D0300A1428E /* dmCouponMultiViewCell.xib */,
+			);
+			name = Coupon;
+			sourceTree = "<group>";
+		};
+		68C00CDF1945028700D1310B /* Coupon */ = {
+			isa = PBXGroup;
+			children = (
+				68B8C54F19329CE80005011D /* dmCoupon.h */,
+				68B8C55019329CE80005011D /* dmCoupon.m */,
 			);
 			name = Coupon;
 			sourceTree = "<group>";
@@ -741,7 +744,6 @@
 				6838106318FB3B150019A61D /* dmMainViewController.m in Sources */,
 				6837D1C119280A2D00CE4928 /* dmEventView.m in Sources */,
 				682162A8194114A700EE466F /* dmFavouritesViewController.m in Sources */,
-				6838102F18F9FC170019A61D /* dmSecondViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
