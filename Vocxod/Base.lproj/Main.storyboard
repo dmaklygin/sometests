@@ -187,21 +187,21 @@
         <!--Favourites-->
         <scene sceneID="NOZ-M5-I1a">
             <objects>
-                <viewController storyboardIdentifier="FavouritesViewController" title="Favourites" id="2oN-6O-DhC" userLabel="Favourites" customClass="dmFavouritesViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="lMq-uj-UdG"/>
-                        <viewControllerLayoutGuide type="bottom" id="FZf-1j-3xg"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Zwv-qx-u6v">
+                <viewController title="Favourites" id="2oN-6O-DhC" userLabel="Favourites" customClass="dmFavouritesViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="T3X-6N-r9e">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="Vby-Ln-QWG"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="2oN-6O-DhC" id="Qxm-b6-L6d"/>
+                            <outlet property="delegate" destination="2oN-6O-DhC" id="XSa-f3-2dD"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Favourites" id="lMc-qb-0Be"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BSG-DI-VNX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="653" y="1268"/>
+            <point key="canvasLocation" x="1179" y="1268"/>
         </scene>
         <!--Coupon View-->
         <scene sceneID="rj4-mF-x2E">
@@ -573,6 +573,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7pg-gU-OyN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="653" y="554"/>
+        </scene>
+        <!--Navigation Controller - Favourites-->
+        <scene sceneID="5DC-Ds-zPm">
+            <objects>
+                <navigationController storyboardIdentifier="FavouritesViewController" title="Favourites" automaticallyAdjustsScrollViewInsets="NO" id="5wD-0K-PlD" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="Vby-Ln-QWG"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fQQ-IA-Zha">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2oN-6O-DhC" kind="relationship" relationship="rootViewController" id="8E3-e1-QnB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DB8-kh-eIz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="653" y="1268"/>
         </scene>
     </scenes>
     <resources>

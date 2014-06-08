@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "UIViewController+ECSlidingViewController.h"
 
-@interface dmFavouritesViewController : UIViewController <ECSlidingViewControllerDelegate>
+@interface dmFavouritesViewController : UITableViewController <ECSlidingViewControllerDelegate>
 
 @end

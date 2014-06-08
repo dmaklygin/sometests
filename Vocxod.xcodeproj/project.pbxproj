@@ -14,6 +14,7 @@
 		682162A8194114A700EE466F /* dmFavouritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 682162A7194114A700EE466F /* dmFavouritesViewController.m */; };
 		682162B21943AE6D00EE466F /* dmFirstScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 682162B01943AE6D00EE466F /* dmFirstScreenViewController.m */; };
 		682162B31943AE6D00EE466F /* dmFirstScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 682162B11943AE6D00EE466F /* dmFirstScreenViewController.xib */; };
+		682162B71944DD2B00EE466F /* dmEventsTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 682162B61944DD2B00EE466F /* dmEventsTableTableViewController.m */; };
 		6837D1C119280A2D00CE4928 /* dmEventView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6837D1C019280A2D00CE4928 /* dmEventView.m */; };
 		6837D1C419294DAA00CE4928 /* dmLiveEventsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6837D1C319294DAA00CE4928 /* dmLiveEventsTableViewController.m */; };
 		6838101618F9FC170019A61D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6838101518F9FC170019A61D /* Foundation.framework */; };
@@ -82,6 +83,8 @@
 		682162AF1943AE6D00EE466F /* dmFirstScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmFirstScreenViewController.h; sourceTree = "<group>"; };
 		682162B01943AE6D00EE466F /* dmFirstScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dmFirstScreenViewController.m; sourceTree = "<group>"; };
 		682162B11943AE6D00EE466F /* dmFirstScreenViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = dmFirstScreenViewController.xib; sourceTree = "<group>"; };
+		682162B51944DD2B00EE466F /* dmEventsTableTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmEventsTableTableViewController.h; sourceTree = "<group>"; };
+		682162B61944DD2B00EE466F /* dmEventsTableTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dmEventsTableTableViewController.m; sourceTree = "<group>"; };
 		6837D1BF19280A2D00CE4928 /* dmEventView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmEventView.h; sourceTree = "<group>"; };
 		6837D1C019280A2D00CE4928 /* dmEventView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dmEventView.m; sourceTree = "<group>"; };
 		6837D1C219294DAA00CE4928 /* dmLiveEventsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmLiveEventsTableViewController.h; sourceTree = "<group>"; };
@@ -222,6 +225,80 @@
 			name = FirstScreen;
 			sourceTree = "<group>";
 		};
+		682162B41944DCFD00EE466F /* EventsTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				682162B51944DD2B00EE466F /* dmEventsTableTableViewController.h */,
+				682162B61944DD2B00EE466F /* dmEventsTableTableViewController.m */,
+			);
+			name = EventsTableViewController;
+			sourceTree = "<group>";
+		};
+		682162B81944DE0400EE466F /* ManagedObjectContext */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ManagedObjectContext;
+			sourceTree = "<group>";
+		};
+		682162B91944DE1900EE466F /* Sport */ = {
+			isa = PBXGroup;
+			children = (
+				6838105A18FB247B0019A61D /* dmSport.h */,
+				6838105B18FB247B0019A61D /* dmSport.m */,
+				9BE3493B19212429003D1D72 /* dmSportController.h */,
+				9BE3493C19212429003D1D72 /* dmSportController.m */,
+			);
+			name = Sport;
+			sourceTree = "<group>";
+		};
+		682162BA1944DE2A00EE466F /* Tournament */ = {
+			isa = PBXGroup;
+			children = (
+				6838107218FB45050019A61D /* dmTournament.h */,
+				6838107318FB45050019A61D /* dmTournament.m */,
+				9BE349A619264DC9003D1D72 /* dmTournamentController.h */,
+				9BE349A719264DC9003D1D72 /* dmTournamentController.m */,
+			);
+			name = Tournament;
+			sourceTree = "<group>";
+		};
+		682162BB1944DE3B00EE466F /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				9BE349A319260BF7003D1D72 /* Event.h */,
+				9BE349A419260BF7003D1D72 /* Event.m */,
+			);
+			name = Event;
+			sourceTree = "<group>";
+		};
+		682162BC1944DE4F00EE466F /* Coefficient */ = {
+			isa = PBXGroup;
+			children = (
+				68B8C53A1931F6740005011D /* Coefficient.h */,
+				68B8C53B1931F6740005011D /* Coefficient.m */,
+			);
+			name = Coefficient;
+			sourceTree = "<group>";
+		};
+		682162BD1944DE6400EE466F /* Outcomes */ = {
+			isa = PBXGroup;
+			children = (
+				9B35F3F5192F3B5D004135C8 /* dmOutcomesController.h */,
+				9B35F3F6192F3B5D004135C8 /* dmOutcomesController.m */,
+			);
+			name = Outcomes;
+			sourceTree = "<group>";
+		};
+		682162BE1944DE6E00EE466F /* Bet */ = {
+			isa = PBXGroup;
+			children = (
+				68B8C54C19329A280005011D /* Bet.h */,
+				68B8C54D19329A280005011D /* Bet.m */,
+			);
+			name = Bet;
+			sourceTree = "<group>";
+		};
 		6838100918F9FC160019A61D = {
 			isa = PBXGroup;
 			children = (
@@ -300,6 +377,8 @@
 		6838104D18FA00870019A61D /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				682162B41944DCFD00EE466F /* EventsTableViewController */,
+				682162A91943AA1000EE466F /* FirstScreen */,
 				9BEF7AF21941AE4300545A24 /* Main */,
 				9BEF7AEE1941AD7100545A24 /* Menu */,
 				682162A51941148D00EE466F /* Favourites */,
@@ -320,23 +399,14 @@
 		6838104E18FA00990019A61D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				682162BE1944DE6E00EE466F /* Bet */,
+				682162BD1944DE6400EE466F /* Outcomes */,
+				682162BC1944DE4F00EE466F /* Coefficient */,
+				682162BB1944DE3B00EE466F /* Event */,
+				682162BA1944DE2A00EE466F /* Tournament */,
+				682162B91944DE1900EE466F /* Sport */,
+				682162B81944DE0400EE466F /* ManagedObjectContext */,
 				6838105718FA9E950019A61D /* Tournaments.xcdatamodeld */,
-				68B8C54C19329A280005011D /* Bet.h */,
-				68B8C54D19329A280005011D /* Bet.m */,
-				68B8C53A1931F6740005011D /* Coefficient.h */,
-				68B8C53B1931F6740005011D /* Coefficient.m */,
-				9BE349A319260BF7003D1D72 /* Event.h */,
-				9BE349A419260BF7003D1D72 /* Event.m */,
-				6838105A18FB247B0019A61D /* dmSport.h */,
-				6838105B18FB247B0019A61D /* dmSport.m */,
-				6838107218FB45050019A61D /* dmTournament.h */,
-				6838107318FB45050019A61D /* dmTournament.m */,
-				9BE3493B19212429003D1D72 /* dmSportController.h */,
-				9BE3493C19212429003D1D72 /* dmSportController.m */,
-				9BE349A619264DC9003D1D72 /* dmTournamentController.h */,
-				9BE349A719264DC9003D1D72 /* dmTournamentController.m */,
-				9B35F3F5192F3B5D004135C8 /* dmOutcomesController.h */,
-				9B35F3F6192F3B5D004135C8 /* dmOutcomesController.m */,
 				68B8C54F19329CE80005011D /* dmCoupon.h */,
 				68B8C55019329CE80005011D /* dmCoupon.m */,
 				9B2D9F131934B4AF006835F4 /* dmMainSettings.h */,
@@ -405,7 +475,6 @@
 		9B74BDD518FBF93A00D884C0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				682162A91943AA1000EE466F /* FirstScreen */,
 				6885C69B19367BE1003243DD /* Coupon */,
 				9B35F3E7192DF1B3004135C8 /* Coefficients */,
 				9B74BDD618FBF98100D884C0 /* dmEventTableViewCell.h */,
@@ -635,6 +704,7 @@
 				68B8C55119329CE80005011D /* dmCoupon.m in Sources */,
 				6838102218F9FC170019A61D /* main.m in Sources */,
 				682162B21943AE6D00EE466F /* dmFirstScreenViewController.m in Sources */,
+				682162B71944DD2B00EE466F /* dmEventsTableTableViewController.m in Sources */,
 				6882F02F193FAFA60049BE28 /* dmUserSettings.m in Sources */,
 				9B35F3F1192DFD78004135C8 /* dmCoefficientView.m in Sources */,
 				6885C69F19367C29003243DD /* dmCouponSingleViewCell.m in Sources */,
