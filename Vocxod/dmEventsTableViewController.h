@@ -8,6 +8,6 @@
 
 #import <CoreData/CoreData.h>
 
-@interface dmEventsTableTableViewController : UITableViewController <NSFetchedResultsControllerDelegate>
-
+@interface dmEventsTableViewController : UITableViewController <NSFetchedResultsControllerDelegate>
+@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 @end

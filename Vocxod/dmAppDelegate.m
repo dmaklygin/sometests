@@ -129,29 +129,6 @@
     return _liveTournamentController;
 }
 
-- (dmCoupon *)coupon
-{
-    if (_coupon != nil) {
-        return _coupon;
-    }
-    
-    _coupon = [[dmCoupon alloc] initWithManagedObjectContext:self.managedObjectContext];
-    
-    [_coupon loadBets];
-    
-    return _coupon;
-}
-
-
-
-- (BOOL)checkResponse:(NSHTTPURLResponse *)httpResponse
-{
-    if ((([httpResponse statusCode]/100) == 2) && [[httpResponse MIMEType] isEqual:@"application/json"]){
-        return true;
-    }
-    return false;
-}
-
 - (NSManagedObjectContext *)managedObjectContext {
     
     if (_managedObjectContext != nil) {

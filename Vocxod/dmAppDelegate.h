@@ -22,7 +22,7 @@
 @property (nonatomic, strong) dmOutcomesController *outcomesController;
 @property (nonatomic, strong) dmTournamentController *prematchTournamentController;
 @property (nonatomic, strong) dmTournamentController *liveTournamentController;
-@property (nonatomic, strong) dmCoupon *coupon;
+
 
 @property (nonatomic, strong) dmFirstScreenViewController *firstController;
 

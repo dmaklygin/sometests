@@ -14,7 +14,7 @@
 		682162A8194114A700EE466F /* dmFavouritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 682162A7194114A700EE466F /* dmFavouritesViewController.m */; };
 		682162B21943AE6D00EE466F /* dmFirstScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 682162B01943AE6D00EE466F /* dmFirstScreenViewController.m */; };
 		682162B31943AE6D00EE466F /* dmFirstScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 682162B11943AE6D00EE466F /* dmFirstScreenViewController.xib */; };
-		682162B71944DD2B00EE466F /* dmEventsTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 682162B61944DD2B00EE466F /* dmEventsTableTableViewController.m */; };
+		682162B71944DD2B00EE466F /* dmEventsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 682162B61944DD2B00EE466F /* dmEventsTableViewController.m */; };
 		682162C11944F1A300EE466F /* dmModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 682162C01944F1A300EE466F /* dmModelController.m */; };
 		6837D1C119280A2D00CE4928 /* dmEventView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6837D1C019280A2D00CE4928 /* dmEventView.m */; };
 		6837D1C419294DAA00CE4928 /* dmLiveEventsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6837D1C319294DAA00CE4928 /* dmLiveEventsTableViewController.m */; };
@@ -84,8 +84,8 @@
 		682162AF1943AE6D00EE466F /* dmFirstScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmFirstScreenViewController.h; sourceTree = "<group>"; };
 		682162B01943AE6D00EE466F /* dmFirstScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dmFirstScreenViewController.m; sourceTree = "<group>"; };
 		682162B11943AE6D00EE466F /* dmFirstScreenViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = dmFirstScreenViewController.xib; sourceTree = "<group>"; };
-		682162B51944DD2B00EE466F /* dmEventsTableTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmEventsTableTableViewController.h; sourceTree = "<group>"; };
-		682162B61944DD2B00EE466F /* dmEventsTableTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dmEventsTableTableViewController.m; sourceTree = "<group>"; };
+		682162B51944DD2B00EE466F /* dmEventsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmEventsTableViewController.h; sourceTree = "<group>"; };
+		682162B61944DD2B00EE466F /* dmEventsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dmEventsTableViewController.m; sourceTree = "<group>"; };
 		682162BF1944F1A300EE466F /* dmModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmModelController.h; sourceTree = "<group>"; };
 		682162C01944F1A300EE466F /* dmModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dmModelController.m; sourceTree = "<group>"; };
 		6837D1BF19280A2D00CE4928 /* dmEventView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmEventView.h; sourceTree = "<group>"; };
@@ -231,8 +231,8 @@
 		682162B41944DCFD00EE466F /* EventsController */ = {
 			isa = PBXGroup;
 			children = (
-				682162B51944DD2B00EE466F /* dmEventsTableTableViewController.h */,
-				682162B61944DD2B00EE466F /* dmEventsTableTableViewController.m */,
+				682162B51944DD2B00EE466F /* dmEventsTableViewController.h */,
+				682162B61944DD2B00EE466F /* dmEventsTableViewController.m */,
 			);
 			name = EventsController;
 			sourceTree = "<group>";
@@ -709,7 +709,7 @@
 				68B8C55119329CE80005011D /* dmCoupon.m in Sources */,
 				6838102218F9FC170019A61D /* main.m in Sources */,
 				682162B21943AE6D00EE466F /* dmFirstScreenViewController.m in Sources */,
-				682162B71944DD2B00EE466F /* dmEventsTableTableViewController.m in Sources */,
+				682162B71944DD2B00EE466F /* dmEventsTableViewController.m in Sources */,
 				6882F02F193FAFA60049BE28 /* dmUserSettings.m in Sources */,
 				9B35F3F1192DFD78004135C8 /* dmCoefficientView.m in Sources */,
 				6885C69F19367C29003243DD /* dmCouponSingleViewCell.m in Sources */,

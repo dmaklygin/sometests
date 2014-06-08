@@ -6,11 +6,12 @@
 //  Copyright (c) 2014 DmitryCo. All rights reserved.
 //
 
-#import <CoreData/CoreData.h>
+//#import <CoreData/CoreData.h>
 #import "dmTournament.h"
-#import "Event.h"
+//#import "Event.h"
+#import "dmEventsTableViewController.h"
 
 
-@interface dmLiveEventsTableViewController : UITableViewController <NSFetchedResultsControllerDelegate>
+@interface dmLiveEventsTableViewController : dmEventsTableViewController
 @property (nonatomic,strong) dmTournament *tournament;
 @end
