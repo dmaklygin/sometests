@@ -25,7 +25,7 @@
     return self;
 }
 
-- (void)configureCell:(UITableView *)cell withEvent:(Event *)event
+- (void)configureCell:(UITableViewCell *)cell withEvent:(Event *)event
 {
     dmLineEventsTableViewCell *dmCell = (dmLineEventsTableViewCell *)cell;
 
@@ -36,12 +36,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    Event *event = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    
-    dmLineEventViewController *eventViewController = [[dmLineEventViewController alloc] init];
-    eventViewController.event = event;
-    
-    [self.navigationController pushViewController:eventViewController animated:YES];
+    [self performSegueWithIdentifier:@"LineEventSegue" sender:self];
 }
 
 #pragma mark - Navigation

@@ -91,6 +91,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="События" id="ljx-wE-p6q" userLabel="Прематч События"/>
+                    <connections>
+                        <segue destination="W06-R1-mxG" kind="push" identifier="LineEventSegue" id="DSi-WI-g1p"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nZf-df-aoq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -257,6 +260,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Лайв События" id="jlQ-Jt-wxo" userLabel="Лайв События"/>
+                    <connections>
+                        <segue destination="StE-4S-1HM" kind="push" identifier="LiveEventSegue" id="Mb2-gO-48f"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Qh-wi-Mfz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

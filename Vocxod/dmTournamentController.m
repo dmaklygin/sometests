@@ -35,7 +35,7 @@
         [self.params setObject:self.version forKey:@"line_version"];
     }
     
-    return [dmAppAPIClient send:self.params success:^(NSURLSessionDataTask *task, id responseObject) {
+    return [dmTournamentController send:self.params success:^(NSURLSessionDataTask *task, id responseObject) {
         
         NSArray *rawTournaments = (NSArray *)[responseObject valueForKey:@"tournaments"];
         self.version = (NSNumber *)[responseObject valueForKey:@"line_version"];

@@ -6,15 +6,9 @@
 //  Copyright (c) 2014 DmitryCo. All rights reserved.
 //
 
-#import <CoreData/CoreData.h>
-#import "dmAppDelegate.h"
+#import "dmTournamentsTableViewController.h"
 #import "UIViewController+ECSlidingViewController.h"
 
-@interface dmLineTableViewController : UITableViewController <NSFetchedResultsControllerDelegate, ECSlidingViewControllerDelegate>
-
-@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
-@property (nonatomic, strong) dmAppDelegate * appDelegate;
+@interface dmLineTableViewController : dmTournamentsTableViewController
 - (IBAction)onMenuButtonClick:(id)sender;
-
-- (void)removeExpiredEventsInTournament:(id)sender;
 @end

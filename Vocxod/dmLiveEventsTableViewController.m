@@ -27,7 +27,7 @@
 
 #pragma mark - Table view data source
 
-- (void)configureCell:(UITableView *)cell withEvent:(Event *)event
+- (void)configureCell:(UITableViewCell *)cell withEvent:(Event *)event
 {
     dmLiveEventsTableViewCell *dmCell = (dmLiveEventsTableViewCell *)cell;
     
@@ -35,6 +35,11 @@
     dmCell.labelAway.text = [event valueForKey:@"away"];
     dmCell.labelHome.text = [event valueForKey:@"home"];
     dmCell.labelTime.text = [event getFormatterDate];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self performSegueWithIdentifier:@"LiveEventSegue" sender:self];
 }
 
 #pragma mark - Navigation
@@ -56,7 +61,6 @@
     NSDate *nowDate = [NSDate date];
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"time < %@ AND self.inTournament == %@", nowDate, self.tournament];
     [fetchRequest setPredicate:predicate];
-
 }
 
 @end

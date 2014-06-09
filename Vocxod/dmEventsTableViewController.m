@@ -13,7 +13,7 @@
 
 @interface dmEventsTableViewController ()
 - (void)setPredicate:(NSFetchRequest *)fetchRequest;
-- (void)configureCell:(UITableView *)cell withEvent:(Event *)event;
+- (void)configureCell:(UITableViewCell *)cell withEvent:(Event *)event;
 @end
 
 @implementation dmEventsTableViewController
@@ -67,7 +67,7 @@
     return [sectionInfo numberOfObjects];
 }
 
-- (void)configureCell:(UITableView *)cell withEvent:(Event *)event
+- (void)configureCell:(UITableViewCell *)cell withEvent:(Event *)event
 {
     
 }
