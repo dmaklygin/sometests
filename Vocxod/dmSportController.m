@@ -8,15 +8,11 @@
 
 #import "dmSportController.h"
 
-
 @interface dmSportController () <NSFetchedResultsControllerDelegate>
-
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
-
 @end
 
 @implementation dmSportController
-
 
 - (instancetype)initWithManagedObjectContext:(NSManagedObjectContext *)managedObjectContext {
     self = [super init];

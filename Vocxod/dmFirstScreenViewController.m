@@ -7,7 +7,6 @@
 //
 
 #import "dmFirstScreenViewController.h"
-#import "MBProgressHUD.h"
 
 @interface dmFirstScreenViewController ()
 
@@ -31,20 +30,23 @@
 
     self.view.userInteractionEnabled = NO;
     
-    MBProgressHUD *progressView = [[MBProgressHUD alloc] initWithView:self.view];
-    [self.view addSubview:progressView];
-    progressView.labelText = @"Loading";
-    progressView.opacity = 0.0f;
+    self.progress = [[MBProgressHUD alloc] initWithView:self.view];
+    [self.view addSubview:self.progress];
+    [self setProgressTitle:@"Loading..."];
+    self.progress.opacity = 0.0f;
     
-    [progressView show:YES];
-    
+    [self.progress show:YES];
 }
-
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)setProgressTitle:(NSString *)title
+{
+    self.progress.labelText = title;
 }
 
 @end

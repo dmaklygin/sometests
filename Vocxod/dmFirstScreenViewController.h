@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MBProgressHUD.h"
 
 @interface dmFirstScreenViewController : UIViewController
+@property (nonatomic, strong) MBProgressHUD *progress;
 
+- (void)setProgressTitle:(NSString *)title;
 @end

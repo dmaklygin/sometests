@@ -9,6 +9,8 @@
 #import "dmModelController.h"
 
 #import "dmMainSettings.h"
+#import "dmPrematchTournamentController.h"
+#import "dmLiveTournamentController.h"
 
 
 @interface dmAppDelegate()
@@ -31,7 +33,7 @@
 - (void)initApplication
 {    
     self.sportController = [[dmSportController alloc] initWithManagedObjectContext:self.managedObjectContext];
-
+    [self.firstController setProgressTitle:@"Loading Sports"];
     [self.sportController loadData:^(NSArray *sports, NSError *error) {
         
         if (error != nil) {
@@ -40,6 +42,7 @@
         }
         
         self.outcomesController = [[dmOutcomesController alloc] initWithManagedObjectContext:self.managedObjectContext];
+        [self.firstController setProgressTitle:@"Loading Outcomes"];
         [self.outcomesController loadRemoteOutcomes:^(NSDictionary *data, NSError *error) {
 
             if (error != nil) {
@@ -47,13 +50,32 @@
                 return;
             }
             
+            [self.firstController setProgressTitle:@"Loading Settings"];
             [[dmMainSettings instance] loadSettings:^(NSDictionary *settings, NSError *error) {
                 if (error != nil) {
                     [self handleError:error];
                     return;
                 }
                 
-                [self initSuccess];
+                // Loading Prematch Tournaments
+                [self.firstController setProgressTitle:@"Loading Tournaments"];
+                [[dmPrematchTournamentController instance] loadRemoteTournaments:^(NSArray *tournaments, NSError *error) {
+                    if (error != nil) {
+                        [self handleError:error];
+                        return;
+                    }
+                    
+                    // Loading Live Tournaments
+                    [[dmLiveTournamentController instance] loadRemoteTournaments:^(NSArray *tournaments, NSError *error) {
+                        if (error != nil) {
+                            [self handleError:error];
+                            return;
+                        }
+                        
+                        [self initSuccess];
+                        
+                    } inManagedObjectContext:self.managedObjectContext];
+                } inManagedObjectContext:self.managedObjectContext];
             }];
         }];
     }];
@@ -120,6 +142,5 @@
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:[error localizedDescription] delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
     [alertView show];
 }
-
 
 @end
