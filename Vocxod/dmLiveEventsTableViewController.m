@@ -9,8 +9,6 @@
 #import "dmLiveEventsTableViewController.h"
 #import "dmLiveEventViewController.h"
 
-#import "dmLiveEventsTableViewCell.h"
-
 @interface dmLiveEventsTableViewController ()
 @end
 
@@ -25,22 +23,12 @@
     return self;
 }
 
-#pragma mark - Table view data source
-
-- (void)configureCell:(UITableViewCell *)cell withEvent:(Event *)event
-{
-    dmLiveEventsTableViewCell *dmCell = (dmLiveEventsTableViewCell *)cell;
-    
-    // Configure the cell...
-    dmCell.labelAway.text = [event valueForKey:@"away"];
-    dmCell.labelHome.text = [event valueForKey:@"home"];
-    dmCell.labelTime.text = [event getFormatterDate];
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    [self performSegueWithIdentifier:@"LiveEventSegue" sender:self];
-}
+//#pragma mark - Table view data source
+//
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    [self performSegueWithIdentifier:@"LiveEventSegue" sender:self];
+//}
 
 #pragma mark - Navigation
 

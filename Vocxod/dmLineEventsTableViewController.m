@@ -25,19 +25,10 @@
     return self;
 }
 
-- (void)configureCell:(UITableViewCell *)cell withEvent:(Event *)event
-{
-    dmLineEventsTableViewCell *dmCell = (dmLineEventsTableViewCell *)cell;
-
-    dmCell.labelAway.text = [event valueForKey:@"away"];
-    dmCell.labelHome.text = [event valueForKey:@"home"];
-    dmCell.labelDate.text = [event getFormatterDate];
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    [self performSegueWithIdentifier:@"LineEventSegue" sender:self];
-}
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    [self performSegueWithIdentifier:@"LineEventSegue" sender:self];
+//}
 
 #pragma mark - Navigation
 

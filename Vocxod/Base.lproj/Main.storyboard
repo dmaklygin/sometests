@@ -141,7 +141,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8hO-lN-pkQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2271" y="-138"/>
+            <point key="canvasLocation" x="2367" y="554"/>
         </scene>
         <!--Favourites-->
         <scene sceneID="NOZ-M5-I1a">
@@ -157,6 +157,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Favourites" id="lMc-qb-0Be"/>
+                    <connections>
+                        <segue destination="StE-4S-1HM" kind="push" identifier="LiveEventSegue" id="AYo-jL-Suj"/>
+                        <segue destination="W06-R1-mxG" kind="push" identifier="LineEventSegue" id="tga-Vc-VZf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BSG-DI-VNX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -354,7 +358,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V39-TK-SIE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2271" y="554"/>
+            <point key="canvasLocation" x="2367" y="1268"/>
         </scene>
         <!--Dm Menu View Controller-->
         <scene sceneID="UGy-Lz-dHG">
@@ -523,4 +527,8 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="tga-Vc-VZf"/>
+        <segue reference="AYo-jL-Suj"/>
+    </inferredMetricsTieBreakers>
 </document>

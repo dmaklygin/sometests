@@ -22,4 +22,11 @@
     // Configure the view for the selected state
 }
 
+- (void)configureCell:(Event *)event
+{
+    self.labelAway.text = [event valueForKey:@"away"];
+    self.labelHome.text = [event valueForKey:@"home"];
+    self.labelDate.text = [event getFormatterDate];
+}
+
 @end

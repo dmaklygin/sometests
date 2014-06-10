@@ -11,6 +11,9 @@
 
 #import "Event.h"
 
+#import "dmLiveEventsTableViewCell.h"
+#import "dmLineEventsTableViewCell.h"
+
 @interface dmEventsTableViewController ()
 - (void)setPredicate:(NSFetchRequest *)fetchRequest;
 - (void)configureCell:(UITableViewCell *)cell withEvent:(Event *)event;
@@ -67,25 +70,27 @@
     return [sectionInfo numberOfObjects];
 }
 
-- (void)configureCell:(UITableViewCell *)cell withEvent:(Event *)event
-{
-    
-}
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     Event *event = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
-    UITableViewCell *cell;
     if ([event isLive]) {
-        cell = [tableView dequeueReusableCellWithIdentifier:@"LiveEventsCell" forIndexPath:indexPath];
+        dmLiveEventsTableViewCell *cell = (dmLiveEventsTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"LiveEventsCell" forIndexPath:indexPath];
+        [cell configureCell:event];
+        return cell;
     } else {
-        cell = [tableView dequeueReusableCellWithIdentifier:@"LineEventsCell" forIndexPath:indexPath];
+        dmLineEventsTableViewCell *cell = (dmLineEventsTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"LineEventsCell" forIndexPath:indexPath];
+        [cell configureCell:event];
+        return cell;
     }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    Event *event = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    NSString *segueID = [event isLive] ? @"LiveEventSegue" : @"LineEventSegue";
     
-    [self configureCell:cell withEvent:event];
-    
-    return cell;
+    [self performSegueWithIdentifier:segueID sender:self];
 }
 
 
