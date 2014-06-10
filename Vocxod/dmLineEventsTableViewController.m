@@ -7,42 +7,8 @@
 //
 
 #import "dmLineEventsTableViewController.h"
-#import "dmLineEventViewController.h"
-
-#import "dmLineEventsTableViewCell.h"
-
-@interface dmLineEventsTableViewController ()
-@end
 
 @implementation dmLineEventsTableViewController
-
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    [self performSegueWithIdentifier:@"LineEventSegue" sender:self];
-//}
-
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-    Event *event = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    
-    dmLineEventViewController *eventViewController = (dmLineEventViewController *)[segue destinationViewController];
-    eventViewController.event = event;
-}
 
 - (void)setPredicate:(NSFetchRequest *)fetchRequest
 {

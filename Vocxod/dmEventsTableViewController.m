@@ -14,6 +14,9 @@
 #import "dmLiveEventsTableViewCell.h"
 #import "dmLineEventsTableViewCell.h"
 
+#import "dmLineEventViewController.h"
+#import "dmLiveEventViewController.h"
+
 @interface dmEventsTableViewController ()
 - (void)setPredicate:(NSFetchRequest *)fetchRequest;
 - (void)configureCell:(UITableViewCell *)cell withEvent:(Event *)event;
@@ -93,6 +96,24 @@
     [self performSegueWithIdentifier:segueID sender:self];
 }
 
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    Event *event = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    
+    if ([event isLive]) {
+        dmLiveEventViewController *eventViewController = (dmLiveEventViewController *)[segue destinationViewController];
+        eventViewController.event = event;
+    } else {
+        dmLineEventViewController *eventViewController = (dmLineEventViewController *)[segue destinationViewController];
+        eventViewController.event = event;
+    }
+}
 
 - (NSFetchedResultsController *)fetchedResultsController {
     
