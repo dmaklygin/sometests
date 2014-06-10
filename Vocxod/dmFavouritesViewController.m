@@ -21,4 +21,7 @@
     [fetchRequest setPredicate:predicate];
 }
 
+- (IBAction)onMenuButtonClick:(id)sender {
+    [self.slidingViewController anchorTopViewToRightAnimated:YES];
+}
 @end

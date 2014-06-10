@@ -10,7 +10,6 @@
 #import "dmSportController.h"
 #import "dmOutcomesController.h"
 #import "dmTournamentController.h"
-#import "dmCoupon.h"
 
 #import "dmFirstScreenViewController.h"
 
@@ -18,14 +17,10 @@
 
 @property (strong, nonatomic) UIWindow *window;
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
+
 @property (nonatomic, strong) dmSportController *sportController;
 @property (nonatomic, strong) dmOutcomesController *outcomesController;
-@property (nonatomic, strong) dmTournamentController *prematchTournamentController;
-@property (nonatomic, strong) dmTournamentController *liveTournamentController;
-
 
 @property (nonatomic, strong) dmFirstScreenViewController *firstController;
-
-- (void)showLoadingScreen;
 
 @end

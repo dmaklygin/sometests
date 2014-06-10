@@ -98,7 +98,6 @@
     UIViewController *mainUIViewController = (UIViewController *)self.window.rootViewController;
     
     [mainUIViewController.view addSubview:self.firstController.view];
-
 }
 
 - (void)hideLoadingScreen
@@ -106,39 +105,15 @@
     [self.firstController.view removeFromSuperview];
 }
 
-- (dmTournamentController *)prematchTournamentController
+- (NSManagedObjectContext *)managedObjectContext
 {
-    if (_prematchTournamentController != nil) {
-        return _prematchTournamentController;
-    }
-    
-    _prematchTournamentController = [[dmTournamentController alloc] initWithParams:@{@"command": @"line"}];
-    
-    return _prematchTournamentController;
-}
-
-- (dmTournamentController *)liveTournamentController
-{
-    if (_liveTournamentController != nil) {
-        return _liveTournamentController;
-    }
-    
-    _liveTournamentController = [[dmTournamentController alloc] initWithParams:@{@"command": @"live"}];
-    
-    return _liveTournamentController;
-}
-
-- (NSManagedObjectContext *)managedObjectContext {
-    
-    if (_managedObjectContext != nil) {
+    if (_managedObjectContext) {
         return _managedObjectContext;
     }
     
     _managedObjectContext = [dmModelController managedObjectContext];
-    
     return _managedObjectContext;
 }
-
 
 -(void)handleError:(NSError *)error
 {

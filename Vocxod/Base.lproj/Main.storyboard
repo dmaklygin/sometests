@@ -156,7 +156,13 @@
                             <outlet property="delegate" destination="2oN-6O-DhC" id="XSa-f3-2dD"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Favourites" id="lMc-qb-0Be"/>
+                    <navigationItem key="navigationItem" title="Favourites" id="lMc-qb-0Be">
+                        <barButtonItem key="leftBarButtonItem" image="Menu" style="plain" id="KGO-Ym-uAD">
+                            <connections>
+                                <action selector="onMenuButtonClick:" destination="2oN-6O-DhC" id="9Z0-TL-dpv"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="StE-4S-1HM" kind="push" identifier="LiveEventSegue" id="AYo-jL-Suj"/>
                         <segue destination="W06-R1-mxG" kind="push" identifier="LineEventSegue" id="tga-Vc-VZf"/>

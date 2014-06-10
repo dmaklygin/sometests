@@ -9,6 +9,7 @@
 #import "dmLiveTableViewController.h"
 #import "dmLineEventsTableViewController.h"
 #import "dmTournament.h"
+#import "dmLiveTournamentController.h"
 
 @interface dmLiveTableViewController ()
 @end
@@ -51,7 +52,7 @@
 
 - (dmTournamentController *)createTournamentController
 {
-    return [[dmTournamentController alloc] initWithParams:@{@"command": @"live"}];
+    return [dmLiveTournamentController instance];
 }
 
 

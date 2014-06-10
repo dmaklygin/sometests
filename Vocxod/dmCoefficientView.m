@@ -7,7 +7,7 @@
 //
 
 #import "dmCoefficientView.h"
-#import "dmAppDelegate.h"
+#import "dmCoupon.h"
 
 
 @interface dmCoefficientView ()

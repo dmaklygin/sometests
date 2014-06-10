@@ -51,6 +51,8 @@
 		68C00CE919450FD500D1310B /* dmLineEventsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C00CE719450FD500D1310B /* dmLineEventsTableViewCell.m */; };
 		68C00CEA19450FD500D1310B /* dmLineEventsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68C00CE819450FD500D1310B /* dmLineEventsTableViewCell.xib */; };
 		68C00CEE194634C800D1310B /* dmTournamentsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C00CED194634C800D1310B /* dmTournamentsTableViewController.m */; };
+		68C00CF21947A37B00D1310B /* dmPrematchTournamentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C00CF11947A37B00D1310B /* dmPrematchTournamentController.m */; };
+		68C00CF51947A3E000D1310B /* dmLiveTournamentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C00CF41947A3E000D1310B /* dmLiveTournamentController.m */; };
 		68EE4363193A065400AD22A8 /* dmCouponItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68EE4361193A065400AD22A8 /* dmCouponItemViewController.m */; };
 		68EE4364193A065400AD22A8 /* dmCouponItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68EE4362193A065400AD22A8 /* dmCouponItemViewController.xib */; };
 		9B2D9F151934B4AF006835F4 /* dmMainSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B2D9F141934B4AF006835F4 /* dmMainSettings.m */; };
@@ -154,6 +156,10 @@
 		68C00CE819450FD500D1310B /* dmLineEventsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = dmLineEventsTableViewCell.xib; sourceTree = "<group>"; };
 		68C00CEC194634C800D1310B /* dmTournamentsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmTournamentsTableViewController.h; sourceTree = "<group>"; };
 		68C00CED194634C800D1310B /* dmTournamentsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dmTournamentsTableViewController.m; sourceTree = "<group>"; };
+		68C00CF01947A37B00D1310B /* dmPrematchTournamentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmPrematchTournamentController.h; sourceTree = "<group>"; };
+		68C00CF11947A37B00D1310B /* dmPrematchTournamentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dmPrematchTournamentController.m; sourceTree = "<group>"; };
+		68C00CF31947A3E000D1310B /* dmLiveTournamentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmLiveTournamentController.h; sourceTree = "<group>"; };
+		68C00CF41947A3E000D1310B /* dmLiveTournamentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dmLiveTournamentController.m; sourceTree = "<group>"; };
 		68EE4360193A065400AD22A8 /* dmCouponItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmCouponItemViewController.h; sourceTree = "<group>"; };
 		68EE4361193A065400AD22A8 /* dmCouponItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dmCouponItemViewController.m; sourceTree = "<group>"; };
 		68EE4362193A065400AD22A8 /* dmCouponItemViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = dmCouponItemViewController.xib; sourceTree = "<group>"; };
@@ -274,6 +280,10 @@
 				6838107318FB45050019A61D /* dmTournament.m */,
 				9BE349A619264DC9003D1D72 /* dmTournamentController.h */,
 				9BE349A719264DC9003D1D72 /* dmTournamentController.m */,
+				68C00CF01947A37B00D1310B /* dmPrematchTournamentController.h */,
+				68C00CF11947A37B00D1310B /* dmPrematchTournamentController.m */,
+				68C00CF31947A3E000D1310B /* dmLiveTournamentController.h */,
+				68C00CF41947A3E000D1310B /* dmLiveTournamentController.m */,
 			);
 			name = Tournament;
 			sourceTree = "<group>";
@@ -755,6 +765,7 @@
 			files = (
 				9BEF7AF11941AD9300545A24 /* dmSlidingViewController.m in Sources */,
 				9B2D9F151934B4AF006835F4 /* dmMainSettings.m in Sources */,
+				68C00CF21947A37B00D1310B /* dmPrematchTournamentController.m in Sources */,
 				9BE3493D19212429003D1D72 /* dmSportController.m in Sources */,
 				68B8C55119329CE80005011D /* dmCoupon.m in Sources */,
 				6838102218F9FC170019A61D /* main.m in Sources */,
@@ -770,6 +781,7 @@
 				68B8C54E19329A280005011D /* Bet.m in Sources */,
 				688F496E19391D0300A1428E /* dmCouponMultiViewCell.m in Sources */,
 				9B35F3F4192E2A31004135C8 /* dmMainCoefficientsView.m in Sources */,
+				68C00CF51947A3E000D1310B /* dmLiveTournamentController.m in Sources */,
 				6837D1C419294DAA00CE4928 /* dmLiveEventsTableViewController.m in Sources */,
 				9BE349A519260BF7003D1D72 /* Event.m in Sources */,
 				6838107018FB41E00019A61D /* dmLineTableViewController.m in Sources */,

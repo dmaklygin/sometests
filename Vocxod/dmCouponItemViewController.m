@@ -9,6 +9,7 @@
 #import "dmCouponItemViewController.h"
 #import "dmAppDelegate.h"
 
+#import "dmCoupon.h"
 #import "dmCouponMultiViewCell.h"
 #import "dmCouponSingleViewCell.h"
 

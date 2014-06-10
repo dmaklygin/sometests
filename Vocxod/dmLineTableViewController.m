@@ -10,6 +10,7 @@
 #import "dmLineEventsTableViewController.h"
 
 #import "dmTournament.h"
+#import "dmPrematchTournamentController.h"
 
 @interface dmLineTableViewController ()
 @end
@@ -55,7 +56,7 @@
 
 - (dmTournamentController *)createTournamentController
 {
-    return [[dmTournamentController alloc] initWithParams:@{@"command": @"line"}];
+    return [dmPrematchTournamentController instance];
 }
 
 @end

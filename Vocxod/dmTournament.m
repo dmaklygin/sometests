@@ -58,11 +58,6 @@
         abort();
     }
     
-//    
-//    for (dmTournament *tourn in tournamentsMatchingNames) {
-//        [tourn setIn]
-//    }
-    
     return tournaments;
 }
 

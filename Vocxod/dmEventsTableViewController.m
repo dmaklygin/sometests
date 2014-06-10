@@ -19,19 +19,9 @@
 
 @interface dmEventsTableViewController ()
 - (void)setPredicate:(NSFetchRequest *)fetchRequest;
-- (void)configureCell:(UITableViewCell *)cell withEvent:(Event *)event;
 @end
 
 @implementation dmEventsTableViewController
-
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
@@ -56,7 +46,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 #pragma mark - Table view data source
 
