@@ -55,7 +55,15 @@
     
     [newSport setValue:[attributes valueForKey:@"id"] forKey:@"id"];
     [newSport setValue:[attributes valueForKey:@"group"] forKey:@"group"];
-    [newSport setValue:[attributes valueForKey:@"name"] forKey:@"name"];
+    @try {
+        [newSport setValue:[attributes valueForKey:@"name"] forKey:@"name"];
+    }
+    @catch (NSException *exception) {
+        
+    }
+    @finally {
+        [newSport setValue:@"noname" forKey:@"name"];
+    }
     [newSport setValue:[attributes valueForKey:@"slug"] forKey:@"slug"];
     [newSport setValue:[attributes valueForKey:@"rating"] forKey:@"rating"];
     
