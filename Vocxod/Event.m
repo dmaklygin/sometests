@@ -171,7 +171,19 @@
 -(NSString *)getFormatterDate
 {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"dd-MM-yyyy HH:mm"];
+    
+    NSDate *nowDate = [[NSDate alloc] init];
+    
+    NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSDateComponents *components = [gregorianCalendar components:NSDayCalendarUnit
+                                                        fromDate:nowDate
+                                                          toDate:self.time
+                                                         options:0];
+    if ([components day] > 0) {
+        [formatter setDateFormat:@"dd.MM"];
+    } else {
+        [formatter setDateFormat:@"HH:mm"];
+    }
     
     return [formatter stringFromDate:self.time];
 }
