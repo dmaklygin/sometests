@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "ECSlidingViewController.h"
+#import <ViewPagerController.h>
+#import "dmSportController.h"
 
-@interface dmMainViewController : UIViewController <ECSlidingViewControllerDelegate>
+@interface dmMainViewController : ViewPagerController <ViewPagerDataSource,ViewPagerDelegate,ECSlidingViewControllerDelegate>
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *menuButton;
 - (IBAction)unwindToMenu:(id)sender;
 

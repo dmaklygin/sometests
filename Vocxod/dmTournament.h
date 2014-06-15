@@ -18,6 +18,7 @@
 @property (nonatomic, assign) NSUInteger sport_id;
 @property (nonatomic, assign) NSUInteger rating;
 @property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *type;
 @property (nonatomic, retain) dmSport *inSport;
 @property (nonatomic, retain) NSSet *events;
 

@@ -9,10 +9,24 @@
 #import "dmSportController.h"
 
 @interface dmSportController () <NSFetchedResultsControllerDelegate>
-@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
+
 @end
 
 @implementation dmSportController
+
++ (instancetype)instance
+{
+    static dmSportController *_controller = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _controller = [[dmSportController alloc] initWithManagedObjectContext:[dmModelController managedObjectContext]];
+        
+        [_controller loadData:^(NSArray *sports, NSError *error) {}];
+    });
+    
+    return _controller;
+}
+
 
 - (instancetype)initWithManagedObjectContext:(NSManagedObjectContext *)managedObjectContext {
     self = [super init];
@@ -33,12 +47,6 @@
     }
     
     NSArray *fetchedObjects = self.fetchedResultsController.fetchedObjects;
-//    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"id == %@", @2];
-//    NSArray *filteredObjects = [fetchedObjects filteredArrayUsingPredicate:predicate];
-//    NSLog(@"filtered objects = %@, %lu", filteredObjects, (unsigned long)[filteredObjects count]);
-//    for (dmSport *sport in fetchedObjects) {
-//        NSLog(@"sport = %@", [sport valueForKey:@"id"]);
-//    }
     
     if (![fetchedObjects count]) {
         [self loadRemoteData: ^(NSArray *sports, NSError *error) {

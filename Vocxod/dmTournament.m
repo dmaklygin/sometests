@@ -11,7 +11,7 @@
 #import "dmAppDelegate.h"
 @implementation dmTournament
 
-@dynamic id, sport_id, name, rating, inSport, events;
+@dynamic id, sport_id, name, type,rating, inSport, events;
 
 
 + (NSArray *)insertTournaments:(NSArray *)data inManagedObjectContext:(NSManagedObjectContext *)managedObjectContext {

@@ -7,11 +7,14 @@
 //
 #import <CoreData/CoreData.h>
 #import "dmSport.h"
+#import "dmModelController.h"
 
 @interface dmSportController : NSObject <NSFetchedResultsControllerDelegate>
 
+@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 
++ (instancetype)instance;
 - (instancetype)initWithManagedObjectContext:(NSManagedObjectContext *)managedObjectContext;
 
 -(void)loadData:(void (^)(NSArray *sports, NSError *error))block;

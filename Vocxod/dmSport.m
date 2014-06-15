@@ -36,7 +36,9 @@
         NSMutableArray *sports = [NSMutableArray arrayWithCapacity:[data count]];
         for (NSDictionary *attributes in data) {
             dmSport *sport = [dmSport insertNewSport:attributes managedObjectContext:managedObjectContext];
-            [sports addObject: sport];
+            if (sport) {
+                [sports addObject: sport];
+            }
         }
         if (block) {
             block([NSArray arrayWithArray:sports], nil);
@@ -46,7 +48,6 @@
             block([NSArray array], error);
         }
     }];
-    
 }
 
 + (dmSport *) insertNewSport:(NSDictionary *)attributes managedObjectContext:(NSManagedObjectContext *)managedObjectContext {
@@ -59,11 +60,10 @@
         [newSport setValue:[attributes valueForKey:@"name"] forKey:@"name"];
     }
     @catch (NSException *exception) {
-        
+        [managedObjectContext deleteObject:newSport];
+        return nil;
     }
-    @finally {
-        [newSport setValue:@"noname" forKey:@"name"];
-    }
+
     [newSport setValue:[attributes valueForKey:@"slug"] forKey:@"slug"];
     [newSport setValue:[attributes valueForKey:@"rating"] forKey:@"rating"];
     

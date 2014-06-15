@@ -53,6 +53,7 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="rating" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="sport_id" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="events" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Event" inverseName="inTournament" inverseEntity="Event" syncable="YES"/>
         <relationship name="inSport" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Sport" inverseName="forTournaments" inverseEntity="Sport" syncable="YES"/>
     </entity>
@@ -62,6 +63,6 @@
         <element name="Event" positionX="-1307" positionY="-225" width="128" height="180"/>
         <element name="Sport" positionX="-524" positionY="-109" width="128" height="133"/>
         <element name="Timeline" positionX="-1098" positionY="-153" width="128" height="180"/>
-        <element name="Tournament" positionX="-992" positionY="-304" width="128" height="135"/>
+        <element name="Tournament" positionX="-992" positionY="-304" width="128" height="150"/>
     </elements>
 </model>

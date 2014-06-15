@@ -19,6 +19,8 @@
 
 @interface dmEventsTableViewController ()
 - (void)setPredicate:(NSFetchRequest *)fetchRequest;
+- (void)setSortDescriptors:(NSFetchRequest *)fetchRequest;
+- (void)setLimit:(NSFetchRequest *)fetchRequest;
 @end
 
 @implementation dmEventsTableViewController
@@ -116,11 +118,11 @@
     NSEntityDescription *eventsEntityDescription = [NSEntityDescription entityForName:@"Event" inManagedObjectContext:managedObjectContext];
     [fetchRequest setEntity:eventsEntityDescription];
     
-    // create Sort
-    NSSortDescriptor *timeSortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"time" ascending:YES];
-    [fetchRequest setSortDescriptors:@[timeSortDescriptor]];
+    [self setSortDescriptors:fetchRequest];
     
     [self setPredicate:fetchRequest];
+    
+    [self setLimit:fetchRequest];
     
     _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:managedObjectContext sectionNameKeyPath:nil cacheName:nil];
     
@@ -130,6 +132,17 @@
 }
 
 - (void)setPredicate:(NSFetchRequest *)fetchRequest
+{
+    
+}
+
+- (void)setSortDescriptors:(NSFetchRequest *)fetchRequest
+{
+    NSSortDescriptor *timeSortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"time" ascending:YES];
+    [fetchRequest setSortDescriptors:@[timeSortDescriptor]];
+}
+
+- (void)setLimit:(NSFetchRequest *)fetchRequest
 {
     
 }

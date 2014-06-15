@@ -7,10 +7,11 @@
 //
 #import "UIViewController+ECSlidingViewController.h"
 #import "dmMainViewController.h"
+#import "dmMainEventsTableViewController.h"
 
 
 @interface dmMainViewController ()
-
+@property (nonatomic, strong) NSFetchedResultsController *sportsResultsController;
 @end
 
 @implementation dmMainViewController
@@ -19,12 +20,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    self.dataSource = self;
+    self.delegate = self;
+    
     
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:animated];
+    
     [self.navigationController.view addGestureRecognizer:self.slidingViewController.panGesture];
 }
 
@@ -50,4 +56,60 @@
 - (IBAction)unwindToMenu:(id)sender {
     [self.slidingViewController anchorTopViewToRightAnimated:YES];
 }
+
+#pragma mark - ViewPagerDataSource
+- (NSUInteger)numberOfTabsForViewPager:(ViewPagerController *)viewPager {
+    int count = [self.sportsResultsController.fetchedObjects count];
+    if (!count) {
+        count = 1;
+    }
+    return count;
+}
+
+
+#pragma mark - ViewPagerDataSource
+- (UIView *)viewPager:(ViewPagerController *)viewPager viewForTabAtIndex:(NSUInteger)index {
+    
+    UILabel *label = [UILabel new];
+    
+    if ([self.sportsResultsController.fetchedObjects count]) {
+        dmSport *sport = [self.sportsResultsController.fetchedObjects objectAtIndex:index];
+        label.text = [NSString stringWithFormat:@"%@", sport.name];
+    } else {
+        label.text = @"noname";
+    }
+    
+    [label sizeToFit];
+    
+    return label;
+}
+
+#pragma mark - ViewPagerDataSource
+- (UIViewController *)viewPager:(ViewPagerController *)viewPager contentViewControllerForTabAtIndex:(NSUInteger)index {
+    
+//    ContentViewController *cvc = [self.storyboard instantiateViewControllerWithIdentifier:@"contentViewController"];
+//    
+//    return cvc;
+    dmSport *sport = [self.sportsResultsController.fetchedObjects objectAtIndex:index];
+    
+//    dmMainEventsTableViewController *eventsTableViewController = [[dmMainEventsTableViewController alloc] initWithSport:sport];
+    dmMainEventsTableViewController *eventsTableViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"mainEventsTableViewController"];
+    eventsTableViewController.sport = sport;
+    
+    return eventsTableViewController;
+}
+
+
+- (NSFetchedResultsController *)sportsResultsController
+{
+    if (_sportsResultsController) {
+        return _sportsResultsController;
+    }
+    
+    _sportsResultsController = [[dmSportController instance] fetchedResultsController];
+
+    return _sportsResultsController;
+}
+
+
 @end
