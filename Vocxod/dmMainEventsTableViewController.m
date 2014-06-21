@@ -34,7 +34,12 @@
 
 - (void)setPredicate:(NSFetchRequest *)fetchRequest
 {
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"self.inTournament.inSport == %@", self.sport];
+    NSPredicate *predicate;
+    if (self.sport) {
+        predicate = [NSPredicate predicateWithFormat:@"self.inTournament.inSport == %@", self.sport];
+    } else {
+        predicate = [NSPredicate predicateWithFormat:@"1 != 1"];
+    }
     [fetchRequest setPredicate:predicate];
 }
 

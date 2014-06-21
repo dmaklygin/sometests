@@ -23,8 +23,6 @@
 
     self.dataSource = self;
     self.delegate = self;
-    
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -59,7 +57,7 @@
 
 #pragma mark - ViewPagerDataSource
 - (NSUInteger)numberOfTabsForViewPager:(ViewPagerController *)viewPager {
-    int count = [self.sportsResultsController.fetchedObjects count];
+    NSUInteger count = [self.sportsResultsController.fetchedObjects count];
     if (!count) {
         count = 1;
     }
@@ -90,11 +88,13 @@
 //    ContentViewController *cvc = [self.storyboard instantiateViewControllerWithIdentifier:@"contentViewController"];
 //    
 //    return cvc;
-    dmSport *sport = [self.sportsResultsController.fetchedObjects objectAtIndex:index];
-    
-//    dmMainEventsTableViewController *eventsTableViewController = [[dmMainEventsTableViewController alloc] initWithSport:sport];
     dmMainEventsTableViewController *eventsTableViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"mainEventsTableViewController"];
-    eventsTableViewController.sport = sport;
+    
+    if ([self.sportsResultsController.fetchedObjects count]) {
+        dmSport *sport = [self.sportsResultsController.fetchedObjects objectAtIndex:index];
+        eventsTableViewController.sport = sport;
+    }
+    
     
     return eventsTableViewController;
 }

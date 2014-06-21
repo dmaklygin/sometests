@@ -26,6 +26,8 @@
     
     [self initApplication];
     
+    
+    
     return YES;
 }
 
@@ -119,6 +121,7 @@
     UIViewController *mainUIViewController = (UIViewController *)self.window.rootViewController;
     
     [mainUIViewController.view addSubview:self.firstController.view];
+    
 }
 
 - (void)hideLoadingScreen
