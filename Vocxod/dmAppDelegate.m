@@ -26,11 +26,8 @@
     
     [self initApplication];
     
-    
-    
     return YES;
 }
-
 
 - (void)initApplication
 {    
@@ -60,7 +57,7 @@
                 }
                 
                 // Loading Prematch Tournaments
-                [self.firstController setProgressTitle:@"Loading Tournaments"];
+                [self.firstController setProgressTitle:@"Loading Prematch"];
                 [[dmPrematchTournamentController instance] loadRemoteTournaments:^(NSArray *tournaments, NSError *error) {
                     if (error != nil) {
                         [self handleError:error];
@@ -68,6 +65,7 @@
                     }
                     
                     // Loading Live Tournaments
+                    [self.firstController setProgressTitle:@"Loading Live"];
                     [[dmLiveTournamentController instance] loadRemoteTournaments:^(NSArray *tournaments, NSError *error) {
                         if (error != nil) {
                             [self handleError:error];

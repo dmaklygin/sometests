@@ -14,11 +14,14 @@
 
 + (instancetype)standartSettings;
 
-- (int)getId;
+- (NSUInteger)getId;
 - (void)setId:(int)userId;
 
 - (NSString *)getLogin;
 - (void)setLogin:(NSString *)login;
+
+- (NSString *)getToken;
+- (void)setToken:(NSString *)token;
 
 - (void)synchronize;
 

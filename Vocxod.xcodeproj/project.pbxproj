@@ -46,6 +46,7 @@
 		68B8C545193215E70005011D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 68B8C547193215E70005011D /* Localizable.strings */; };
 		68B8C54E19329A280005011D /* Bet.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B8C54D19329A280005011D /* Bet.m */; };
 		68B8C55119329CE80005011D /* dmCoupon.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B8C55019329CE80005011D /* dmCoupon.m */; };
+		68B9BC1F1958B2C90066A656 /* Timeline.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B9BC1E1958B2C90066A656 /* Timeline.m */; };
 		68C00CE419450FB100D1310B /* dmLiveEventsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C00CE219450FB100D1310B /* dmLiveEventsTableViewCell.m */; };
 		68C00CE519450FB100D1310B /* dmLiveEventsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68C00CE319450FB100D1310B /* dmLiveEventsTableViewCell.xib */; };
 		68C00CE919450FD500D1310B /* dmLineEventsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C00CE719450FD500D1310B /* dmLineEventsTableViewCell.m */; };
@@ -150,6 +151,8 @@
 		68B8C54D19329A280005011D /* Bet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bet.m; sourceTree = "<group>"; };
 		68B8C54F19329CE80005011D /* dmCoupon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmCoupon.h; sourceTree = "<group>"; };
 		68B8C55019329CE80005011D /* dmCoupon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dmCoupon.m; sourceTree = "<group>"; };
+		68B9BC1D1958B2C90066A656 /* Timeline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timeline.h; sourceTree = "<group>"; };
+		68B9BC1E1958B2C90066A656 /* Timeline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Timeline.m; sourceTree = "<group>"; };
 		68C00CE119450FB100D1310B /* dmLiveEventsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmLiveEventsTableViewCell.h; sourceTree = "<group>"; };
 		68C00CE219450FB100D1310B /* dmLiveEventsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dmLiveEventsTableViewCell.m; sourceTree = "<group>"; };
 		68C00CE319450FB100D1310B /* dmLiveEventsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = dmLiveEventsTableViewCell.xib; sourceTree = "<group>"; };
@@ -421,8 +424,6 @@
 				682162A1193FDC1C00EE466F /* Transitions */,
 				6838102418F9FC170019A61D /* dmAppDelegate.h */,
 				6838102518F9FC170019A61D /* dmAppDelegate.m */,
-				6882F02D193FAFA60049BE28 /* dmUserSettings.h */,
-				6882F02E193FAFA60049BE28 /* dmUserSettings.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -430,6 +431,9 @@
 		6838104E18FA00990019A61D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				68B9BC211958B6180066A656 /* Settings */,
+				68B9BC201958B3270066A656 /* User */,
+				68B9BC1C1958A95D0066A656 /* Timeline */,
 				68C00CDF1945028700D1310B /* Coupon */,
 				682162BE1944DE6E00EE466F /* Bet */,
 				682162BD1944DE6400EE466F /* Outcomes */,
@@ -439,8 +443,6 @@
 				682162B91944DE1900EE466F /* Sport */,
 				682162B81944DE0400EE466F /* ModelController */,
 				6838105718FA9E950019A61D /* Tournaments.xcdatamodeld */,
-				9B2D9F131934B4AF006835F4 /* dmMainSettings.h */,
-				9B2D9F141934B4AF006835F4 /* dmMainSettings.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -474,6 +476,33 @@
 				688F496D19391D0300A1428E /* dmCouponMultiViewCell.xib */,
 			);
 			name = Coupon;
+			sourceTree = "<group>";
+		};
+		68B9BC1C1958A95D0066A656 /* Timeline */ = {
+			isa = PBXGroup;
+			children = (
+				68B9BC1D1958B2C90066A656 /* Timeline.h */,
+				68B9BC1E1958B2C90066A656 /* Timeline.m */,
+			);
+			name = Timeline;
+			sourceTree = "<group>";
+		};
+		68B9BC201958B3270066A656 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				6882F02D193FAFA60049BE28 /* dmUserSettings.h */,
+				6882F02E193FAFA60049BE28 /* dmUserSettings.m */,
+			);
+			name = User;
+			sourceTree = "<group>";
+		};
+		68B9BC211958B6180066A656 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				9B2D9F131934B4AF006835F4 /* dmMainSettings.h */,
+				9B2D9F141934B4AF006835F4 /* dmMainSettings.m */,
+			);
+			name = Settings;
 			sourceTree = "<group>";
 		};
 		68C00CDF1945028700D1310B /* Coupon */ = {
@@ -785,6 +814,7 @@
 				9B2D9F151934B4AF006835F4 /* dmMainSettings.m in Sources */,
 				68C00CF21947A37B00D1310B /* dmPrematchTournamentController.m in Sources */,
 				9BE3493D19212429003D1D72 /* dmSportController.m in Sources */,
+				68B9BC1F1958B2C90066A656 /* Timeline.m in Sources */,
 				68B8C55119329CE80005011D /* dmCoupon.m in Sources */,
 				6838102218F9FC170019A61D /* main.m in Sources */,
 				682162B21943AE6D00EE466F /* dmFirstScreenViewController.m in Sources */,

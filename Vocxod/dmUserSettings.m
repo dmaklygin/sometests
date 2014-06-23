@@ -14,6 +14,7 @@
 {
     static dmUserSettings *_userSettings = nil;
     static dispatch_once_t onceToken;
+
     dispatch_once(&onceToken, ^{
         _userSettings = [[dmUserSettings alloc] init];
     });
@@ -27,17 +28,12 @@
         return _userDefaults;
     }
     
-//    NSString *defaultPrefsFile = [[NSBundle mainBundle] pathForResource:@"defaultPrefs" ofType:@"plist"];
-//    NSDictionary *defaultPreferences = [NSDictionary dictionaryWithContentsOfFile:defaultPrefsFile];
-
     _userDefaults = [NSUserDefaults standardUserDefaults];
-    
-//    [_userDefaults registerDefaults:defaultPreferences];
     
     return  _userDefaults;
 }
 
-- (int)getId
+- (NSUInteger)getId
 {
     return [self.userDefaults integerForKey:@"userId"];
 }
@@ -61,11 +57,22 @@
 
 - (BOOL)isLogin
 {
-    int userId = [self getId];
+    NSUInteger userId = [self getId];
     if (!userId) {
         return NO;
     }
     return YES;
+}
+
+- (NSString *)getToken
+{
+    return [self.userDefaults stringForKey:@"token"];
+}
+
+- (void)setToken:(NSString *)token
+{
+    [self.userDefaults setObject:token forKey:@"token"];
+    [self.userDefaults synchronize];
 }
 
 - (void)synchronize

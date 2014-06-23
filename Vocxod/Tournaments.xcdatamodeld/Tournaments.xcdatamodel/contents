@@ -37,7 +37,7 @@
         <attribute name="slug" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="forTournaments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tournament" inverseName="inSport" inverseEntity="Tournament" syncable="YES"/>
     </entity>
-    <entity name="Timeline" syncable="YES">
+    <entity name="Timeline" representedClassName="Timeline" syncable="YES">
         <attribute name="balance" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="closed" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="closeDate" optional="YES" attributeType="Date" syncable="YES"/>
@@ -46,7 +46,7 @@
         <attribute name="id" attributeType="Integer 16" defaultValueString="0" indexed="YES" syncable="YES"/>
         <attribute name="stake" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" indexed="YES" syncable="YES"/>
-        <attribute name="win_sum" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="winSum" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
     </entity>
     <entity name="Tournament" representedClassName="dmTournament" syncable="YES">
         <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" indexed="YES" syncable="YES"/>
