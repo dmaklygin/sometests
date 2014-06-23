@@ -6,3 +6,5 @@
   Copyright (c) 2014 DmitryCo. All rights reserved.
 */
 "%@ TIME" = "%@ Тайм";
+
+"dm.Vocxod.menu.item.login" = "Вход";

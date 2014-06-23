@@ -6,3 +6,10 @@
   Copyright (c) 2014 DmitryCo. All rights reserved.
 */
 "%@ TIME" = "%@ Time";
+
+"dm.Vocxod.menu.item.login" = "Login";
+"dm.Vocxod.menu.item.main" = "Main";
+"dm.Vocxod.menu.item.sport" = "Sport";
+"dm.Vocxod.menu.item.live" = "Live";
+"dm.Vocxod.menu.item.favourites" = "Favourites";
+"dm.Vocxod.menu.item.coupon" = "Coupon";

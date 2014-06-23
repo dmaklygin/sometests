@@ -12,7 +12,7 @@
 
 @property (nonatomic, strong) NSUserDefaults *userDefaults;
 
-+ (instancetype)standartSettings;
++ (instancetype)instance;
 
 - (NSUInteger)getId;
 - (void)setId:(int)userId;

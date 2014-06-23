@@ -15,17 +15,26 @@
 #import "dmFavouritesViewController.h"
 #import "dmCouponItemViewController.h"
 
+#import "dmUserSettings.h"
+
+NSString * const dmMenuViewControllerItemLogin = @"dm.Vocxod.menu.item.login";
+NSString * const dmMenuViewControllerItemMain = @"dm.Vocxod.menu.item.main";
+NSString * const dmMenuViewControllerItemSport = @"dm.Vocxod.menu.item.sport";
+NSString * const dmMenuViewControllerItemLive = @"dm.Vocxod.menu.item.live";
+NSString * const dmMenuViewControllerItemFavourites = @"dm.Vocxod.menu.item.favourites";
+NSString * const dmMenuViewControllerItemCoupon = @"dm.Vocxod.menu.item.coupon";
+
 @interface dmMenuViewController ()
+
 @property (nonatomic, strong) NSMutableArray *menuItems;
 
 @property (nonatomic, strong) dmMainViewController *mainViewController;
 @property (nonatomic, strong) dmLineTableViewController *lineViewController;
+
 @property (nonatomic, strong) dmLiveTableViewController *liveViewController;
 @property (nonatomic, strong) dmFavouritesViewController *favouritesViewController;
 @property (nonatomic, strong) dmCouponItemViewController *couponViewController;
 @end
-
-
 
 @implementation dmMenuViewController
 
@@ -53,11 +62,12 @@
         return _menuItems;
     }
     
-    _menuItems = [[NSMutableArray alloc] initWithArray:@[NSLocalizedString(@"MAIN", nil),
-                                                         NSLocalizedString(@"SPORT", nil),
-                                                         NSLocalizedString(@"LIVE", nil),
-                                                         NSLocalizedString(@"FAVOURITES", nil),
-                                                         NSLocalizedString(@"COUPON", nil)
+    _menuItems = [[NSMutableArray alloc] initWithArray:@[dmMenuViewControllerItemLogin,
+                                                         dmMenuViewControllerItemMain,
+                                                         dmMenuViewControllerItemSport,
+                                                         dmMenuViewControllerItemLive,
+                                                         dmMenuViewControllerItemFavourites,
+                                                         dmMenuViewControllerItemCoupon
                                                         ]];
     
     return _menuItems;
@@ -90,11 +100,18 @@
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *menuItem = [self.menuItems objectAtIndex:indexPath.row];
+    NSString *menuTitle = [self.menuItems objectAtIndex:indexPath.row];
 
-    cell.textLabel.text = menuItem;
+    dmUserSettings *userInfo = [dmUserSettings instance];
+    if (menuTitle == dmMenuViewControllerItemLogin) {
+        if ([userInfo isLogin]) {
+            menuTitle = [userInfo getLogin];
+        } else {
+            menuTitle = dmMenuViewControllerItemLogin;
+        }
+    }
     
-//    cell.backgroundColor = [UIColor clearColor];
+    cell.textLabel.text = NSLocalizedString(menuTitle, nil);
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

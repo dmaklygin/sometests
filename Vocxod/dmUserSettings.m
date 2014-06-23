@@ -10,7 +10,7 @@
 
 @implementation dmUserSettings
 
-+ (instancetype)standartSettings
++ (instancetype)instance
 {
     static dmUserSettings *_userSettings = nil;
     static dispatch_once_t onceToken;
