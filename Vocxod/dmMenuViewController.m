@@ -73,8 +73,6 @@ NSString * const dmMenuViewControllerItemCoupon = @"dm.Vocxod.menu.item.coupon";
     return _menuItems;
 }
 
-
-
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation

@@ -47,6 +47,8 @@
 		68B8C54E19329A280005011D /* Bet.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B8C54D19329A280005011D /* Bet.m */; };
 		68B8C55119329CE80005011D /* dmCoupon.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B8C55019329CE80005011D /* dmCoupon.m */; };
 		68B9BC1F1958B2C90066A656 /* Timeline.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B9BC1E1958B2C90066A656 /* Timeline.m */; };
+		68B9BC261958C2F80066A656 /* dmAuthorizingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B9BC241958C2F80066A656 /* dmAuthorizingViewController.m */; };
+		68B9BC271958C2F80066A656 /* dmAuthorizingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68B9BC251958C2F80066A656 /* dmAuthorizingViewController.xib */; };
 		68C00CE419450FB100D1310B /* dmLiveEventsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C00CE219450FB100D1310B /* dmLiveEventsTableViewCell.m */; };
 		68C00CE519450FB100D1310B /* dmLiveEventsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68C00CE319450FB100D1310B /* dmLiveEventsTableViewCell.xib */; };
 		68C00CE919450FD500D1310B /* dmLineEventsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C00CE719450FD500D1310B /* dmLineEventsTableViewCell.m */; };
@@ -153,6 +155,9 @@
 		68B8C55019329CE80005011D /* dmCoupon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dmCoupon.m; sourceTree = "<group>"; };
 		68B9BC1D1958B2C90066A656 /* Timeline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timeline.h; sourceTree = "<group>"; };
 		68B9BC1E1958B2C90066A656 /* Timeline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Timeline.m; sourceTree = "<group>"; };
+		68B9BC231958C2F80066A656 /* dmAuthorizingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmAuthorizingViewController.h; sourceTree = "<group>"; };
+		68B9BC241958C2F80066A656 /* dmAuthorizingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dmAuthorizingViewController.m; sourceTree = "<group>"; };
+		68B9BC251958C2F80066A656 /* dmAuthorizingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = dmAuthorizingViewController.xib; sourceTree = "<group>"; };
 		68C00CE119450FB100D1310B /* dmLiveEventsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmLiveEventsTableViewCell.h; sourceTree = "<group>"; };
 		68C00CE219450FB100D1310B /* dmLiveEventsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dmLiveEventsTableViewCell.m; sourceTree = "<group>"; };
 		68C00CE319450FB100D1310B /* dmLiveEventsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = dmLiveEventsTableViewCell.xib; sourceTree = "<group>"; };
@@ -369,9 +374,7 @@
 			isa = PBXGroup;
 			children = (
 				9BE349951923848C003D1D72 /* Vendor */,
-				9B35F3D2192CECD5004135C8 /* Resources */,
 				9B74BDD518FBF93A00D884C0 /* Views */,
-				6838105D18FB26650019A61D /* Network */,
 				6838105018FA00F00019A61D /* Sources */,
 				6838104E18FA00990019A61D /* Models */,
 				6838104D18FA00870019A61D /* Classes */,
@@ -411,6 +414,8 @@
 		6838104D18FA00870019A61D /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				68B9BC221958C2060066A656 /* Authorizing */,
+				6838105D18FB26650019A61D /* Network */,
 				68E992F3194CE83600A1B752 /* MainPage */,
 				68C00CEB1946349700D1310B /* TournamentsController */,
 				682162B41944DCFD00EE466F /* EventsController */,
@@ -505,6 +510,16 @@
 			name = Settings;
 			sourceTree = "<group>";
 		};
+		68B9BC221958C2060066A656 /* Authorizing */ = {
+			isa = PBXGroup;
+			children = (
+				68B9BC231958C2F80066A656 /* dmAuthorizingViewController.h */,
+				68B9BC241958C2F80066A656 /* dmAuthorizingViewController.m */,
+				68B9BC251958C2F80066A656 /* dmAuthorizingViewController.xib */,
+			);
+			name = Authorizing;
+			sourceTree = "<group>";
+		};
 		68C00CDF1945028700D1310B /* Coupon */ = {
 			isa = PBXGroup;
 			children = (
@@ -552,21 +567,6 @@
 				68E992F5194CE86400A1B752 /* dmMainPageViewController.m */,
 			);
 			name = MainPage;
-			sourceTree = "<group>";
-		};
-		9B35F3D2192CECD5004135C8 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				9B35F3D3192CECDC004135C8 /* Images */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		9B35F3D3192CECDC004135C8 /* Images */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Images;
 			sourceTree = "<group>";
 		};
 		9B35F3E7192DF1B3004135C8 /* Coefficients */ = {
@@ -759,6 +759,7 @@
 				6821629A193FCE8300EE466F /* Images.xcassets in Resources */,
 				68B8C545193215E70005011D /* Localizable.strings in Resources */,
 				688F496F19391D0300A1428E /* dmCouponMultiViewCell.xib in Resources */,
+				68B9BC271958C2F80066A656 /* dmAuthorizingViewController.xib in Resources */,
 				68C00CE519450FB100D1310B /* dmLiveEventsTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -834,6 +835,7 @@
 				6837D1C419294DAA00CE4928 /* dmLiveEventsTableViewController.m in Sources */,
 				9BE349A519260BF7003D1D72 /* Event.m in Sources */,
 				6838107018FB41E00019A61D /* dmLineTableViewController.m in Sources */,
+				68B9BC261958C2F80066A656 /* dmAuthorizingViewController.m in Sources */,
 				9BE34999192384FF003D1D72 /* MBProgressHUD.m in Sources */,
 				68E992F6194CE86400A1B752 /* dmMainPageViewController.m in Sources */,
 				682162C11944F1A300EE466F /* dmModelController.m in Sources */,

@@ -13,6 +13,8 @@
 #import "dmCouponMultiViewCell.h"
 #import "dmCouponSingleViewCell.h"
 
+#import "dmAuthorizingViewController.h"
+
 @interface dmCouponItemViewController () <NSFetchedResultsControllerDelegate>
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, strong) dmCoupon *coupon;
@@ -244,6 +246,11 @@
         alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"COUPON", nil) message:error.description delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alertView show];
     }
+    
+    dmAuthorizingViewController *authorizingViewController = [[dmAuthorizingViewController alloc] initWithNibName:@"dmAuthorizingViewController" bundle:nil];
+    
+    [self.navigationController pushViewController:authorizingViewController animated:YES];
+    
     NSLog(@"SendButton click");
 }
 
