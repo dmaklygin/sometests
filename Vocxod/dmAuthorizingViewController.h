@@ -10,5 +10,7 @@
 
 @interface dmAuthorizingViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UITextField *phoneTextField;
+- (IBAction)onValueChanged:(id)sender;
+- (IBAction)sendPhone:(id)sender;
 
 @end

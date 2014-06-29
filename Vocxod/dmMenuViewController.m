@@ -9,6 +9,7 @@
 #import "dmMenuViewController.h"
 #import "UIViewController+ECSlidingViewController.h"
 
+#import "dmAuthorizingViewController.h"
 #import "dmMainViewController.h"
 #import "dmLineTableViewController.h"
 #import "dmLiveTableViewController.h"
@@ -28,6 +29,7 @@ NSString * const dmMenuViewControllerItemCoupon = @"dm.Vocxod.menu.item.coupon";
 
 @property (nonatomic, strong) NSMutableArray *menuItems;
 
+@property (nonatomic, strong) dmAuthorizingViewController *authorizingViewController;
 @property (nonatomic, strong) dmMainViewController *mainViewController;
 @property (nonatomic, strong) dmLineTableViewController *lineViewController;
 
@@ -128,23 +130,40 @@ NSString * const dmMenuViewControllerItemCoupon = @"dm.Vocxod.menu.item.coupon";
     
     switch (indexPath.row) {
         case 0:
-            self.slidingViewController.topViewController = self.mainViewController;
+            self.slidingViewController.topViewController = self.authorizingViewController;
             break;
         case 1:
-            self.slidingViewController.topViewController = self.lineViewController;
+            self.slidingViewController.topViewController = self.mainViewController;
             break;
         case 2:
-            self.slidingViewController.topViewController = self.liveViewController;
+            self.slidingViewController.topViewController = self.mainViewController;
             break;
         case 3:
-            self.slidingViewController.topViewController = self.favouritesViewController;
+            self.slidingViewController.topViewController = self.lineViewController;
             break;
         case 4:
+            self.slidingViewController.topViewController = self.liveViewController;
+            break;
+        case 5:
+            self.slidingViewController.topViewController = self.favouritesViewController;
+            break;
+        case 6:
             self.slidingViewController.topViewController = self.couponViewController;
             break;
     }
     
     [self.slidingViewController resetTopViewAnimated:YES];
+}
+
+- (dmAuthorizingViewController *)authorizingViewController
+{
+    if (_authorizingViewController) {
+        return _authorizingViewController;
+    }
+    
+    _authorizingViewController = [[dmAuthorizingViewController alloc] initWithNibName:@"dmAuthorizingViewController" bundle:nil];
+    
+    return _authorizingViewController;
 }
 
 - (dmMainViewController *)mainViewController

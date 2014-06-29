@@ -33,7 +33,6 @@
     
     self.delegate = self.zoomAnimationController;
     self.customAnchoredGestures = @[];
-    
 }
 
 - (void)didReceiveMemoryWarning
